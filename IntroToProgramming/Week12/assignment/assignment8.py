@@ -45,12 +45,12 @@ def binary_search(password, passwords):
 def main():
     shortFile = "passwords_short.txt"
     # longFile = "passwords_long.txt"
-    # with open(longFile) as file:
-    #     passwords = []
-    #     print("Reading password data ... ", end='')
-    #     for line in file:
-    #         passwords.append(line.strip())
-    #     print("Complete!")
+    with open(shortFile) as file:
+        passwords = []
+        print("Reading password data ... ", end='')
+        for line in file:
+            passwords.append(line.strip())
+        print("Complete!")
     
     password = input("Please enther the password to search for: ")
     while (password != ''):
