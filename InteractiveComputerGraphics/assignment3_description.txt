@@ -1,0 +1,19 @@
+Implemented Functionalities:
+All functionalities were collaborated on to some extent, but the name listed is the one who was the primary writer (Was assigned that part)
+-A Python script extract_words.py, which generates three .txt files: allwords.txt, uniquewords.txt and wordfrequency.txt 
+	-Completed by Jon Butler
+
+-A word cloud generated in Wordle based on the contents of allwords.txt
+	 -Completed by Jon Butler
+
+-A Processing file a3_novelvisualization.pde (or .pyde) that generates a word cloud using the contents of uniquewords.txt
+	-Font colors selected: official UT colors
+	-Fonts selected: Broadway, Harrington, Hightower
+	-Font size: 30
+	-Font and font colors are randomly assigned for every word; font size remains consistent; 
+	 fonts chosen since they are easily readable.
+	-Completed by Richard Paredes
+
+-A Processing file a3_wordfrequency.pde (or .pyde) that generates a visual representation of word frequency using the contents of wordfrquency.txt 
+	-Possible extra credit: Created colored pi chart representation instead of histogram 
+	-Completed by Clarice Norton

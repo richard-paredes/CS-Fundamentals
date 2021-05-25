@@ -1,0 +1,17 @@
+Intended animation: 
+
+Clocks with spinning hands bounce around the screen in a screensaver-like animation.
+
+Included classes: 
+
+Clock:
+Display function implements the translate function to display the clock in the desired location.
+The clock moves around the screen using the move function. 
+- Clarice and Richard both created the functions involved in this class.
+
+
+Hands: 
+The hands move with the clock as it moves around the screen, rotating
+at varying speeds according to minutes/seconds/hours. 
+- Jon
+
