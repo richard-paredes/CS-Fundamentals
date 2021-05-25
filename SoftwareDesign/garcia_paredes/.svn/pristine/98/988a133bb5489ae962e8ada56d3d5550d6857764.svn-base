@@ -1,0 +1,10 @@
+from random import shuffle
+
+class WordGuess:
+  def __init__(self):
+    pass
+  
+  def scramble_word(self, word: str):
+    letters = list(word.strip())
+    shuffle(letters)
+    return ''.join(letters)

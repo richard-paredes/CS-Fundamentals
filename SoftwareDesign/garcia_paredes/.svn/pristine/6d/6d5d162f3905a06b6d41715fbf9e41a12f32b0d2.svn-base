@@ -1,0 +1,8 @@
+def lowercase(text):
+  return text.lower()
+
+def uppercase(text):
+  return text.upper()
+
+def stupid_remover(text):
+  return text.replace("stupid", "s*****")

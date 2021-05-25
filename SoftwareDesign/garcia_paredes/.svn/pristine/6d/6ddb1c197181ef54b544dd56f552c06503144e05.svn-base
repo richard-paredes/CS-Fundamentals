@@ -1,0 +1,17 @@
+from writer import Writer
+
+class StringWriter(Writer):
+  def __init__(self, *operations):
+    self.target = ""
+    self.is_closed = False
+    super().__init__(*operations)
+  
+  def write(self, message):
+    if not self.is_closed:
+      self.target += Writer.write(self, message) #Feedback: **1
+  
+  def close(self):
+    self.is_closed = True
+  
+  def get_contents(self):
+    return self.target

@@ -1,0 +1,40 @@
+body {
+    font-size: 16px;
+    background: #2D3047;
+}
+
+header {
+    font-family: 'Lobster';
+    font-size: 23px;
+    font-weight: 120;
+    /*inherit color from body*/
+    text-align: right;
+
+    background: white;
+    border:1px solid white;
+}
+
+h1 {
+    padding: 1px;
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
+}
+
+span {
+    margin-right:4.3%;
+}
+
+
+img {
+    width: 29%;
+    /*float property:
+        basically breaks the blocks and puts them on the same line
+    */
+    /* removes any white space between elements*/
+    float: left;
+
+    /*3 images per line so 6 total margins (L-R per image)*/
+    margin: 1.66%;
+
+    border: 1px solid black;
+}

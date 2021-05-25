@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bootstrap Grid System</title>
+    <!-- BS 3: -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <style type="text/css">
+        .pink {
+            background: pink;
+            border: 1px solid purple;
+        }
+        .orange {
+            background: orange;
+            border: 1px solid blue;
+        }
+        .tourstuff {
+            margin: 20px;
+            background:orange;
+        }
+        .tour {
+            /*margin: 10px;*/
+            /*padding: 20px;*/
+            text-align: center;
+            border: 3px solid black;
+        }
+        hr.dateline {
+          border: 0;
+          height: 1px;
+          background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+          background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+          background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+          background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+        }
+        hr.yearline {
+          border: 0;
+          height: 1px;
+          background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+          background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+          background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+          background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+        }
+        .year {
+            font-weight: bold;
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================================== -->
+    <!--               OBJECTIVES             -->
+    <!-- 1. Understand purpose of Grid system -->
+    <!-- 2. Understand the 4 different sizes  -->
+    <!-- 2. Write nested grids                -->
+    <!-- ==================================== -->
+
+    <!-- grid adds structure and layout to application -->
+    <!-- helps things line up side-by-side and scale accoridng to screen size -->
+    <!-- if you imagine a grid layout, there are 12 columns across the width of the screen -->
+    <!-- the scaling is with proportion to how much columns each content takes up -->
+
+    <!-- how to make a grid: -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 pink">COLUMN LARGE 6</div>
+            <div class="col-lg-6 pink">COLUMN LARGE 6</div>
+        </div>
+        <div class="row">
+            <div class="col-lg-2 pink">COLUMN LARGE 2</div>
+            <div class="col-lg-8 pink">COLUMN LARGE 8</div>
+            <div class="col-lg-2 pink">COLUMN LARGE 2</div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 pink">COLUMN LARGE 4</div>
+            <div class="col-lg-4 pink">COLUMN LARGE 4</div>
+            <div class="col-lg-4 pink">COLUMN LARGE 4</div>
+        </div>
+        <br>
+        <div class="row">
+            <!-- at a large width, each element will take up 1 column -->
+            <!-- at a medium width, each element will take up 2 columns -->
+            <!-- at a small width, each element will take up 6 columns -->
+            <!-- at an xtra-small width, each element will take up 4 columns -->
+            <!-- UNLESS SPECIFIED: at md, sm, and xs, each of the elements will take up all 12 columns -->
+            <div class="col-lg-1 col-md-2 col-sm-6 col-xs-4  pink">COLUMN LARGE 1</div>
+            <div class="col-lg-1 col-md-2 col-sm-6 col-xs-4  pink">COLUMN LARGE 1</div>
+            <div class="col-lg-1 col-md-2 col-sm-6 col-xs-4  pink">COLUMN LARGE 1</div>
+            <div class="col-lg-1 col-md-2 col-sm-6 col-xs-4  pink">COLUMN LARGE 1</div>
+            <div class="col-lg-1 col-md-2 col-sm-6 col-xs-4  pink">COLUMN LARGE 1</div>
+            <div class="col-lg-1 col-md-2 col-sm-6 col-xs-4  pink">COLUMN LARGE 1</div>
+            <div class="col-lg-1 col-md-2 col-sm-6 col-xs-4  pink">COLUMN LARGE 1</div>
+            <div class="col-lg-1 col-md-2 col-sm-6 col-xs-4  pink">COLUMN LARGE 1</div>
+            <div class="col-lg-1 col-md-2 col-sm-6 col-xs-4  pink">COLUMN LARGE 1</div>
+            <div class="col-lg-1 col-md-2 col-sm-6 col-xs-4  pink">COLUMN LARGE 1</div>
+            <div class="col-lg-1 col-md-2 col-sm-6 col-xs-4  pink">COLUMN LARGE 1</div>
+            <div class="col-lg-1 col-md-2 col-sm-6 col-xs-4  pink">COLUMN LARGE 1</div>
+        </div>
+        <br>
+        <div class="row">
+
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-11 tour">
+                <h3 class="year">2019!</h3>
+                <hr class="yearline">
+                <h5 class="date">October</h5>
+                <hr class="dateline">
+                <h5 class="location">Houston, TX</h5>
+                <h4>SOLD OUT Toyota Center</h4>
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-11 tour">
+                <h3 class="year">2019!</h3>
+                <hr class="yearline">
+                <h5 class="date">December</h5>
+                <hr class="dateline">
+                <h5 class="location">Houston, TX</h5>
+                <h4>SOLD OUT Toyota Center</h4>
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-11 tour">
+                <h3 class="year">2019!</h3>
+                <hr class="yearline">
+                <h5 class="date">December</h5>
+                <hr class="dateline">
+                <h5 class="location">Houston, TX</h5>
+                <h4>SOLD OUT Toyota Center</h4>
+            </div>
+            <!-- dont need to specify the column width for larger sizes if you've specified for a smaller one
+            ex: dont need to put lg-3 if i've already put md-3
+            bootstrap will take the smallest one it knows and apply it to the larger ones
+            but it will not do the same for larger to smaller ones -->
+            <div class="col-md-3 col-sm-6 tour">
+                <h3 class="year">2019!</h3>
+                <hr class="yearline">
+                <h5 class="date">December</h5>
+                <hr class="dateline">
+                <h5 class="location">Houston, TX</h5>
+                <h4>SOLD OUT Toyota Center</h4>
+            </div>
+
+        </div>
+        <!-- rows can be nested -->
+        <br>
+        <div class="row">
+            <div class="col-md-3 col-sm-6 pink">
+                <!-- each nest will have 12 units -->
+                <div class="row">
+                    <div class="col-lg-6 orange">FIRST HALF</div>
+                    <div class="col-lg-6 orange">OTHER HALF</div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 pink">COL</div>
+            <div class="col-md-3 col-sm-6 pink">COL</div>
+            <div class="col-md-3 col-sm-6 pink">
+                <div class="row">
+                    <div class="col-lg-2 orange">split</div>
+                    <div class="col-lg-2 orange">split</div>
+                    <div class="col-lg-2 orange">split</div>
+                    <div class="col-lg-2 orange">split</div>
+                    <div class="col-lg-2 orange">split</div>
+                    <div class="col-lg-2 orange">split</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

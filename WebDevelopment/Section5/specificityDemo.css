@@ -1,0 +1,41 @@
+/* since all elements are nested in body,
+ all elements will inherit this color unless
+ specified explicitly */
+body {
+    color: red;
+}
+
+ul {
+    color: blue;
+}
+
+p {
+    color: green;
+}
+/*specificity:
+    idea that multiple styles can be targeting one element
+
+    if there are multiple styles being applied to a particular element
+    the style that is more specific (ie closest in tag) to that
+    particular element will be the style that is applied!
+
+    example:
+    ul is more specific to li than body, so ul style wins;
+
+    rank of specificity (descending)
+    1. in-line styles
+    2. IDs
+    3. classes, attributes, and pseudoclasses
+    4. elements and pseudoelements
+    */
+li {
+    color: orange;
+}
+/* class is more specific than element*/
+.highlight {
+    color: purple;
+}
+
+#special {
+    color: pink;
+}

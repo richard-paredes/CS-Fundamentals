@@ -1,0 +1,62 @@
+Please keep all files related to a homework or an assignment within the appropriate directory. Files checked in outside of specific homework or assignment directory will not be reviewed or graded for that homework/assignment.
+
+Check in and modify files as many times as you like. You will not be able to modify the files after the deadline.
+
+You will work as a pair, both of you are responsible for the completed work in all assignments and homework. Reasonable effort is expected from each person. If you do not check in, you will not receive any scores. When pairing please switch who checks in so there is significant number of check in from each of you.
+
+The deadlines are strict, there will be no extensions. Don't email any code to Venkat or to the mailing list. Your last check in before the deadline will be graded. If your last check in breaks the code, both you and your pair will lose significant points.
+
+Please feel free to ask for frequent reviews. See the reviews/readme.txt file for details on how to ask for reviews.
+
+You can evolve the answers and solutions based on the reviews. Only the latest checkin at the time of review will be looked at. Also the final check in will be the only one graded.
+
+You are still responsible to successfully complete an homework or assignment even if your pair is a no-show. You can request to change pairs at any time and if there is another person in the class willing to pair with you we can make the switch.
+
+A lot of help will be provided in this course, but you have to start early and ask for help along the way.
+
+Please read the academic honesty policy posted on the course mailing list.
+
+The above details apply to all homework and assignments in this course.
+
+Now to homework #1.
+==============================================================================
+HW1: Due 11:59PM January 29
+
+Please refer to the paper "An Initial Investigation of Test Driven Development in Industry" by Boby George and Laurie Williams:
+<https://collaboration.csc.ncsu.edu/laurie/Papers/TDDpaperv8.pdf>
+
+1. What are some of the learnings or take aways for you from this article?
+
+One of the most emphasized points of the article was that TDD appeared to result in higher quality, more reliable code, and the majority of developers in this case study believed the practice of TDD to be effective and productive.
+
+TDD can allow programmers to identify errors in their codebase immediately after creating an object or function, thus improving the quality of the code by receiving immediate feedback from the test case and iterating upon it.
+
+The study also concluded that TDD consumes more time, which makes sense as writing tests requires additional overhead and designing especially towards the beginning stages of a project / feature. However, the time tradeoff can be worthwhile as it results in a foundational test bed that can be expanded upon as more features are integrated, facilitating debugging, maintenance and evolution of the codebase.
+
+Although the professional setting in which this study was performed had more contextual relevance than the previous research performed on grad students, there were still a few downfalls to consider. For example, we were left wondering how much of an influence pair-programming had on the results of this study, since it were performed in tandem with TDD.
+
+Additionally, the sample size was still unfortunately small, so the results of the study were limited.
+
+Lastly, the majority of control groups wrote meaningless tests in comparison to the TDD groups which could partially explain the significant disparity in timings between waterfall and TDD programming.
+
+2. What are your past experiences with quality of design and efforts to maintain code?
+
+(Alan)
+My past approach to creating quality and maintainable code has been the traditional implementation of designing unit tests after completing a "successful" iteration of the codebase. I have always followed a waterfall model to software development and designed code to meet a set of requirements that were given to me prior to the start of the project.
+
+Unfortunately, unit testing has been considered an afterthought in several of the projects I have been involved in. The unit testing that was developed provided a low coverage of the codebase (~50%) and therefore did not significantly support any future efforts to maintain the codebase. In fact, the implementation of poor unit tests may lead future software maintainers to develop bugs and poor code by falsely relying on an existing unit testing framework to detect any issues in their new code development.
+
+(Richard)
+Unfortunately, I have no experience with test-driven development. In a professional setting, I have only implemented unit tests after the feature has already been implemented. Prior to me entering the project, the codebase was severely lacking testing, so it was difficult to debug issues when incorporating or removing functionalities. From these experiences, it felt tedious coming up with various test cases for something that was already implemented. It felt like the test cases were conforming to the implementation rather than the other way around.
+
+Although I may not practice TDD, I have learned to be extremely thoughtful into how I implement a feature. I try to be as forward-thinking as possible, making the code as simple, readable and extensible as possible, which can sometimes be time consuming. Unfortunately, I'm still very much a novice at strategic and tactical designing, hence my decision to take this course in hopes of becoming a better software developer.
+
+3. What impact will some of the details mentioned in the article have on your design and code quality?
+
+Based on the quantitative and qualitative results provided in the article, the incorporation of TDD, if properly implemented, will upwardly drive the quality of code and the productivity of the programmer. As the name of the TDD practice implies, the development of code is driven by the tests so its a "test first, code after" design approach. Therefore, TDD is an entirely different software paradigm than the classical waterfall approach, in which tests are often disregarded as an afterthought.
+
+By adopting TDD, our development cycle will be closely coupled with unit tests and code as referenced in the article: "If you can't write test for what you are about to code, then you shouldn't be thinking about coding". Prior to writing code, we will try to focus on creating a high level design for how a feature will be implemented. Then, upon reaching a satisfactory design and beginning implementation, we will rely on the iterative feedback provided by TDD to keep the code as correct and minimally functional as possible.
+
+Realistically, due to the initial learning curve, incorporating TDD into our development cycle will require a change in our mindset to place an emphasis on superior code design over the rate of development. With experience, the rate of development will gradually scale up along with code quality as part of the TDD paradigm shift.
+
+Total [10]: 10

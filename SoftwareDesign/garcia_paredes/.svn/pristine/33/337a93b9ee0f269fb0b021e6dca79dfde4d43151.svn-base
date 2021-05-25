@@ -1,0 +1,21 @@
+class FileWriter:
+  def __init__(self, file_name):
+    self.file_name = file_name
+    self.target = open(file_name, "w+")
+    self.is_closed = False
+    
+  def write(self, message = ""):
+    if not self.target.closed:
+      self.target.write(message)
+      self.target.flush()
+  
+  def close(self):
+    self.target.close()
+  
+  def get_contents(self):
+    with open(self.file_name, "r") as target:
+      return target.read()
+
+#Feedback: by being here the following violates DRY (it is mostl likely to be repeated in other writers). Also, it violates OCP since we have to change this class to add other operations.
+  def to_lowercase(self):
+    return self.get_contents().lower()

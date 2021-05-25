@@ -1,0 +1,21 @@
+> Accuracy real: 67%, fake: 63% 
+00:09:09.65 
+> Accuracy real: 41%, fake: 84% 
+00:08:52.32 
+> Accuracy real: 47%, fake: 90% 
+00:08:53.38 
+> Accuracy real: 89%, fake: 57% 
+00:08:48.73 
+> Accuracy real: 96%, fake: 19% 
+00:08:47.58 
+> Accuracy real: 49%, fake: 91% 
+00:08:47.62 
+> Accuracy real: 85%, fake: 38% 
+00:08:47.17 
+> Accuracy real: 82%, fake: 49% 
+00:08:48.27 
+> Accuracy real: 89%, fake: 32% 
+00:08:49.19 
+> Accuracy real: 72%, fake: 64% 
+00:08:51.78 
+01:29:01.83 

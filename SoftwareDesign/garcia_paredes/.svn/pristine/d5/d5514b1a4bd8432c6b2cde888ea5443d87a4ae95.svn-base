@@ -1,0 +1,25 @@
+import os, sys
+sys.path.append(os.path.dirname(__file__).replace("timer", ""))
+
+from fibonacci_imperative import imperative_fibonacci
+from fibonacci_functional import functional_fibonacci
+from fibonacci_recursive import recursive_fibonacci
+from fibonacci_memoized_recursive import memoized_fibonacci
+from timer import Timer
+
+def compare_fibonacci(funcs, position):
+  for func in funcs:
+    with Timer():
+      result = func(position)
+      print(f"\n{func.__name__!r}: {result}") #Feedback: we don't want to be printing stuff when we should be doing automated tests.
+
+
+if __name__ == '__main__':
+  funcs = [
+            imperative_fibonacci, 
+            functional_fibonacci, 
+            recursive_fibonacci, 
+            memoized_fibonacci
+          ]
+  
+  compare_fibonacci(funcs, 30)

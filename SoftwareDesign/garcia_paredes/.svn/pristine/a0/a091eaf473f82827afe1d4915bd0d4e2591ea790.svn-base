@@ -1,0 +1,68 @@
+import tkinter as tk
+import os
+import sys
+sys.path.append(os.path.dirname(__file__).replace("gui", ""))
+
+from minesweeper import Minesweeper, CellState
+
+class Application(tk.Frame):
+  def __init__(self, master=None):
+    super().__init__(master)
+    self.master = master
+    self.minesweeper = Minesweeper()
+    self.minesweeper.set_mines(5)
+    self.pack()
+    self.create_cells()
+
+  def create_cells(self):
+    for i in range(self.minesweeper.SIZE):
+      for j in range(self.minesweeper.SIZE):
+        button = tk.Button(self, text="", height=1, width=2)
+        button.bind("<Button-1>", self.left_click)
+        button.bind("<Button-2>", self.right_click)
+        button.bind("<Button-3>", self.right_click)
+        button.grid(row=i, column=j, padx=2, pady=2)
+
+  def refresh_grid(self):
+    for i in range(self.minesweeper.SIZE):
+      for j in range(self.minesweeper.SIZE):
+        self.update_widget(i, j)
+
+  def update_widget(self, x, y):
+    widget = self.grid_slaves(x, y)[0]
+    text = self.get_button_text(x, y)
+    widget['text'] = text
+    if self.minesweeper.get_cell_status(x, y) == CellState.EXPOSED:
+      widget['state'] = "disabled"
+      widget.configure(bg="gray")
+    if text == "X":
+      widget['state'] = "disabled"
+      widget.configure(bg="red")   
+    
+  def left_click(self, event):
+    grid_info = event.widget.grid_info()
+    x = grid_info["row"]
+    y = grid_info["column"]
+    self.minesweeper.expose_cell(x, y)
+    self.refresh_grid()
+
+  def right_click(self, event):
+    grid_info = event.widget.grid_info()
+    x = grid_info["row"]
+    y = grid_info["column"]
+    self.minesweeper.toggle_seal(x, y)
+    self.refresh_grid()
+
+  def get_button_text(self, x, y):
+    if self.minesweeper.get_cell_status(x, y) == CellState.UNEXPOSED:
+      return ""
+    if self.minesweeper.get_cell_status(x, y) == CellState.SEALED:
+      return "S"
+    if self.minesweeper.is_mine_at(x, y):
+      return "X"
+    adjacent_mines_count = self.minesweeper.adjacent_mines_count_at(x, y)
+    return adjacent_mines_count if adjacent_mines_count else ""
+
+root = tk.Tk()
+app = Application(master=root)
+app.mainloop()

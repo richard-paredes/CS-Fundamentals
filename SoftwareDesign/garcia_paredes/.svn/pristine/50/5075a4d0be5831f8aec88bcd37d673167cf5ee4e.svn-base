@@ -1,0 +1,15 @@
+from timer.fibonacci_comparison import fibonacci_timer
+from fibonacci_recursive import recursive_fibonacci
+from fibonacci_memoized_recursive import memoized_fibonacci
+
+class TestFibonacciComparison():
+ #Feedback: let's move this test to the memoization test class
+  def test_memoized_fibonacci_faster_than_recursive_fibonacci(self):
+    testing_position = 10
+
+    recursive_time = fibonacci_timer(recursive_fibonacci, testing_position)
+    memoized_time = fibonacci_timer(memoized_fibonacci, testing_position)
+
+    assert memoized_time < recursive_time, "Memoized function is not faster than non-memoized version"
+    #Feedback: we want to assert that the memoized time is significantly faster than recursion
+    #assert memoized_time * 10 < recursive_time

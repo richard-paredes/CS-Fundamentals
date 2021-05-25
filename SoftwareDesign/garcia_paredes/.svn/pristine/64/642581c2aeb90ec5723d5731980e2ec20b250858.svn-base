@@ -1,0 +1,49 @@
+class WriterTests:
+
+  def setUp(self):
+    self.writer = self.create_writer()
+
+  def test_canary(self):
+    self.assertTrue(True)
+  
+  def test_write_nothing_to_writer_is_ignored(self):
+    self.assertEquals("", self.writer.get_contents())
+
+  def test_write_string_to_writer_writes_to_target(self):
+    self.writer.add_message("Hello").write()
+
+    self.assertEquals("Hello", self.writer.get_contents())
+  
+  def test_write_string_twice_to_writer_writes_both_to_target(self):
+    self.writer.add_message("Hello").write()
+    self.writer.add_message(" World!").write()
+
+    self.assertEquals("Hello World!", self.writer.get_contents())
+  
+  def test_write_close_write_to_writer_ignores_second_write(self):
+    self.writer.add_message("Hello").write()
+    self.writer.close()
+    self.writer.add_message(" World!").write()
+
+    self.assertEquals("Hello", self.writer.get_contents())
+  
+  def test_close_write_to_writer_ignores_write(self):
+    self.writer.close()
+    self.writer.add_message("Hello").write()
+
+    self.assertEquals("", self.writer.get_contents())
+
+  def test_mixcase_to_lowercase(self):
+    self.writer.add_message("heLLo WorLD").to_lowercase().write()
+
+    self.assertEquals("hello world", self.writer.get_contents())
+
+  def test_all_uppercase_to_lowercase(self):
+    self.writer.add_message("HELLO WORLD").to_lowercase().write()
+
+    self.assertEquals("hello world", self.writer.get_contents())
+
+  def test_all_lowercase_to_lowercase(self):
+    self.writer.add_message("hello world").to_lowercase().write()
+
+    self.assertEquals("hello world", self.writer.get_contents())

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!-- MDN Attribute Reference:
+-- https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes
+-- contains common attributes in HTML
+-- 10-15 attributes used most commonly
+-- most attributes only work on specific elements
+ -->
+<html>
+<head>
+    <title>Common Attributes</title>
+</head>
+<body>
+
+    <h1>Common Attributes</h1>
+
+    <div>
+        <h2>Here's an image of a bird:</h2>
+
+    <!-- could be hosted (online links) or local (on disk) -->
+    <!-- img element tag
+    -- takes in src attribute for the source -->
+    <img src ="http://cdn.litlepups.net/2018/07/28/piper-a-cute-story-of-a-little-bird-english-short-film.jpg">
+    </div>
+
+    <!-- Anchoring element tag: in-line
+    -- takes in href attribute for the hyperlink
+    -- takes in title for a tooltip
+    -- here's example of a http URL (needs to be specified otherwise it'll
+    -- try to find the URL on your local disk
+    -->
+    <div>
+        <h2>Here's a link to all HTML Attributes</h2>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes"
+        title="MDN Attributes Reference"><strong>Link to MDN Attribute Reference</strong></a>
+    </div>
+
+    <!-- Here's a fix to redirecting via hyperlink
+    -- to a link that does not use http URL
+    -- i.e. a relative path
+    -- (this searches in the directory the HTML file is in)
+     -->
+    <div>
+        <h2>Here's another link </h2>
+        <a href="CommonElementTags.html" title="Common Elements"><strong>Common Elements</strong></a>
+
+    </div>
+
+    <!-- 'for' attribute for label elements: used to match
+        a label with a corresponding element with the same
+        id string
+     -->
+    <!-- 'required' attribute for input elements
+        it is a method of simple validation: presence validation
+        forcing users to enter data in the field
+    -->
+    <form>
+        <label for="user">Username:</label>
+        <input type="username" name="user" id="user" required>
+    </form>
+
+</body>
+</html>

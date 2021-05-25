@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container p-5 text-center">
+        <h1 class="display-2 text-warning border border-info border-rounded">Display Utility</h1>
+        <h1 class="border border-danger">Example</h1>
+        <h1 class="border border-danger d-inline">Example</h1>
+        <h1 class="border border-danger d-block">Example</h1>
+        <!-- will hide from medium and larger -->
+        <h1 class="border border-danger d-md-none">HIDE ME ON M</h1>
+        <h1 class="border border-danger d-lg-none">HIDE ME ON LG</h1>
+        <h1 class="border border-danger d-xl-none">HIDE ME ON XL</h1>
+        <h1 class="border border-danger d-none">HIDE ME ON Default</h1>
+        <!-- block/inline means it will be visible again while none means it will not show -->
+        <h1 class="border d-none d-lg-inline d-xl-none">Always hidden except lg</h1>
+    </div>
+
+    <!-- real example: -->
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="display-4">Hello, world!</h1>
+            <p class="lead d-m-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia temporibus animi, reprehenderit atque expedita quia culpa totam fugiat natus ipsum deserunt cum ab nesciunt dolor tempora neque sint! Consequuntur, placeat culpa sed vitae doloribus quia cupiditate. Sit possimus sed provident alias eveniet doloremque fugit autem earum illo! In vero eum voluptatibus explicabo, esse laudantium quae velit perferendis quo. Neque, provident!</p>
+            <hr class="my-4">
+            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+                <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

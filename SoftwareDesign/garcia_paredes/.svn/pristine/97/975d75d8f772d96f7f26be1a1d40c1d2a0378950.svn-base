@@ -1,0 +1,79 @@
+x canary test
+x write nothing to a StringWriter
+x write a string to a StringWriter
+x write a string twice to a StringWriter
+x write, close, write to a StringWriter
+x close, write to a StringWriter
+x write nothing to a FileWriter
+x write a string to a FileWriter
+x write a string twice to a FileWriter
+x write, close, write to a FileWriter
+x close, write to a FileWriter
+x write nothing to the StringWriter with lowercase operation and verify content is empty string
+x write "hello THERE" to the StringWriter with lowercase operation and verify content is "hello there"
+x write twice "hELLo" and then " wORLd" to the StringWriter with lowercase operation, verify content is "hello world"
+x write, close, write to the StringWriter with lowercase operation and verify only first write is recorded and lowercase
+x close, write to the StringWriter with lowercase operation and verify content is empty string
+x write nothing to the FileWriter with lowercase operation and verify content is empty string
+x write "hello THERE" to the FileWriter with lowercase operation and verify content is "hello there"
+x write twice "hELLo" and then " wORLd" to the FileWriter with lowercase operation, verify content is "hello world"
+x write, close, write to the FileWriter with lowercase operation and verify only first write is recorded and lowercase
+x close, write to the FileWriter with lowercase operation and verify content is empty string
+x write nothing to the StringWriter with uppercase operation and verify content is empty string
+x write "hello THERE" to the StringWriter with uppercase operation and verify content is "HELLO THERE"
+x write twice "hELLo" and then " wORLd" to the StringWriter with uppercase operation, verify content is "HELLO WORLD"
+x write, close, write to the StringWriter with uppercase operation and verify only first write is recorded and uppercase
+x close, write to the StringWriter with uppercase operation and verify content is empty string
+x write nothing to the FileWriter with uppercase operation and verify content is empty string
+x write "hello THERE" to the FileWriter with uppercase operation and verify content is "HELLO THERE"
+x write twice "hELLo" and then " wORLd" to the FileWriter with uppercase operation, verify content is "HELLO WORLD"
+x write, close, write to the FileWriter with uppercase operation and verify only first write is recorded and uppercase
+x close, write to the FileWriter with uppercase operation and verify content is empty string
+x write nothing to the StringWriter with stupid remover operation and verify content is empty string
+x write stupid lowercase to StringWriter with stupid remover operation returns replaced stupid
+x write stupid uppercase to StringWriter with stupid remover operation returns uppercase stupid
+x write stupid mixcase to StringWriter with stupid remover operation returns mixcase stupid
+x write twice to StringWriter with stupid remover operation returns replaced stupid
+x write close write to StringWriter with stupid remover operation returns first asterisks
+x close write to StringWriter with uppercase operations returns empty string
+x write nothing to the FileWriter with stupid remover operation and verify content is empty string
+x write stupid lowercase to FileWriter with stupid remover operation returns replaced stupid
+x write stupid uppercase to FileWriter with stupid remover operation returns uppercase stupid
+x write stupid mixcase to FileWriter with stupid remover operation returns mixcase stupid
+x write twice to FileWriter with stupid remover operation returns replaced stupid
+x write close write to FileWriter with stupid remover operation returns first asterisks
+x close write to FileWriter with uppercase operations returns empty string
+x write nothing to StringWriter with duplicate remover operations returns empty string
+x write duplicate lowercase to StringWriter with duplicate remover operation returns without duplicate
+x write duplicate uppercase to StringWriter with duplicate remover operation returns without duplicate
+x write nonconsecutive duplicate to StringWriter with duplicate remover operation returns duplicates
+x write mixedcase to StringWriter with duplicate remover operation returns mixed case with duplicate
+x write twice to StringWriter with duplicate remover operation returns with duplicate
+x write close write to StringWriter with duplicate remover operation returns first without duplicate
+x close write to StringWriter with uppercase operations returns empty string
+x write nothing to FileWriter with duplicate remover operations returns empty string
+x write duplicate lowercase to FileWriter with duplicate remover operation returns without duplicate
+x write duplicate uppercase to FileWriter with duplicate remover operation returns without duplicate
+x write nonconsecutive duplicate to FileWriter with duplicate remover operation returns duplicates
+x write mixedcase to FileWriter with duplicate remover operation returns mixed case with duplicate
+x write twice to FileWriter with duplicate remover operation returns with duplicate
+x write close write to FileWriter with duplicate remover operation returns first without duplicate
+x close write to FileWriter with uppercase operations returns empty string
+x write to StringWriter with uppercase then lowercase operation returns lowercase
+x write to StringWriter with lowercase then uppercase operation  returns lowercase
+x write to StringWriter with lowercase then stupid remover returns lowercase and stupid removed
+x write to StringWriter with stupid remover then lowercase returns stupid removed and lowercase
+x write to StringWriter with uppercase then stupid remover returns uppercase without stupid removed
+x write to StringWriter with stupid remover then uppercase returns stupid removed and uppercase
+x write to StringWriter with duplicate then stupid returns with duplicates and stupid removed
+x write to StringWriter with duplicate then stupid remover then lowercase returns lowercase with duplicates and stupid removed
+x write to StringWriter with duplicate then stupid remover then uppercase returns uppercase with duplicates and stupid removed
+x write to FileWriter with uppercase then lowercase operation returns lowercase
+x write to FileWriter with lowercase then uppercase operation  returns lowercase
+x write to FileWriter with lowercase then stupid remover returns lowercase and stupid removed
+x write to FileWriter with stupid remover then lowercase returns stupid removed and lowercase
+x write to FileWriter with uppercase then stupid remover returns uppercase without stupid removed
+x write to FileWriter with stupid remover then uppercase returns stupid removed and uppercase
+x write to FileWriter with duplicate then stupid returns with duplicates and stupid removed
+x write to FileWriter with duplicate then stupid remover then lowercase returns lowercase with duplicates and stupid removed
+x write to FileWriter with duplicate then stupid remover then uppercase returns uppercase with duplicates and stupid removed

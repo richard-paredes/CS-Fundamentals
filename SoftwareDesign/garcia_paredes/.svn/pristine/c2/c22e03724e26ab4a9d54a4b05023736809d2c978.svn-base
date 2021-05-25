@@ -1,0 +1,16 @@
+from unittest import TestCase
+
+class FibonacciBaseTests(TestCase):
+
+  def fibonacci_for_position_pos_returns_val(self, func, pos, val):
+        self.assertEquals(val, func(pos))
+
+  def fibonacci_for_position_negative_1_raises_exception(self, func):
+    self.assertRaisesRegex(ValueError, "Invalid Fibonacci sequence position", func, -1)
+
+#Feedback: class FibonacciTests(): no TestCase here
+#
+#let's place all the tests here
+#  def test_fibonacci_for_position_0_returns_1(self):
+#    self.assert... 1, self.fibonacci(0)
+#likewise other tests

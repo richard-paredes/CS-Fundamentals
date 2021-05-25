@@ -1,0 +1,41 @@
+[Reviewed 04/22/21 04:41 AM CDT]
+synopsis: nice work so far
+
+details: 
+
+Nice work so far.
+
+Let's move forward to designing the lower case transformation feature.
+
+------------------------------------------------------------------------------
+[Reviewed 04/21/21 04:23 AM EDT]
+synopsis: let's proceed to the tests mentioned for FileWriter
+
+details: 
+
+Let's proceed to the tests mentioned in tests.txt for FileWriter.
+
+------------------------------------------------------------------------------
+[Reviewed 04/20/21 05:41 AM EDT]
+synopsis: let's reduce code
+
+details: 
+
+Let's reduce code and write minimum code for the following tests:
+
+-canary test
+-write nothing to a StringWriter
+-write a string to a StringWriter
+-write a string twice to a StringWriter
+-write, close, write to a StringWriter
+-close, write to a StringWriter
+
+------------------------------------------------------------------------------
+[Reviewed 04/19/21 07:41 AM EDT]
+synopsis: let's start by bringing in CI for assign4
+
+details: 
+
+Please see build.sh
+
+------------------------------------------------------------------------------

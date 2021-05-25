@@ -1,0 +1,15 @@
+x canary test
+x imperative fibonacci for position 0 returns 1
+x imperative fibonacci for position 1 returns 1
+x imperative fibonacci for position 2 returns 2
+x imperative fibonacci for position 3 returns 3
+x imperative fibonacci for position 5 returns 8
+x imperative fibonacci for position 10 returns 89
+x imperative fibonacci for position -1 raises exception
+x functional fibonacci for position 0 returns 1
+x functional fibonacci for position 1 returns 1
+x functional fibonacci for position 2 returns 2
+x functional fibonacci for position 3 returns 3
+x functional fibonacci for position 5 returns 8
+x functional fibonacci for position 10 returns 89
+x functional fibonacci for position -1 raises exception

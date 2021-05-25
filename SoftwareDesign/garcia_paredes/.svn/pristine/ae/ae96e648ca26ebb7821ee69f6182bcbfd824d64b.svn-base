@@ -1,0 +1,23 @@
+[Reviewed 04/20/21 05:41 AM EDT]
+synopsis: let's reduce code
+
+details: 
+
+Let's reduce code and write minimum code for the following tests:
+
+-canary test
+-write nothing to a StringWriter
+-write a string to a StringWriter
+-write a string twice to a StringWriter
+-write, close, write to a StringWriter
+-close, write to a StringWriter
+
+------------------------------------------------------------------------------
+[Reviewed 04/19/21 07:41 AM EDT]
+synopsis: let's start by bringing in CI for assign4
+
+details: 
+
+Please see build.sh
+
+------------------------------------------------------------------------------

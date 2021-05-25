@@ -1,0 +1,11 @@
+from random import seed as set_seed, shuffle, random
+
+class WordGuess:
+  def __init__(self):
+    pass
+  
+  def scramble_word(self, word, seed=random()):
+    set_seed(seed)
+    letters = list(word)
+    shuffle(letters)
+    return ('').join(letters)

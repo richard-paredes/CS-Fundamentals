@@ -1,0 +1,5 @@
+/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/cmake-build-debug/CMakeFiles/Homework2Fireman.dir
+/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/cmake-build-debug/CMakeFiles/edit_cache.dir
+/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/cmake-build-debug/CMakeFiles/Homework2Server.dir
+/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/cmake-build-debug/CMakeFiles/Homework2Client.dir

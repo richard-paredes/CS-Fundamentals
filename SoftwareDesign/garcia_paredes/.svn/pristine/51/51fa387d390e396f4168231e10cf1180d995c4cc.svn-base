@@ -1,0 +1,4 @@
+x canary test
+x calling get_output on StringWriter returns the message that was written
+
+- ignore write to Writer after calling close

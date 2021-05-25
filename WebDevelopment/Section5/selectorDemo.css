@@ -1,0 +1,71 @@
+/*element*/
+li {
+
+}
+
+/*class*/
+.sites {
+
+}
+
+/*id*/
+#google {
+
+}
+
+/*STAR SELECTORS*/
+/*- selects EVERYTHING*/
+* {
+    border: 1px solid lightgrey;
+}
+
+/*DESCENDANT SELECTORS*/
+/*selects all anchor elements within list elements*/
+li a {
+    color: green;
+}
+/*selects all anchor elements within list elements within unordered list elements*/
+ul li a {
+
+}
+/* selects all classes of 'sites' within ul elements*/
+ul .sites {
+    background: rgba(11, 90, 150, 0.3);
+
+}
+
+
+/*ADJACENT SELECTORS*/
+/*siblings on same level/indentation (if properly formatted HTML*/
+h4 + ul {
+    border: 3px solid red;
+}
+
+/*ATTRIBUTE SELECTORS*/
+/*finds elements that share the same attribute*/
+/*
+example:
+    tag[attribute="value"] {}
+will select all elements with that tag that contain the
+selected attribute with the indicated value
+*/
+
+a[href="http://www.google.com"] {
+    background: rgba(10, 50, 100, 0.2);
+}
+
+input[type="text"] {
+
+}
+
+/* nth of type*/
+/* takes a number and selects the n-th element of the type
+    within a given group/level
+    (it DOES NOT)
+*/
+li:nth-of-type(3) {
+    background: rgba(150, 0, 150, 0.4);
+}
+li:nth-of-type(even) {
+    background: rgba(100, 150, 0, 0.5);
+}

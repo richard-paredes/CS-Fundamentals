@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Bootstrap 4 Breakpoints</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="display-1 text-center border-success border-rounded">Bootstrap 4 Breakpoints</h1>
+    </div>
+    <hr>
+    <div class="container text-center">
+        <blockquote class="blockquote">There are 5 breakpoints that are significant: xs, sm, m, l, xl</blockquote>
+        <footer class="blockquote-footer">Bootstrap 4 <cite title="TBS">by TBS</cite></footer>
+    </div>
+    <div class="container text-center">
+        <h3 class="display-4 ">Paddings Example</h3>
+        <!-- like BS3, specifying padding for smaller things will make it apply to bigger ones too unless specified differently for bigger ones -->
+        <button class="btn btn-warning p-sm-5 p-md-0 pd-lg-3 pd-xl-5">Button</button>
+        <!-- here, default padding is 0, so its the same as saying if not sm, not md, not lg, not xl then padding is 0 (so only for xs) -->
+        <button class="btn btn-danger p-0 p-sm-2 p-md-3 pd-lg-4 pd-xl-5">Button</button>
+        <!-- here, padding will be 0 for xs and sm, but md to xl will be 5 -->
+        <button class="btn btn-success p-0 p-md-5">Button</button>
+        <!-- here, the button expands padding on each side until it maxes at xl -->
+        <button class="btn btn-info p-0 pl-sm-5 pt-md-5 pr-lg-5 pb-xl-5">Button</button>
+    </div>
+    <br>
+    <div class="container text-center">
+        <h1 class="display-3 ">Margins Example</h1>
+        <!-- elements will get farther away as screen expands -->
+        <button class="btn btn-primary p4 mx-0 mx-sm-2 mx-md-3 mx-lg-4 mx-xl-5">Button</button>
+        <button class="btn btn-primary p4 mx-0 mx-sm-2 mx-md-3 mx-lg-4 mx-xl-5">Button</button>
+        <button class="btn btn-primary p4 mx-0 mx-sm-2 mx-md-3 mx-lg-4 mx-xl-5">Button</button>
+        <button class="btn btn-primary p4 mx-0 mx-sm-2 mx-md-3 mx-lg-4 mx-xl-5">Button</button>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+
+</body>
+
+</html>

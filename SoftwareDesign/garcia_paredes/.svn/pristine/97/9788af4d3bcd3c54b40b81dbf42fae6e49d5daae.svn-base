@@ -1,0 +1,168 @@
+from unittest import TestCase
+
+from word_guess import scramble_word, calculate_points_from_guess
+
+class WordGuessTests(TestCase):
+
+  def test_canary(self):
+    self.assertTrue(True)
+
+  def test_scramble_word_apple(self):
+    word = "apple"
+
+    scrambled_word = scramble_word(word)
+
+    self.assertNotEquals(word, scrambled_word)
+
+  def test_scramble_word_matter(self):
+    word = "matter"
+
+    scrambled_word = scramble_word(word)
+
+    self.assertNotEquals(word, scrambled_word)
+
+  def test_scramble_word_apple_twice_and_expect_different_results(self):
+    word = "apple"
+
+    first_scrambled_word = scramble_word(word)
+    second_scrambled_word = scramble_word(first_scrambled_word)
+
+    self.assertNotEquals(second_scrambled_word, first_scrambled_word)
+
+  def test_scramble_an_empty_string_and_returns_scramble_without_space(self):
+    word = "    "
+
+    scrambled_word = scramble_word(word)
+
+    self.assertFalse(scrambled_word.isspace())
+
+  def test_scramble_word_with_space_in_the_beginning_and_returns_scramble_without_space(self):
+    word = " scramble"
+
+    scrambled_word = scramble_word(word)
+
+    self.assertFalse(scrambled_word.isspace())
+
+  def test_scramble_word_with_space_at_end_returns_scramble_without_space(self):
+    word = "scramble "
+
+    scrambled_word = scramble_word(word)
+
+    self.assertFalse(scrambled_word.isspace())
+
+  def test_scramble_word_with_space_in_middle_returns_scramble_with_space(self):
+    word = "ice cream"
+
+    scrambled_word = scramble_word(word)
+
+    self.assertEquals(1, scrambled_word.count(" "))
+
+  def test_scramble_word_with_mixed_casing_returns_scramble_with_lowercase(self):
+    word = "PoLyMoRpHiSm"
+
+    scrambled_word = scramble_word(word)
+
+    self.assertTrue(scrambled_word.islower())
+
+  def test_scramble_word_returns_scramble_with_same_characters(self):
+    word = "scramble"
+
+    scrambled_word = scramble_word(word)
+
+    self.assertTrue(sorted(word) == sorted(scrambled_word))
+
+  def test_calculate_points_from_guess_for_monk_with_original_word_monkey_and_returns_7(self):
+    word = "monkey"
+
+    guess = "monk"
+
+    self.assertEquals(7, calculate_points_from_guess(word, guess))
+
+  def test_calculate_points_from_guess_for_pine_with_original_word_pineapple_and_returns_6(self):
+    word = "pineapple"
+
+    guess = "pine"
+
+    self.assertEquals(6, calculate_points_from_guess(word, guess))
+
+  def test_calculate_points_from_guess_for_mop_with_original_word_monkey_returns_0(self):
+    word = "monkey"
+
+    guess = "mop"
+
+    self.assertEquals(0, calculate_points_from_guess(word, guess))
+
+  def test_calculate_points_from_guess_for_pink_with_original_word_pineapple_returns_0(self):
+    word = "pineapple"
+
+    guess = "pink"
+
+    self.assertEquals(0, calculate_points_from_guess(word, guess))
+
+  def test_calculate_points_for_guess_with_right_letters_but_not_in_order_with_original_word_hyena_returns_0(self):
+    word = "hyena"
+
+    guess = "ney"
+
+    self.assertEquals(0, calculate_points_from_guess(word, guess))
+
+  def test_calculate_points_for_guess_with_right_letters_but_not_in_order_with_original_word_pineapple_returns_6(self):
+    word = "pineapple"
+
+    guess = "peel"
+
+    self.assertEquals(6, calculate_points_from_guess(word, guess))
+
+  def test_calculate_points_from_guess_for_a_with_original_word_apple_returns_1(self):
+    word = "apple"
+
+    guess = "a"
+
+    self.assertEquals(1, calculate_points_from_guess(word, guess))
+
+  def test_calculate_points_from_non_continuous_guess_ape_with_original_word_apple_returns_4(self):
+    word = "apple"
+
+    guess = "ape"
+
+    self.assertEquals(4, calculate_points_from_guess(word, guess))
+
+  def test_calculate_points_from_no_vowel_guess_by_with_original_word_bayou_returns_4(self):
+    word = "bayou"
+
+    guess = "by"
+
+    self.assertEquals(4, calculate_points_from_guess(word, guess))
+
+  def test_calculate_points_for_guess_with_letters_not_in_original_word_returns_0(self):
+    word = "bayou"
+
+    guess = "bye"
+
+    self.assertEquals(0, calculate_points_from_guess(word, guess))
+
+  def test_calculate_points_for_guess_with_repeated_letters_in_original_word_returns_0(self):
+    word = "relate"
+
+    guess = "rear"
+
+    self.assertEquals(0, calculate_points_from_guess(word, guess))
+
+  def test_calculate_points_for_guess_with_incorrect_spelling_and_correct_order(self):
+    word = "apple"
+
+    guess = "app"
+    
+    #Feedback: looking at this test, we can't really tell that this spelling is wrong.
+    #we need to be able to look at the test and say, oh yeah, the stub for the
+    #spell check service says the spelling is incorrect. Please see the videos on
+    #testing with dependencies for the reasons to take that approach.
+
+    self.assertEquals(0, calculate_points_from_guess(word, guess))
+
+  def test_calculate_points_for_guess_with_incorrect_spelling_and_incorrect_order(self):
+    word = "apple"
+
+    guess = "ael"
+
+    self.assertEquals(0, calculate_points_from_guess(word, guess))

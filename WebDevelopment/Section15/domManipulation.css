@@ -1,0 +1,16 @@
+.alterImage {
+    border: 10px solid brown;
+    border-block-end-color: peachpuff;
+    border-block-start-color: peachpuff;
+    
+}
+
+#head.clicked {
+    background: gray;
+    color: white;
+}
+
+.changeBG {
+    background: greenyellow;
+    color: darkred;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+
+    <link rel="stylesheet" href="./assets/css/todoApp.css">
+
+    <title>To-Do Checklist App</title>
+</head>
+
+<body class="m-0">
+
+    <div class="container-fluid my-5">
+        <div class="row justify-content-around">
+            <div class="col-10 col-md-5 my-5">
+                <h1 class="text-center m-0 py-1 px-2">To-Do List<i class="fas fa-pencil-alt float-right text-primary"></i></h1>
+                
+                <input type="text" placeholder="Add New To-Do" class="py-3 px-4 m-0 addIncomplete">
+                <ul class="unfinished p-0 m-0">
+                    <li class=""><span class="trash"><i class="fas fa-trash"></i></span> Go To Potions Class</li>
+                    <li class=""><span class="trash"><i class="fas fa-trash"></i></span> Buy New Robes</li>
+                    <li class=""><span class="trash"><i class="fas fa-trash"></i></span> Buy New Wand</li>
+                    <li class=""><span class="trash"><i class="fas fa-trash"></i></span> Visit Hagrid</li>
+                </ul>
+            </div>
+
+
+            <div class="col-10 col-md-5 my-5">
+                <h1 class="text-center m-0 py-1 px-2">Complete<i class="fas fa-check float-right text-success"></i></h1>
+
+                <input type="text" placeholder="Add New Completed" class="py-3 px-4 m-0 addComplete">
+                <ul class="finished p-0 m-0">
+                    <li class="completed"><span class="trash"><i class="fas fa-trash"></i></span> Hang out with Ron</li>
+                    <li class="completed"><span class="trash"><i class="fas fa-trash"></i></span> Talk to Dumbledore</li>
+                    <li class="completed"><span class="trash"><i class="fas fa-trash"></i></span> Study</li>
+                </ul>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script src="./assets/js/todoApp.js"></script>
+</body>
+
+</html>

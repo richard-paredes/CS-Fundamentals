@@ -1,0 +1,13 @@
+from unittest import TestCase
+from canary import Canary
+
+class TestCanary(TestCase):
+  
+  def setUp(self):
+    self.canary = Canary()
+
+  def test_canary(self):
+    self.assertTrue(True)
+
+  def test_returnTrue_returns_True(self):
+    self.assertTrue(self.canary.returnTrue())

@@ -1,0 +1,15 @@
+class StringWriter:
+  
+  def __init__(self):
+    self.target = ""
+    self.is_closed = False
+    
+  def write(self, message = ""):
+    if not self.is_closed:
+      self.target += message
+  
+  def close(self):
+    self.is_closed = True
+  
+  def get_output(self):
+    return self.target

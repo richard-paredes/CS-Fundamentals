@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Demo</title>
+</head>
+<body>
+    <h2>User Login</h2>
+    <!--
+        form - block element
+        action: where form sends data to (default : same/current html file)
+        method: what HTTP method (get/post) (default: refresh)
+        -- all input returns a query string containing key(name)-value(userinput) pairs
+        -- for processing in a back-end
+     -->
+    <form>
+        <label>
+            Username:
+            <input type="text" placeholder="username" name="username" required>
+        </label>
+
+        <label>
+            Password:
+            <input type="password" placeholder="password" name="password" required>
+        </label>
+
+        <input type="submit" value="Submit">
+
+        <p>
+        <label> Stay logged in:
+        <input type="checkbox" name="stay">
+        </label>
+        </p>
+
+    </form>
+
+    <h2>Do you prefer cats or dogs?</h2>
+    <form>
+        <p>
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" placeholder="e-mail" required>
+        </p>
+
+        <label for="dogs"> Dogs: </label>
+        <input type="radio" name="petChoice" id="dogs" value="DOGS">
+        <label for="cats">Cats:</label>
+        <!--  to connect radio buttons in the same range, need to have the same names-->
+        <input type="radio" name="petChoice" id="cats" value="CATS">
+
+        <!-- select element is a drop-down menu -->
+        <p>What's your favorite color?</p>
+        <select name="color">
+            <option>Red</option>
+            <option>Orange</option>
+            <option>Yellow</option>
+            <option>Green</option>
+            <option>Blue</option>
+            <option>White</option>
+            <option>Black</option>
+        </select>
+
+        <p>What's your current mood?</p>
+        <select name="mood">
+            <option value="happy">:)</option>
+            <option value="neutral">:|</option>
+            <option value="sad">:(</option>
+        </select>
+
+        <!-- text area is a whole text-box, not just a line-text
+            -- rows = vertical length of fieldbox
+            -- cols = horizontal width of fieldbox -->
+        <p> Tell me about yourself: </p>
+        <textarea name="paragraph" rows="10" cols="50"></textarea>
+
+        <!-- a button as the last element in a form will automatiicaly
+            serve as a submit button
+             -->
+        <p></p>
+        <button>Go!</button>
+
+
+    </form>
+
+
+</body>
+</html>

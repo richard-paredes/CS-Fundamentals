@@ -1,0 +1,20 @@
+from random import shuffle
+import requests
+from collections import Counter
+
+def scramble_word(word):
+  letters = list(word.strip().lower())
+  shuffle(letters)
+  return ''.join(letters)
+
+def calculate_points_from_guess(word, guess):
+  allowed_chars = Counter(word)
+  given_chars = Counter(guess)
+  if len(given_chars - allowed_chars) > 0:
+    return 0
+
+  points = 0
+  for letter in guess:
+    points += 1 if letter in "aeiou" else 2
+
+  return points

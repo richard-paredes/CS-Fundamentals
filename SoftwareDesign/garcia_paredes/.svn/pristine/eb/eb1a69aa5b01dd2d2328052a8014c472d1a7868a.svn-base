@@ -1,0 +1,12 @@
+x canary test
+x write nothing to a StringWriter
+x write a string to a StringWriter
+x write a string twice to a StringWriter
+x write, close, write to a StringWriter
+x close, write to a StringWriter
+
+- write nothing to a FileWriter
+- write a string to a FileWriter
+- write a string twice to a FileWriter
+- write, close, write to a FileWriter
+- close, write to a FileWriter

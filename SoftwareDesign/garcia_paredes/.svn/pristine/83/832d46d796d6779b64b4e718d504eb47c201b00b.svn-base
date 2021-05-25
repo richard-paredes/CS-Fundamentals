@@ -1,0 +1,25 @@
+HW4 Due 11:59PM May 07
+
+***There will be no reviews for this Homework***
+
+Feel free to give answers collectively, and also if you want to, you can call 
+out something specific to yourself different from your team member.
+
+1. What did you essentially learn in this course about design?
+                                
+Please provide individual responses to this question here (state your name and write in short paragraphs below that).
+
+Replace this with your response.
+
+(Richard)
+Going into this course, I had almost no knowledge on any design principles or patterns. In fact, I hardly knew the difference between the two. I never followed a test-driven development approach, nor did I place a large emphasis on writing clear, concise, and intentional code. In short, before this class, good software design had little relevance and application to my career as a developer, as much as I dislike to admit it. However, after learning so much more about development approaches, programming paradigms, design principles and patterns, and overall code quality, I feel far better-equipped to design and develop more robust, evolutionary software.
+
+One of the most significant characteristics of this class has been its emphasis on test-driven development (TDD). Through following TDD in every assignment, I have gained a strong understanding of how useful it can really be. TDD helps demystify and solidify details that remain hidden or too abstract to be hashed out during the stages of strategic design. Moreover, TDD helps reduce complexity by placing a focus on code quality. Code is kept minimal, intentional, decoupled, and robust. Additionally, the test cases can serve as a form of documentation and verification, providing developers confidence to refactor and evolve the software. Because of the usefulness of TDD, I have began taking this development approach on most software projects I work on. As a result, I feel much more confident about the software I develop, knowing that thoughtful design has gone into it and it's achieving its purpose.
+
+By gaining a strong understanding on design principles from this class, such as the Open-Closed principle (OCP), Single-Responsibility principle (SRP), Don't Repeat Yourself (DRY), and many more, I have gained a better understanding of metrics affecting code quality. For instance, cohesion, degree of coupling, opacity, stability, rigidity, and various other characteristics play a role in determining whether the software follows a good or bad design. Knowing these metrics keeps me aware of the quality of my own code as I develop and guides me towards better software design.
+
+Lastly, this class has definitely helped me handle critiques and feedback much better. With a focus on incremental and iterative changes, having the ability to request and receive code reviews has had a huge impact on how I have grown as a developer. I previously had limited experience in fruitful code reviews, since most of the time they were just accepted without any positive or critical feedback. However, by having the code reviews introduce new or better strategies to approach problems, I have learned a great amount about proper software design. For example, when to use inheritance versus aggregation, when a design pattern would be useful, and when design principles are not being upheld. There are so many considerations to make at every stage of software development, and this class has provided me a strong foundation to build off of.
+
+2. What are some of the general guidelines you would follow when designing?
+
+Replace this with your response. Provide one collective response as a team.

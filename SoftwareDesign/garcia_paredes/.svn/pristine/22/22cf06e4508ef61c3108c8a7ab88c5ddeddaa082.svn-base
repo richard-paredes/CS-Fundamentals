@@ -1,0 +1,10 @@
+from time import perf_counter
+
+#Feedback: let's move this to the file where this is neeed.
+
+def fibonacci_timer(fibonacci, position): #Feedback: we can remove position from here so any call uses the same position internally
+  start_time = perf_counter()
+  fibonacci(position) #Feedback: let's replace position with 30
+  end_time = perf_counter()
+  
+  return end_time - start_time

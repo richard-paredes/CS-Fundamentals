@@ -1,0 +1,9 @@
+from functools import reduce
+
+class Writer:
+  
+  def __init__(self, *operations):
+    self.operations = operations
+  
+  def write(self, message):
+    return reduce(lambda text, operator: operator(text), self.operations, message)

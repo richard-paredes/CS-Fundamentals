@@ -1,0 +1,10 @@
+x canary test
+x imperative iteration of fibonacci returns 1 for position 0
+x imperative iteration of fibonacci returns 8 for position 5
+x imperative fibonacci for position 0 returns 1
+x imperative fibonacci for position 1 returns 1
+x imperative fibonacci for position 2 returns 3
+x imperative fibonacci for position 3 returns 5
+x imperative fibonacci for position 5 returns 8
+x imperative fibonacci for position 10 returns 55
+x imperative fibonacci for position -1 returns 0

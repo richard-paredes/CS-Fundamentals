@@ -1,0 +1,31 @@
+from collections import Counter
+from random import sample, choice
+import requests
+
+def scramble_word(word):
+  scrambled_word = ''.join(sample(word.strip().lower(), len(word.strip())))
+  return scrambled_word if scrambled_word is not word else scramble_word(word)
+
+def calculate_points_from_guess(word, guess, is_spelling_correct):
+  return {
+    True: 0, 
+    False: sum(map(lambda letter: 1 if letter in "aeiou" else 2, guess))
+  } [len(Counter(guess) - Counter(word)) > 0 or not is_spelling_correct(guess)]
+
+def pick_a_random_word(words):
+  return choice(words)
+
+#Feedback: this is tight coupling. If we decide to use a different 
+#spell check service in the future then this file will have to change. If we decide to use
+#multiple different services, this file will get polluted. All the code below that are
+#related to dealing with the service should be in a separate file.
+
+def parse_text(text):
+  return {
+    True: text.lower() == "true",
+    False: Exception()
+  } [text.lower() in ["true", "false"]]
+
+def is_spelling_correct(word):
+  return requests.get(f"http://agile.cs.uh.edu/spell?check={word}").text
+  #Feedback: please check the URL with what's given in assign2.txt

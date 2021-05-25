@@ -1,0 +1,57 @@
+Assign3: Due 11:59PM April 9
+
+***Please review the top part of ../hw1/hw1.txt***
+***Your chance of success greatly increases if you start very early. Your chance of failure increases if you start late. Please use as many reviews as you possibly can.***
+
+The Fibonacci series of numbers start with 1, 1, 2, 3, 5, 8, 13, 21, ...
+where values at position 0 and 1 are 1, and values at each position after
+that are a sum of values at the previous two positions.
+
+Write four implementations of a function to compute the Fibonacci number at a given position.
+
+Please start with one implementation at a time rather than rushing through all
+of them at the same time.
+
+The four implementations are described below:
+
+1. An imperative iteration. 
+  Given a position n, loop through totaling values until you reach the value for the given position.
+
+2. A functional iteration. 
+	  Given a position n, loop through totaling values until you reach the value for the given position. Avoid explicit mutability.
+
+3. A simple recursion.
+  Given a position, compute the value at a position using the expression fib(n-1) + fib(n-2).
+
+4. A memoized recursion.
+  Given a position, look up to see if the value has been precomputed and if so return that value. Otherwise, use recursion to compute the value.
+  
+Confirms that the memoized version is faster than the recursive version.
+
+Reuse as much code as possible.
+
+Please bring forward the practices, techniques, and tools you have learned so far. This includes: 
+Good code quality
+Lightweight design
+Minimum code
+Automated testing                                                         
+Code coverage
+Continuous integration
+
+Once you complete coding, please answer the following:
+
+1. What design principles did you use in this assignment? Discuss.
+
+Throughout the development of this assignment, we sought to create good code that followed a reusable, lightweight, and simple design. With this goal in mind, several software design principles were exercised.
+
+Through our adoption of Test Driven Development we naturally developed our code as an incremental iterative process by focusing on developing ligtweight code to efficiently meet the requirements dictated by the tests we created around specific functionalities we were looking to implement. TDD leads to the usage of the YAGNI (You Aren't Gonnat Need It [Yet]) principle because as we develop the code to meet the test requirements, we focus on the creation of minimal, essential code required to implement a given functionality.
+
+DRY (Dont Repeat Yourself) was a common design principle we followed in order to avoid needless repetition of code. An example of this principle is in the reuse of the FibonacciTest base class via inheritance by the four TestFibonacci classes. In doing so we were able to place the shared, central functionality in the FibonacciTest base class for reusability and develop very lightweight classes for each of the derived TestFibonacci classes. This process made the TestFibonacci classes easier to evolve, particularly when adding a performance test to compare the recursive and memoized recursive functions.
+
+Additionally, we focused on SRP (Single Responsibility Principle) in order to make sure that every function or module only had responsibility over a single aspect of the program's functionality. This principle is evident in the structure of our code in which each module contains a single function of whose sole responsibility is to compute the Fibonacci value for a given position via a specific implementation. Another example of the SRP is how the functions of the FibonacciTest base class were separated to test a specific behavior from each Fibonacci function.
+
+2. Any surprises or things that you did not expect?
+
+In developing with Test Driven Development approach, we were prepared for an incremental iterative process. However, we did not expect the number iterations we went through in order to cleanly implement a single Fibonacci function. In some ways, the assignment was seemingly simple but provided many learning opportunities to implement several design principles.
+
+An additional surprise was the realization that our Fibonacci code can remain lightweight even in the more sophisticated implementations such as the recursive and memoized versions of the fibonacci functions that was brought about by our usage of the DRY and SRP design principles. Moreover, having the opportunity to fully leverage tools, such as Python's dynamic typing and polymorphism, to develop better quality code was a pleasant learning experience. 

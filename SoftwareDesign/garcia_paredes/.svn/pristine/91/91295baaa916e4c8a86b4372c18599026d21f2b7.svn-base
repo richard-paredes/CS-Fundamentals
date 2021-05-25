@@ -1,0 +1,28 @@
+class FileWriter:
+  def __init__(self, file_name):
+    self.file_name = file_name
+    self.target = open(file_name, "w+")
+    self.content = ""
+    self.is_closed = False
+
+  def add_message(self, message = ""):
+    if not self.is_closed:
+      self.content += message
+    return self
+
+  def close(self):
+    self.is_closed = True
+
+  def to_lowercase(self):
+    self.content = self.content.lower()
+    return self
+    
+  def write(self):
+    if not self.is_closed:
+      self.target.write(self.content)
+      self.target.flush()
+      self.content = ""
+  
+  def get_contents(self):
+    with open(self.file_name, "r") as target:
+      return target.read()

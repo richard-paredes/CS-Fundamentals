@@ -1,0 +1,5 @@
+def recursive_fibonacci(position):
+  if position < 0:
+    raise ValueError("Invalid Fibonacci sequence position")
+
+  return 1 if position < 2 else recursive_fibonacci(position - 2) + recursive_fibonacci(position - 1)

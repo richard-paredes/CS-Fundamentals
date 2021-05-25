@@ -1,0 +1,4 @@
+/usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_COMPILER=/usr/bin/g++ -D CMAKE_CXX_COMPILER=/usr/bin/g++ -G "CodeBlocks - Unix Makefiles" /mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/cmake-build-debug

@@ -1,0 +1,15 @@
+import click
+
+
+@click.command()
+@click.option('--input_file',
+              type=click.Path(exists=True),
+              required=True, help="Path to sample input file.")
+def main(input_file):
+    with open(input_file, "r") as fp:
+        words = fp.read().splitlines()
+    click.echo(words)
+
+
+if __name__ == '__main__':
+    main()

@@ -1,0 +1,191 @@
+[Reviewed 02/28/21 11:42 AM MST]
+synopsis~: let us avoid carrying state as much as possible
+
+details: 
+
+Please see suggestions in code.
+
+GUI: 
+Clicking on the GUI and right clicking on the GUI does nothing.
+
+Let us create a build task so that when we run 
+paver run
+the GUI will run.
+
+Let's do a quick review after these changes. Please modify the requestReview.txt file and check it in as soon as you are ready and I will do a review well before the next scheduled review cycle.
+
+------------------------------------------------------------------------------
+[Reviewed 02/27/21 10:44 AM MST]
+synopsis: good work so far
+
+details: 
+
+Good work so far.
+
+Please see suggestions in code.
+
+Let's create a GUI that makes use of the code we have created so far.
+Please make sure to exclude the GUI code from the code coverage report.
+
+------------------------------------------------------------------------------
+[Reviewed 02/27/21 05:43 AM MST]
+synopsis~: please list tests in tests.txt
+
+details: 
+
+Nice work so far.
+
+Please list the tests in tests.txt and mark them as completed as you proceed.
+
+Please see suggestions in code.
+
+Let's do a quick review after these changes. Please modify the requestReview.txt file and check it in as soon as you are ready and I will do a review well before the next scheduled review cycle.
+
+------------------------------------------------------------------------------
+[Reviewed 02/26/21 11:27 AM MST]
+synopsis~: good so far
+
+details: 
+
+Good so far.
+
+Let's explore the next steps:
+
+- getGameStatus() returns INPROGRESS
+- expose a mined cell and getGameStatus() returns LOST
+- game in progress after all mines sealed but cells remain unexposed
+- game in progress after all mines are sealed but an empty cell is sealed
+- game in progress after all mines sealed but an adjacent cell is unexposed
+- game WON after all mines are sealed and all other cells exposed
+- call setMines(0) and verify there are a total of 10 mines, where 0 is a seed value for random number generator
+- call setMines(0) and setMines(1) and verify there is at least one mine at a different location between the two calls
+
+------------------------------------------------------------------------------
+[Reviewed 02/26/21 10:36 AM MST]
+synopsis~: let's reduce code
+
+details: 
+
+Please see suggestions in code.
+
+Let's do a quick review after these changes. Please modify the requestReview.txt file and check it in as soon as you are ready and I will do a review well before the next scheduled review cycle.
+
+------------------------------------------------------------------------------
+[Reviewed 02/25/21 07:52 AM MST]
+synopsis: very nice work so far
+
+details: 
+
+Very nice work so far
+
+Let's explore the next steps:
+
+- isMineAt(3, 2) returns false
+- set mine at 3, 2 and isMineAt(3, 2) returns true
+- isMineAt(-1, 4) returns false
+- isMineAt(10, 5) returns false
+- isMineAt(5, -1) returns false
+- isMineAt(7, 10) returns false
+- exposing an adjacent cell does not call expose neighbors
+- verify adjacentMinesCountAt(4, 6) returns 0
+- set mine at 3, 4 and verify adjacentMinesCountAt(3, 4) returns 0
+- set mine at 3, 4 and verify adjacentMinesCountAt(3, 5) returns 1
+- set mine at 3, 4 and 2, 6 and verify adjacentMinesCountAt(3, 5) returns 2
+- set mine at 0, 1 and verify adjacentMinesCountAt(0, 0) returns 1
+- verify adjacentMinesCountAt(0, 9) returns 0
+- set mine at 9, 8 and verify adjacentMinesCountAt(9, 9) returns 1
+- verify adjacentMinesCountAt(9, 0) returns 0
+
+
+------------------------------------------------------------------------------
+[Reviewed 02/23/21 21:17 PM MST]
+synopsis: good work so far
+
+details: 
+
+Good work so far.
+
+Let's explore the next set of tests:
+
+- expose calls exposeNeighbors
+- expose called on an already exposed cell does not call exposeNeighbors
+- expose called on a sealed cell does not call exposeNeighbors
+- exposeNeighbors calls expose on eight neighbors
+- exposeNeighbors on top left cell calls expose only on existing cells
+- exposeNeighbors on bottom right cell calls expose only on existing cells
+- exposeNeighbors on border cell calls expose only on existing cells
+
+------------------------------------------------------------------------------
+[Reviewed 02/23/21 06:01 AM MST]
+synopsis~: let's change the design a bit
+
+details: 
+
+Please see suggestions in code.
+
+Let's do a quick review after these changes. Please modify the requestReview.txt file and check it in as soon as you are ready and I will do a review well before the next scheduled review cycle.
+
+------------------------------------------------------------------------------
+[Reviewed 02/15/21 20:15 PM MST]
+synopsis: nice work so far
+
+details: 
+
+Nice work so far.
+
+Please see suggestions in code.
+
+Next tests:
+
+- seal an unexposed cell
+- unseal a sealed cell
+- seal an exposed cell
+- expose a sealed cell
+
+------------------------------------------------------------------------------
+[Reviewed 02/15/21 07:55 AM MST]
+synopsis~: good start
+
+details: 
+
+Good start and the tests show that we are heading in a good direction. We can make some refinements to the tests to gain a better focus for the initial steps.
+
+Let's replace the tests in the tests.txt file with the following:
+x canary test
+
+- check initial cell state is unexposed
+- expose an unexposed cell
+- expose an exposed cell
+- expose a cell outside of the range
+
+
+Please mark tests with x when they are completed.
+
+Let's use an enum for CellState being UNEXPOSED and EXPOSED.
+We do not need a Cell class right now. Let's design a Minesweeper with the help of MinesweeperTest.
+
+Let's delete the minesweeper_app directory and write code in files that are in the src and test directories.
+
+Let's do a quick review after these changes. Please modify the requestReview.txt file and check it in as soon as you are ready and I will do a review well before the next scheduled review cycle.
+
+A CI build has been setup for your project.
+You can see files related to this under assign1.
+
+How does this work?
+When you check in code, the CI build machine wakes up, fetches the latest 
+version of your code, and runs the file build.sh that is under your repository (above assign1). That file in turn runs the build scripts in your assign1 directory.
+
+In case you missed it, please read:
+<https://groups.google.com/g/uhcss21sd/c/MBEmP0NxyQE/m/AQtGsHJNAgAJ>.
+
+Also, please keep an eye on code coverage. To view the code coverage, please 
+run the build using the following command (do not click or double click, 
+instead open the command prompt, cd to your assign1 directory, and then run 
+from there).
+
+paver
+Then take a look at the file (using a browser):
+coverage/index.html
+
+
+------------------------------------------------------------------------------

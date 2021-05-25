@@ -1,0 +1,22 @@
+from functions.fibonacci_imperative import imperative_fibonacci
+from functions.fibonacci_functional import functional_fibonacci
+from functions.fibonacci_recursive import recursive_fibonacci
+from functions.fibonacci_memoized_recursive import memoized_fibonacci
+from timer import Timer
+
+def compare_fibonacci(funcs, position):
+  for func in funcs:
+    with Timer():
+      result = func(position)
+      print(f"\n{func.__name__!r}: {result}")
+
+
+if __name__ == '__main__':
+  funcs = [
+            imperative_fibonacci, 
+            functional_fibonacci, 
+            recursive_fibonacci, 
+            memoized_fibonacci
+          ]
+  
+  compare_fibonacci(funcs, 30)

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bootstrap Basics</title>
+    <!-- bootstrap is just a library with pre-made elements, kinda like lego blocks -->
+    <!-- we can either download bootstrap source code and reference it
+        or we can use CDN (online hosting of bootstrap files, like google fonts) -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- override bootstrap styles in your own CSS -->
+    <style type="text/css">
+        .block {
+            /*padding: 10px 10px;*/
+            width: 150px;
+            height: 100px;
+            background: lightgray;
+            margin:auto;
+            /*margin: auto;*/
+        }
+        .block .btn {
+            background: teal;
+            margin: auto;
+            /*translates this relative to its parent*/
+            transform: translate(0, 50%);
+        }
+        h2 {
+            /*margin: auto;*/
+            text-align: center;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- reference for tools boostrap provides: https://getbootstrap.com/docs/3.3/css/#overview -->
+    <h1>Bootstrap Demo</h1>
+    <button>Non-Bootstrap Button</button>
+    <br>
+    <br>
+    <button type="button" class="btn btn-primary btn-lg ">Click Me!</button>
+    <button type="button" class="btn btn-default btn-lg active">Button</button>
+    <br>
+    <br>
+    <button type="button" class="btn btn-success">Click Me!</button>
+    <!-- button sizes: -->
+    <button type="button" class="btn btn-danger btn-lg">Large!</button>
+    <button type="button" class="btn btn-warning btn-sm">Small!</button>
+    <button type="button" class="btn btn-info btn-xs" disabled="disabled">XSmall!</button>
+    <br>
+    <br>
+    <br>
+    <!-- class container centers and pads items -->
+    <div class="container">
+        <!-- block level buttons span the width of the parent -->
+        <div class="block">
+            <a href="http://www.getbootstrap.com" class="btn btn-danger btn-block btn-lg">Get Bootstrap!</a>
+        </div>
+    <!-- jumbotron -->
+        <div class="jumbotron">
+            <h1>Want to learn more Bootstrap?</h1>
+            <p>Visit here for more resources! This website has plenty
+            of valuable documentations to help you get started with Bootstrap.
+            Whether it be for designing your own webpage or professional website
+            development, Bootstrap is here to help!</p>
+            <p><a href="https://getbootstrap.com/docs/3.3/css/" class="btn btn-lg btn-warning" role="button"> Learn more</a></p>
+        </div>
+    </div>
+
+    <h2>Want more? Sign up for updates!</h2>
+    <!-- have the form in another container -->
+    <!-- copy-paste from form section -->
+    <br>
+    <div class="container">
+    <form>
+        <!-- in-line form example: -->
+        <div class="form-group form-inline">
+            <div class="form-group">
+                <label for="exampleName1">Name</label>
+                <input type="text" name="name" class="form-control" placeholder="Jane Doe" id="exampleName1">
+            </div>
+            <div class="form-group">
+                <label for="exampleEmail1">Email</label>
+                <input type="email" name="email" placeholder="jane.doe@example.com" id="exampleEmail1">
+            </div>
+            <button type="submit" class="btn btn-default" disabled="disabled">Send Invitation</button>
+        </div>
+        <!-- form group adds nice spacing between input types -->
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <!-- form-control adds: padding, focus effect, line breaks -->
+            <input type="email" name="email1" class="form-control" placeholder="Email" id="exampleInputEmail1">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" name="password" class="form-control" placeholder="password" id="exampleInputPassword1">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputFile1">File input</label>
+            <input type="file" name="file" id="exampleInputFile1">
+            <!-- help block is small helper text -->
+            <p class="help-block">Please submit files less than 25MB</p>
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" name="checkbox">Check Me Out!
+            </label>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    </div>
+    <br>
+</body>
+</html>

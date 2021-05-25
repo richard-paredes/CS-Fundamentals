@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercise 3 - Registration Form</title>
+</head>
+<body>
+    <h1>Register</h1>
+
+    <form>
+        <!-- NAME: -->
+        <label for="firstName">First Name:</label>
+        <input type="" name="first" id="firstName" placeholder="John" title="Fill this out, fool" required>
+        <label for="lastName">Last Name:</label>
+        <input type="text" name="last" id="lastName" placeholder="Smith" required>
+
+        <!-- GENDER: -->
+        <br>
+        <br>
+        <div>
+        <label for="male">Male:</label>
+        <input type="radio" name="gender" id="male" value="MALE" required>
+        <label for="female">Female:</label>
+        <input type="radio" name="gender" id="female" value="FEMALE" required>
+        <label for="potato">Potato:</label>
+        <input type="radio" name="gender" id="potato" value="POTATO" required>
+        </div>
+        <br>
+
+        <!-- EMAIL & PASSWORD: -->
+        <div>
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" placeholder="your email" required>
+        <label for="password">Password:</label>
+        <!-- to set password to a range of characters:
+            use 'pattern' attribute
+
+            there is minlength and maxlength
+            but those two attributes are not as supported as pattern is
+             -->
+        <input type="password" name="password" id="password" placeholder="your password" pattern=".{5,10}" title="Password must be between 5 and 10 characters" required>
+        </div>
+
+        <!-- BIRTHDAY: -->
+        <br>
+        <div>
+        <label>Birthday:
+        <select name="month" required>
+            <option value="-1">Month</option>
+            <!-- i don't really need to specify the value here
+            -- because it will default it to the option text
+            -- which works fine for months -->
+            <option value="jan">January</option>
+            <option value="feb">February</option>
+            <option value="mar">March</option>
+            <option value="apr">April</option>
+            <option value="may">May</option>
+            <option value="jun">June</option>
+            <option value="jul">July</option>
+            <option value="aug">August</option>
+            <option value="sep">September</option>
+            <option value="oct">October</option>
+            <option value="nov">November</option>
+            <option value="dec">December</option>
+        </select>
+
+        <select name="day" required>
+            <option value="-1">Day</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+            <option>11</option>
+            <option>12</option>
+        </select>
+
+        <select name="year" placeholder="Year" required>
+            <option value="-1">Year</option>
+            <option>2000</option>
+            <option>2001</option>
+            <option>2002</option>
+            <option>2003</option>
+            <option>2004</option>
+            <option>2005</option>
+            <option>2006</option>
+            <option>2007</option>
+            <option>2008</option>
+            <option>2009</option>
+            <option>2010</option>
+            <option>2011</option>
+            <option>2012</option>
+            <option>2013</option>
+            <option>2014</option>
+            <option>2015</option>
+        </select>
+        </div>
+
+        <!-- CHECKBOX: -->
+        <br>
+        <div>
+        <label for="terms">I agree to the terms and conditions</label>
+        <input type="checkbox" name="checkbox" value="agree" id="terms" required>
+        </div>
+
+        <br>
+        <div>
+        <input type="submit" name="submit" value="Submit">
+        </div>
+    </form>
+
+</body>
+</html>

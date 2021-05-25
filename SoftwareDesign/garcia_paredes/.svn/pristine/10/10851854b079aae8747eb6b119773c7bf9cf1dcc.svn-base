@@ -1,0 +1,11 @@
+from functools import reduce
+
+class Writer:
+  def __init__(self, *operations):
+    self.operations = operations
+  #Feedback: self.operation = partial(reduce, lambda....., operations)
+  
+  def write(self, message):
+    return reduce(lambda text, operator: operator(text), self.operations, message)
+    #Feedback: no return
+    #self.write_to_target(self.operation(message))

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Flexbox</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1 class="text-center display-4">Flexbox</h1>
+        <!-- main (justify) axis of flexbox is X axis, cross (align) axis of flexbos is Y axis  -->
+        <!-- justify content: start (default), end, between, around -->
+        <div class="border border-warning border-rounded d-flex justify-content-around align-items-center"
+            style="height: 200px">
+
+            <button class="btn btn-info btn-lg">Button</button>
+            <button class="btn btn-warning btn-md">Button</button>
+            <button class="btn btn-danger btn-sm">Button</button>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="container">
+        <!-- to reverse axis of flexbox, use flex-row-reverse (will go right to left instead of L-to-R (as default)) -->
+        <div class="border border-danger border-rounded d-flex flex-row-reverse justify-content-start align-items-end"
+            style="height: 200px">
+
+            <button class="btn btn-info btn-lg">Button</button>
+            <button class="btn btn-warning btn-md">Button</button>
+            <button class="btn btn-danger btn-sm">Button</button>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="container">
+        <!-- to reverse axis of flexbox, use flex-column-reverse (will go right to left instead of L-to-R (as default)) -->
+        <!-- to change main axis of flexbox, use flex-column to make the main axis relative to Y -->
+        <!-- therefore, align-items will refer to X-axis -->
+
+        <div class="border border-success border-rounded d-flex flex-column justify-content-center align-items-center"
+            style="height: 200px">
+
+            <button class="btn btn-info btn-lg">Button</button>
+            <button class="btn btn-warning btn-md">Button</button>
+            <button class="btn btn-danger btn-sm">Button</button>
+        </div>
+    </div>
+    <div class="container">
+        <h1 class="display-4 text-center">EXAMPLE</h1>
+        <!-- will start things in a row (from XL to MD) and then at xs and s, will make it a column -->
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-sm-center">
+            <button class="btn btn-dark btn-lg mt-2">Link 1</button>
+            <button class="btn btn-dark btn-lg mt-2">Link 2</button>
+            <button class="btn btn-dark btn-lg mt-2">Link 3</button>
+            <button class="btn btn-dark btn-lg mt-2">Link 4</button>
+            <button class="btn btn-dark btn-lg mt-2">Link 5</button>
+            <button class="btn btn-dark btn-lg mt-2">Link 6</button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+from unittest import TestCase
+from string_writer import StringWriter
+
+class TestStringWriter(TestCase):
+
+  def setUp(self):
+    self.string_writer = StringWriter()
+
+  def test_canary(self):
+    self.assertTrue(True)
+  
+  def test_write_nothing_to_string_writer_is_ignored(self):
+    self.string_writer.write()
+
+    self.assertEquals("", self.string_writer.get_output())
+
+  def test_write_string_to_string_writer_writes_to_target(self):
+    self.string_writer.write("Hello")
+
+    self.assertEquals("Hello", self.string_writer.get_output())
+  
+  def test_write_string_twice_to_string_writer_writes_both_to_target(self):
+    self.string_writer.write("Hello")
+    self.string_writer.write(" World!")
+
+    self.assertEquals("Hello World!", self.string_writer.get_output())
+  
+  def test_write_close_write_to_string_writer_ignores_second_write(self):
+    self.string_writer.write("Hello")
+    self.string_writer.close()
+    self.string_writer.write(" World!")
+
+    self.assertEquals("Hello", self.string_writer.get_output())
+  
+  def test_close_write_to_string_writer_ignores_write(self):
+    self.string_writer.close()
+    self.string_writer.write("Hello")
+
+    self.assertEquals("", self.string_writer.get_output())
+  

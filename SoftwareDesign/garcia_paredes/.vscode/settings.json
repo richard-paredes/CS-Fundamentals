@@ -1,0 +1,14 @@
+{
+    "python.autoComplete.extraPaths": [
+        "./assign4/src",
+        "./assign4/test"
+
+    ],
+    "python.testing.nosetestsEnabled": true,
+    "python.testing.nosetestPath": "nosetests",
+    "python.testing.nosetestArgs": [
+        "--where=${cwd}\\assign4",
+        "--verbosity=3",
+        "-s"
+    ]
+}

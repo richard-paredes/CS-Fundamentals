@@ -1,0 +1,468 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+  <!-- style file -->
+  <link rel="stylesheet" href="/styles/index.css">
+
+  <title>Ordonez Airline</title>
+</head>
+
+<body class="bg-dark">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">Ordonez Airline</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/customer">Customer View</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/clerk">Clerk View</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/admin">Admin View <span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- Title -->
+  <div id="title" class="text-white">
+    <h2>Airline Admin View</h2>
+  </div>
+
+
+  <div class="container alert alert-danger alert-dismissible fade show" id="error-alert" hidden>
+    <h5>Something went wrong</h5>
+    <div id="error-details">
+
+    </div>
+    <button type="button" class="close" aria-label="Close" onclick="hideError()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+
+  <!-- todo insert input box and add button -->
+  <div class="container rounded bg-white py-3">
+    <h4>Airports <button class="btn btn-primary" type="button" data-toggle="modal"
+        data-target="#create-airport-modal">+</button></h4>
+    <!-- end of insert form -->
+
+    <!-- Airport table-->
+    <table class="table mt-5 mx-auto border" id="airports-list">
+      <thead>
+        <tr>
+          <th scope="col">Code</th>
+          <th scope="col">Name</th>
+          <th scope="col">City</th>
+          <th scope="col">Coordinates</th>
+          <th scope="col">Time Zone</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody id="airports-table">
+      </tbody>
+    </table>
+  </div>
+
+  <hr />
+
+  <div class="container rounded bg-white py-3">
+    <h4>
+      Aircrafts
+      <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#create-aircraft-modal">+</button>
+    </h4>
+    <!-- Aircraft Table-->
+    <table class="table mt-5 border" id="aircrafts-list">
+      <thead>
+        <tr>
+          <th scope="col">Code</th>
+          <th scope="col">Model</th>
+          <th scope="col">Range</th>
+          <th scope="col">Total Seats</th>
+        </tr>
+      </thead>
+      <tbody id="aircrafts-table">
+      </tbody>
+    </table>
+  </div>
+  <hr />
+  <!-- dynamic table to display todo list -->
+
+  <div class="container bg-white py-3 rounded">
+    <h4>Flights <button class="btn btn-primary" type="button" data-toggle="modal"
+        data-target="#create-flight-modal">+</button></h4>
+    <table class="table mt-5 text-center border" id="flights-list">
+      <thead>
+        <tr>
+          <th>Flight</th>
+          <th>Price</th>
+          <th>Status</th>
+          <th>Departure</th>
+          <th>Arrival</th>
+          <th>Aircraft</th>
+          <th>Seats Available</th>
+        </tr>
+      </thead>
+      <!-- add todos in tbody by modying the HTML in main.js -->
+      <tbody id="flights-table">
+      </tbody>
+    </table>
+  </div>
+  <hr />
+  <!-- End of dynamic table -->
+
+  <!-- Create Flight Modal-->
+  <div class="modal fade" id="create-flight-modal" data-backdrop="static" tabindex="-1"
+    aria-labelledby="Add a new flight" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <form class="mt-3" id="create-flight-details" onsubmit="insertFlight(event)">
+          <div class="modal-header">
+            <h5 class="modal-title" id="edit-todo-label">Add Flight</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-row">
+              <div class="form-group col-md-4">
+                <label for="departure_airport">Departure Airport</label>
+                <select class="custom-select" id="departure_airport" name="departure_airport" onblur="onBlur(event)"
+                  required>
+                  <option selected disabled readonly value="">Choose...</option>
+                </select>
+                <!-- <input type="select" class="form-control" id="departure_airport" name="departure_airport"> -->
+
+              </div>
+              <div class="form-group col-md-2">
+                <label for="departure_gate">Departure Gate</label>
+                <select class="custom-select" id="departure_gate" name="departure_gate" onblur="onBlur(event)" required>
+                </select>
+              </div>
+              <div class="form-group col-md-4">
+                <label for="arrival_airport">Arrival Airport</label>
+                <select class="custom-select" id="arrival_airport" name="arrival_airport" onblur="onBlur(event)"
+                  required>
+                  <option selected disabled readonly value="">Choose...</option>
+                </select>
+              </div>
+              <div class="form-group col-md-2">
+                <label for="arrival_gate">Arrival Gate</label>
+                <select class="custom-select" id="arrival_gate" name="arrival_gate" onblur="onBlur(event)" required>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-4">
+                <label for="baggage_claim">Baggage Claim</label>
+                <select class="custom-select" id="baggage_claim" name="baggage_claim" onblur="onBlur(event)" required>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-4">
+                <label for="scheduled_departure">Scheduled Departure</label>
+                <input type="datetime-local" class="form-control" id="scheduled_departure" name="scheduled_departure"
+                  onblur="onBlur(event)" required>
+              </div>
+              <div class="form-group col-md-4">
+                <label for="scheduled_arrival">Scheduled Arrival</label>
+                <input type="datetime-local" class="form-control" id="scheduled_arrival" name="scheduled_arrival"
+                  onblur="onBlur(event)" required>
+              </div>
+              <div class="form-group col-md-4">
+                <label for="boarding_time">Scheduled Boarding</label>
+                <input type="datetime-local" class="form-control" id="boarding_time" name="boarding_time"
+                  onblur="onBlur(event)" required>
+              </div>
+            </div>
+            <div class="form-row form-group">
+              <label for="aircraft_code">Aircraft Model</label>
+              <select class="custom-select" id="aircraft_code" name="aircraft_code" onblur="onBlur(event)" required>
+                <option selected disabled value="">Choose...</option>
+              </select>
+            </div>
+            <div class="form-row mt-3">
+              <div class="form-group col-md-4">
+                <label for="economy_seats_price">Economy Fare Price</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">$</span>
+                  </div>
+                  <input type="number" class="form-control" name="economy_seats_price"
+                    aria-label="Amount (to the nearest dollar)" min="0.00" step="0.01"
+                    value="${flight.economy_seats_price.slice(1,)}" onblur="onBlur(event)" required>
+                </div>
+              </div>
+              <div class="form-group col-md-4">
+                <label for="business_seats_price">Business Fare Price</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">$</span>
+                  </div>
+                  <input type="number" class="form-control" name="business_seats_price"
+                    aria-label="Amount (to the nearest dollar)" min="0.00" step="0.01"
+                    value="${flight.business_seats_price.slice(1,)}" onblur="onBlur(event)" required>
+                </div>
+              </div>
+              <div class="form-group col-md-4">
+                <label for="first_seats_price">First Fare Price</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">$</span>
+                  </div>
+                  <input type="number" class="form-control" name="first_seats_price"
+                    aria-label="Amount (to the nearest dollar)" min="0.00" step="0.01"
+                    value="${flight.first_seats_price.slice(1,)}" onblur="onBlur(event)" required>
+                </div>
+              </div>
+            </div>
+            <div class="form-row mt-3">
+              <div class="form-group col-md-4">
+                <label for="checked_bag_price">Checked Bag Fee</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">$</span>
+                  </div>
+                  <input type="number" class="form-control" name="checked_bag_price"
+                    aria-label="Amount (to the nearest dollar)" min="0.01" step="0.01" onblur="onBlur(event)" required>
+                </div>
+              </div>
+              <div class="form-group col-md-4">
+                <label for="carry_on_price">Carry-On Fee</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">$</span>
+                  </div>
+                  <input type="number" class="form-control" name="carry_on_price"
+                    aria-label="Amount (to the nearest dollar)" min="0.01" step="0.01" onblur="onBlur(event)" required>
+                </div>
+              </div>
+            </div>
+            <div class="form-row text-center">
+              <div class="form-group col-md-4">
+                <input type="checkbox" id="includes_meal" name="includes_meal">
+                <label for="includes_meal">Includes Meal</label>
+              </div>
+              <div class="form-group col-md-4">
+                <input type="checkbox" id="includes_movie" name="includes_movie">
+                <label for="includes_movie">Includes Movie</label>
+              </div>
+              <div class="form-group col-md-4">
+                <input type="checkbox" id="allow_waitlist" name="allow_waitlist">
+                <label for="allow_waitlist">Allow Waitlist</label>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Create Airport Modal-->
+  <div class="modal fade" id="create-airport-modal" data-backdrop="static" tabindex="-1"
+    aria-labelledby="Add a new airport" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form class="mt-3" id="create-airport-details" onsubmit="insertAirport(event)">
+          <div class="modal-header">
+            <h5 class="modal-title" id="edit-todo-label">Add Airport</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-row">
+              <div class="form-group col-md-3">
+                <label for="airport_code">Airport Code</label>
+                <input type="text" id="airport_code" name="airport_code" class="form-control" maxlength="9" required
+                  onblur="onBlur(event)">
+              </div>
+              <div class="form-group col-md-9">
+                <label for="airport_code">Airport Name</label>
+                <input type="text" id="airport_name" name="airport_name" class="form-control" maxlength="50" required
+                  onblur="onBlur(event)">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="city">City</label>
+                <input type="text" id="city" name="city" class="form-control" maxlength="25" required
+                  onblur="onBlur(event)">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="coordinates">Coordinates</label>
+                <input type="text" id="coordinates" name="coordinates" class="form-control" maxlength="50"
+                  onblur="onBlur(event)" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="timezone">Time Zone</label>
+                <select class="custom-select" id="timezone" name="timezone" onblur="onBlur(event)" required>
+                  <option selected disabled readonly value="">Choose...</option>
+                  <option value="Alaska Standard Time">Alaska Standard Time</option>
+                  <option value="Hawaii Standard Time">Hawaii Standard Time</option>
+                  <option value="Pacific Standard Time">Pacific Standard Time</option>
+                  <option value="Mountain Standard Time">Mountain Standard Time</option>
+                  <option value="Central Standard Time">Central Standard Time</option>
+                  <option value="Eastern Standard Time">Eastern Standard Time</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-5">
+                <label for="Gates">Gates</label>
+                <div>
+                  <div class="input-group mb-3">
+                    <input id="gate-no" name="gate-no" type="text" class="form-control" placeholder="Gate number..."
+                      aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-primary" type="button" id="create-gate-btn"
+                        onclick="insertGate()">Add</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="form-control">
+              <div id="create-gates-list" class="input-group d-flex flex-row">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-5">
+                <label for="baggage_claims">Baggage Claims</label>
+                <div>
+                  <div class="input-group mb-3">
+                    <input id="baggage-claim-no" name="baggage-claim-no" type="text" class="form-control"
+                      placeholder="Baggage Claim number..." aria-label="Recipient's username"
+                      aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-primary" type="button" id="create-baggage-claim-btn"
+                        onclick="insertBaggageClaim()">Add</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="form-control">
+              <div id="create-baggage-claim-list" class="input-group d-flex flex-row">
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Create Aircraft Modal-->
+  <div class="modal fade" id="create-aircraft-modal" data-backdrop="static" tabindex="-1"
+    aria-labelledby="Add a new aircraft" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form class="mt-3" id="create-aircraft-details" onsubmit="insertAircraft(event)">
+          <div class="modal-header">
+            <h5 class="modal-title" id="edit-todo-label">Add Aircraft</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-row">
+              <div class="form-group col-md-3">
+                <label for="aircraft_code">Aircraft Code</label>
+                <input type="text" id="aircraft_code" name="aircraft_code" class="form-control" maxlength="9"
+                  onblur="onBlur(event)">
+              </div>
+              <div class="form-group col-md-9">
+                <label for="model">Model</label>
+                <input type="text" id="model" name="model" class="form-control" maxlength="50" onblur="onBlur(event)">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="range">Range</label>
+                <div class="input-group">
+                  <input type="number" id="range" name="range" class="form-control" step="1" min="0" max="100000"
+                    value="0" onblur="onBlur(event)">
+                  <div class="input-group-append">
+                    <span class="input-group-text">M</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <label for="" class="font-weight-bold">Economy Class Seats</label>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-4">
+                <label for="economy_no_seats">Number of seats</label>
+                <input type="number" min="1" max="100" name="economy_no_seats" class="form-control"
+                  onblur="onBlur(event)" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <label for="" class="font-weight-bold">Business Class Seats</label>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-4">
+                <label for="business_no_seats">Number of seats</label>
+                <input type="number" min="0" max="100" name="business_no_seats" class="form-control"
+                  onblur="onBlur(event)" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <label for="" class="font-weight-bold">First Class Seats</label>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-4">
+                <label for="first_no_seats">Number of seats</label>
+                <input type="number" min="0" max="100" name="first_no_seats" class="form-control" onblur="onBlur(event)"
+                  required>
+              </div>
+            </div>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script src="/scripts/admin/flights.js"></script>
+<script src="/scripts/admin/airports.js"></script>
+<script src="/scripts/admin/aircrafts.js"></script>
+<script src="/scripts/index.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</html>

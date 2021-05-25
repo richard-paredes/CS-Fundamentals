@@ -1,0 +1,7 @@
+from functools import reduce
+
+def lowercase(message): #Feedback: text instead of message
+  return message.lower()
+
+def apply(message, *operations): #Feedback: please remove
+  return reduce(lambda text, operator: operator(text), operations, message)

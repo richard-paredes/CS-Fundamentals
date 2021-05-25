@@ -1,0 +1,7 @@
+class WriterTests:
+
+  def setUp(self):
+    self.writer = self.create_writer()
+  
+  def test_canary(self):
+    self.assertTrue(True)

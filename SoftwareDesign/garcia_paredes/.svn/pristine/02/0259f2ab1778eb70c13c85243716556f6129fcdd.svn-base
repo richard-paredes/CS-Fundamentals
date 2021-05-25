@@ -1,0 +1,10 @@
+def fibonacci(position):
+  if position < 0:
+    raise ValueError("Invalid Fibonacci sequence position")
+
+  prev = 0
+  curr = 1
+  for i in range(position):
+    prev, curr = curr, curr + prev
+
+  return curr

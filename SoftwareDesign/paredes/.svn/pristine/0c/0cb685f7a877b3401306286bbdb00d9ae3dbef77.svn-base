@@ -1,0 +1,13 @@
+import os, sys
+sys.path.append(os.path.dirname(__file__).replace("app", ""))
+
+from click import command, option, Path, echo, style, prompt
+from perfect_number import generate_perfect_numbers_upto
+
+def main():
+  user_number = prompt("Please enter a number greater than 0")
+  
+  echo(style("Awesome!"))
+
+if __name__ == "__main__":
+  main()

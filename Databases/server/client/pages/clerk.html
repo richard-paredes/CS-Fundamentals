@@ -1,0 +1,172 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+  <!-- style file -->
+  <link rel="stylesheet" href="/styles/index.css">
+
+  <title>Ordonez Airline</title>
+</head>
+
+<body class="bg-dark">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">Ordonez Airline</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/customer">Customer View</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/clerk">Clerk View <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/admin">Admin View</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- Title -->
+  <div id="title" class="text-white">
+    <h2>Airline Clerk View</h2>
+  </div>
+
+
+  <div class="container alert alert-danger alert-dismissible fade show" id="error-alert" hidden>
+    <h5>Something went wrong</h5>
+    <div id="error-details">
+
+    </div>
+    <button type="button" class="close" aria-label="Close" onclick="hideError()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+
+  <!-- dynamic table to display todo list -->
+  <div class="container py-3 bg-white rounded w-100" id="input-flight">
+    <h4>Flights</h4>
+    <div>
+      <form id="search-flights-form" onsubmit="searchFlights(event)">
+        <div class="form-row">
+          <div class="form-group col-md-3">
+            <label for="departure_airport">Departure (City)</label>
+            <input type="text" id="" name="departure_airport" class="form-control" placeholder="Atlanta" required />
+          </div>
+          <div class="form-group col-md-3">
+            <label for="arrival_airport">Arrival (City)</label>
+            <input type="text" name="arrival_airport" class="form-control" placeholder="Orlando" required />
+          </div>
+          <div class="form-group col-md-2">
+            <label for="departure_date">Departure Date</label>
+            <input type="date" id="departure_date" name="departure_date" class="form-control" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-1">
+            <button type="submit" name="search-btn" class="btn btn-primary form-control">Search</button>
+          </div>
+          <div class="form-group col-md-1">
+            <button type="button" name="search-btn" class="btn btn-outline-primary form-control"
+              onclick="resetFlights()">Reset</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <table class="table text-center table-responsive" id="flights-list">
+      <!-- add todos in tbody by modying the HTML in main.js -->
+      <thead>
+        <tr>
+          <th>Flight</th>
+          <th>Price</th>
+          <th>Status</th>
+          <th>Departure</th>
+          <th>Arrival</th>
+          <th>Aircraft</th>
+          <th>Seats Available</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="flights-table">
+      </tbody>
+    </table>
+  </div>
+  <!-- End of dynamic table -->
+  <hr />
+
+  <div class="modal fade" id="flight-details-modal" data-backdrop="static" tabindex="-1" aria-labelledby="View a flight"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <form onsubmit="editFlight(event)">
+          <div class="modal-header">
+            <h5 id="book-flight-title">Flight Details</h5>
+          </div>
+          <div class="modal-body">
+            <div id="selected-flight-details" class="mb-3">
+
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary" id="book-flight-btn">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="flight-passengers-modal" data-backdrop="static" tabindex="-2"
+    aria-labelledby="View passengers" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 id="book-flight-title">Flight Passengers</h5>
+        </div>
+        <div class="modal-body">
+          <h6>Secured</h6>
+          <div id="secured-flight-passengers" class="p-2 bg-light">
+
+          </div>
+          <hr />
+          <h6>Waitlisted</h6>
+          <div id="waitlisted-flight-passengers" class="p-2 bg-light">
+
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+<script src="/scripts/clerk/flights.js"></script>
+<script src="/scripts/clerk/airports.js"></script>
+<script src="/scripts/clerk/aircrafts.js"></script>
+<script src="/scripts/index.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+  integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
+  integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+
+</html>

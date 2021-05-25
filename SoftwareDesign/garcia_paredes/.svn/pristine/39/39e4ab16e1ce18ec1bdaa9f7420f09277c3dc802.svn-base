@@ -1,0 +1,6 @@
+from unittest import TestCase
+from string_writer import StringWriter
+
+class TestStringWriter(TestCase):
+  def create_writer(self, *operations): #Feedback: no need for *operations here because we are not dealing with opereations at this level of testing
+    return StringWriter(*operations)

@@ -1,0 +1,27 @@
+x canary test
+x write nothing to a StringWriter
+x write a string to a StringWriter
+x write a string twice to a StringWriter
+x write, close, write to a StringWriter
+x close, write to a StringWriter
+x write nothing to a FileWriter
+x write a string to a FileWriter
+x write a string twice to a FileWriter
+x write, close, write to a FileWriter
+x close, write to a FileWriter
+x write nothing to the writer with lowercase operation and verify content is empty string
+x write "hello THERE" to the writer with lowercase operation and verify content is "hello there"
+x write twice "hELLo" and then " wORLd" to the writer with lowercase operation, verify content is "hello world"
+x write, close, write to the writer with lowercase operation and verify only first write is recorded and lowercase
+x close, write to the writer with lowercase operation and verify content is empty string
+x write nothing to the writer with uppercase operation and verify content is empty string
+x write "hello THERE" to the writer with uppercase operation and verify content is "HELLO THERE"
+x write twice "hELLo" and then " wORLd" to the writer with uppercase operation, verify content is "HELLO WORLD"
+x write, close, write to the writer with uppercase operation and verify only first write is recorded and uppercase
+x close, write to the writer with uppercase operation and verify content is empty string
+x write nothing to the writer with stupid remover operation and verify content is empty string
+x write "hello stupid" to the writer with stupid remover operation and verify content is "hello s*****"
+x write twice "stupid" and then " stupid" to the writer with stupid remover operation, verify content is "s***** s*****"
+x write, close, write to the writer with stupid remover operation and verify only first write is recorded and stupid is masked
+x close, write to the writer with stupid remover operation and verify content is empty string
+

@@ -1,0 +1,25 @@
+Assign1: Due 11:59PM March 5 [Moved from February 26 due to inclement weather]
+
+***Please review the top part of ../hw1/hw1.txt***
+***Your chance of success greatly increases if you start very early. Your chance of failure increases if you start late. Please use as many reviews as you possibly can.***
+
+Using Test First Development (no code without test first) let's implement the problem designed in hw2. Feel free to evolve that design and use judgment to make changes based on the improved understanding and learning.
+
+Please take small steps and ask for frequent reviews.
+
+First start with a tests list (tests.txt) and a canary test. Implement at most two more tests and minimum code to make those tests to pass. This is a great first step to complete and ask for a review.
+
+After completing the assignment (and only after) let's answer the following questions:
+
+1. What did you learn mainly in this assignment?
+
+YOUR ANSWER GOES HERE
+
+2. How is the current design different, if at all, from the strategic design created in hw2?
+
+YOUR ANSWER GOES HERE
+
+3. Were there any surprises or things you did not expect along the way? Any particular problem faced, things you had to tackle that you did not expect 
+beforehand?
+
+YOUR ANSWER GOES HERE

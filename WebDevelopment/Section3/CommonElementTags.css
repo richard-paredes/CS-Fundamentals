@@ -1,0 +1,51 @@
+/*
+hexadecimals use 6 digits (RGB channels) OR 8 digits (RGBA channels)
+hex: 0-F for each digit
+rgb: 0-255 for each channel (3 channels)
+rgba: 0-255 for rgb channels and 0-1.0 for alpha channel;
+COLOR-PICKING TOOL:;
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Colors/Color_picker_tool
+*/
+h1 {
+    color: red;
+    /* borders have three types:
+    color:
+    width:
+    style:;
+    */
+    /*border-width: 5px;
+    border-color: gray;
+    border-style: solid;*/
+
+    border: 2px solid gray;
+}
+
+h2 {
+    color: #d800ff;
+}
+
+h3 {
+
+    color: rgb(11, 99, 150);
+}
+
+h4 {
+    color: #ee294255;
+    background: rgb(11, 99, 150, 0.1);
+}
+
+hr {
+    color: rgba(255, 200, 100, 0.5);
+}
+
+body {
+    /*background: #BFB83F45;*/
+    /*images that aren't big enough are tiled (repeat)*/
+    background: url(http://blog.hostbaby.com/wp-content/uploads/2014/03/Trees_1920x1234.png);
+    /*background-repeat: no-repeat;*/
+    /*background-size: cover;*/
+}
+
+p {
+
+}

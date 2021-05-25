@@ -1,0 +1,4 @@
+from lowercase_write_operation_test import LowerCaseWriteOperationTests
+from file_writer_test import TestFileWriter
+
+class LowerCaseFileWriterTests(LowerCaseWriteOperationTests, TestFileWriter): pass

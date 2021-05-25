@@ -1,0 +1,30 @@
+/* reference page: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference */
+body {
+    background: rgba(11, 99, 150, 0.5);
+}
+
+li {
+    border: 2px solid gold;
+}
+
+/* this is referencing an id attribute that is set to 'final'*/
+/* IMPORTANT NOTE: there should only be ONE id attribute in the HTML that is set
+to that value since it singles out an individual element*/
+#first {
+    background: orange;
+    text-decoration: line-through;
+}
+#final {
+    background: orange;
+}
+/*this is referencing a class attribute that is set to 'webstuff'
+IMPORTANT NOTE: MULTIPLE elements in the HTML can be set to the same class
+which serve the same purpose as an ID but to highlight multiple elements
+instead of singling out one;
+*/
+.webstuff {
+    background-color: #E7DE2B;
+    text-decoration: underline;
+    text-decoration: overline;
+    text-decoration-color: red
+}

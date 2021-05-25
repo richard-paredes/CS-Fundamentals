@@ -1,0 +1,82 @@
+[Reviewed 04/03/21 12:36 PM MDT]
+synopsis: good so far
+
+details: 
+
+Good so far.
+
+Let's move forward to the next function.
+
+------------------------------------------------------------------------------
+[Reviewed 04/02/21 18:39 PM MDT]
+synopsis: good so far
+
+details: 
+
+Good so far. Please see suggestions in code.
+
+Let's move forward to the next function.
+
+------------------------------------------------------------------------------
+[Reviewed 04/01/21 20:01 PM MDT]
+synopsis: we can reduce further
+
+details: 
+
+Please see suggestions in code.
+
+After that, let's move forward to the next function.
+
+------------------------------------------------------------------------------
+[Reviewed 04/01/21 08:36 AM MDT]
+synopsis~: let's reduce duplication, a lot
+
+details: 
+
+Please see suggestions in code.
+
+Let's do a quick review after these changes. Please modify the requestReview.txt file and check it in as soon as you are ready and I will do a review well before the next scheduled review cycle.
+
+------------------------------------------------------------------------------
+[Reviewed 03/31/21 03:45 AM MDT]
+synopsis: let's keep it DRY
+
+details: 
+
+Let's remove the duplication.
+
+The tests in the two test files are the same as they should be. But,
+that is also duplication of the tests. Let's remove the duplication and reuse the tests for the two functions, but without violating the single responsibility principle.
+
+------------------------------------------------------------------------------
+[Reviewed 03/27/21 17:02 PM MDT]
+synopsis: good so far
+
+details: 
+
+Good so far. Please see suggestions in code.
+
+Let's take the next step.
+
+------------------------------------------------------------------------------
+[Reviewed 03/27/21 11:48 AM MDT]
+synopsis~: good start
+
+details: 
+
+Good start.
+
+Let's create FibonacciImperativeTest and a file fibonacci_imperative with a function fibonacci.
+
+Let's make sure these tests are covered:
+-fibonacci for position 0
+-fibonacci for position 1
+-fibonacci for position 2
+-fibonacci for position 3
+-fibonacci for position 5
+-fibonacci for position 10
+-fibonacci for position -1
+
+Let's do a quick review after these changes. Please modify the requestReview.txt file and check it in as soon as you are ready and I will do a review well before the next scheduled review cycle.
+
+------------------------------------------------------------------------------

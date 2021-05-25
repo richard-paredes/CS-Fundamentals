@@ -1,0 +1,4 @@
+class Canary:
+  
+  def returnTrue(self):
+    return True

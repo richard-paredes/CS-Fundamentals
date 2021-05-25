@@ -1,0 +1,7 @@
+class Writer:
+
+  def __init__(self):
+    self.is_closed = False
+  
+  def write(self, message):
+    self.write_to_target(message)

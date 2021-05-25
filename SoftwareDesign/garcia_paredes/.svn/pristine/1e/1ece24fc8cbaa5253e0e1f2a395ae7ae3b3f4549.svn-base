@@ -1,0 +1,36 @@
+from fibonacci_imperative import fibonacci as imperative #Feedback: no need for as imperative
+from fibonacci_base_tests import FibonacciBaseTests
+
+#Feedback: we should have very little in this file.
+#class FibonacciImperativeTests(FibonacciTests, TestCase):
+#
+# def setUp(self):
+#   self.fibonacci = fibonacci
+#
+
+class FibonacciImperativeTests(FibonacciBaseTests):
+  
+  def test_canary(self):
+    self.assertTrue(True)
+  
+  def test_fibonacci_for_position_0_returns_1(self, func=imperative, pos=0, val=1):
+    self.fibonacci_for_position_pos_returns_val(func, pos, val)
+  
+  def test_fibonacci_for_position_1_returns_1(self, func=imperative, pos=1, val=1):
+    self.fibonacci_for_position_pos_returns_val(func, pos, val)
+
+  def test_fibonacci_for_position_2_returns_2(self, func=imperative, pos=2, val=2):
+    self.fibonacci_for_position_pos_returns_val(func, pos, val)
+
+  def test_fibonacci_for_position_3_returns_3(self, func=imperative, pos=3, val=3):
+    self.fibonacci_for_position_pos_returns_val(func, pos, val)
+  
+  def test_fibonacci_for_position_5_returns_8(self, func=imperative, pos=5, val=8):
+    self.fibonacci_for_position_pos_returns_val(func, pos, val)
+  
+  def test_fibonacci_for_position_10_returns_89(self, func=imperative, pos=10, val=89):
+    self.fibonacci_for_position_pos_returns_val(func, pos, val)
+
+  def test_fibonacci_for_position_negative_1_raises_exception(self, func=imperative):
+    self.fibonacci_for_position_negative_1_raises_exception(func)
+  

@@ -1,0 +1,130 @@
+body {
+    /* background-color: #232323; */
+    font-family: 'Indie Flower';
+    /* from uigradients: */
+    /* background: #c0392b; */
+    /* fallback for old browsers */
+    /* background: -webkit-linear-gradient(to right, #8e44ad, #c0392b); */
+    /* Chrome 10-25, Safari 5.1-6 */
+    /* background: linear-gradient(to right, #8e44ad, #c0392b); */
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+h1 {
+    background: lightgoldenrodyellow;;
+    color: black;
+    text-transform: uppercase;
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+
+@media (max-width: 1500px) {
+    h1 {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+}
+
+@media (max-width: 500px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+    input {
+        font-size: 1.2rem !important;
+        padding: 0;
+        height: 0;
+
+    }
+    li {
+        font-size: 1rem !important;
+    }
+}
+
+ul {
+    list-style: none !important;
+    margin-left:0;
+}
+
+li {
+    background: #fff;
+    color: #666;
+    font-size: 1.75rem;
+    padding: 1%;
+    margin-left: 0;
+    
+}
+
+li:nth-of-type(2n) {
+    background: #f7f7f7;
+}
+
+input {
+    font-size: 2rem;
+    background-color: #f7f7f7;
+    width: 100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    color: salmon;
+    border: 3px solid rgba(0,0,0,0);
+    transition: 0.2s linear;
+}
+
+input:focus {
+    background: #fff;
+    border: 3px solid #2980b9;
+    outline: none;
+}
+
+i:hover {
+    text-shadow: 1px 1px 3px currentColor;
+}
+
+.addComplete {
+    display: none;
+}
+
+.pen{
+    float:right;
+    font-size: 2rem;
+    margin: 20px 20px;
+}
+
+.trash {
+    background: #e74c3c;
+    padding-top:0;
+    margin-right: 1%;
+    color:white;
+    text-align: center;
+    transition: 0.2s linear;
+    width: 0;
+    height:15%;
+    opacity:0;
+    display:inline-block;
+}
+
+li:hover span {
+    width:8%;
+    opacity:1; 
+}
+
+
+.container {
+
+    /* background-color: #f7f7f7; */
+    box-shadow: 10px 10px 5px rgba(0,0,0);
+}
+
+.completed {
+    color: red;
+    text-decoration: line-through;
+}

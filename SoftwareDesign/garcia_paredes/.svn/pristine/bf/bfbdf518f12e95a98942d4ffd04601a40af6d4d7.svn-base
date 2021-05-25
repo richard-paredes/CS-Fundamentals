@@ -1,0 +1,5 @@
+def lowercase(text):
+  return text.lower()
+
+def uppercase(text):
+  return text.upper()

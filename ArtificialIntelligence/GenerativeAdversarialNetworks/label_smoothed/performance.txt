@@ -1,0 +1,21 @@
+> Accuracy real: 0%, fake: 100% 
+00:07:53.42 
+> Accuracy real: 0%, fake: 100% 
+00:07:54.48 
+> Accuracy real: 0%, fake: 100% 
+00:07:54.61 
+> Accuracy real: 0%, fake: 100% 
+00:07:54.04 
+> Accuracy real: 0%, fake: 100% 
+00:07:57.98 
+> Accuracy real: 0%, fake: 100% 
+00:07:54.96 
+> Accuracy real: 0%, fake: 100% 
+00:07:54.35 
+> Accuracy real: 0%, fake: 100% 
+00:07:54.88 
+> Accuracy real: 0%, fake: 100% 
+00:07:54.59 
+> Accuracy real: 0%, fake: 100% 
+00:07:55.01 
+01:19:30.70 

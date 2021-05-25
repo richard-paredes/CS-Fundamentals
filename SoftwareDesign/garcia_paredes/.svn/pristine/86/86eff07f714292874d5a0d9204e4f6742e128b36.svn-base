@@ -1,0 +1,7 @@
+from requests import request
+
+#Feedback: please remove this file, we can get to this later. We need to focus on this
+#separately.
+
+def is_spelling_correct(word):
+  return request("GET", f"http://agile.cs.uh.edu/spell?check={word}").json()

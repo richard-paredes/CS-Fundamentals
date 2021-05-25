@@ -1,0 +1,10 @@
+from fibonacci_recursive import fibonacci as recursive_fibonacci
+
+def fibonacci(position, cache = {0:1, 1:1}):
+  if position < 0:
+    raise ValueError("Invalid Fibonacci sequence position")
+  
+  if position not in cache:
+    cache[position] = recursive_fibonacci(position, fibonacci)
+
+  return cache[position]

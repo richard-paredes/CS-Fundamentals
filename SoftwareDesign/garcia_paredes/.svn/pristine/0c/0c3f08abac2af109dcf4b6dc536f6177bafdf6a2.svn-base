@@ -1,0 +1,13 @@
+from writer import Writer
+
+class StringWriter(Writer):
+  
+  def __init__(self):
+    super().__init__()
+    self.target = ""
+    
+  def write_to_target(self, message):
+    self.target += message
+  
+  def get_output(self):
+    return self.target

@@ -1,0 +1,56 @@
+body {
+    font-size: 16px;
+    background: #003049;
+}
+#header {
+    background: #FCBF49;
+    border: 0 solid #FCBF49;
+    margin: 0 auto;
+    /*width: 500px;*/
+}
+#title {
+    color: black;
+    font-family: 'Lobster';
+    font-size: 5em;
+    text-align: center;
+}
+
+hr {
+    margin-bottom: 50px;
+    height: 50px;
+    color: #FFFFFF;
+    background:#FFFFFF;
+
+}
+
+#board {
+    /*content*/
+    /*background: #FCBF49;*/
+    text-align:center;
+    font-size: 100px;
+    font-weight: 800;
+    /*margin*/
+    margin: 0 auto;
+
+    /*border*/
+    /*border: 3px solid black;*/
+}
+
+#board tr td{
+
+    width: 200px;
+    height: 200px;
+}
+#board #middleRow td{
+    border-top: 3px solid #EAE2B7;
+    border-bottom: 3px solid #EAE2B7;
+}
+#board .middleCol{
+
+    border-left:3px solid #EAE2B7;
+    border-right:3px solid #EAE2B7;
+    /*border-right: 3px solid black;*/
+
+}
+
+

@@ -1,0 +1,5 @@
+from unittest import TestCase
+
+class FibonacciFunctionsTests(TestCase):
+  def test_canary(self):
+    self.assertTrue(True)

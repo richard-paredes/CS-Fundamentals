@@ -1,0 +1,5 @@
+from string_writer_test import TestStringWriter
+from writer_test import WriterTests
+
+class WriteStringWriterTests(WriterTests, TestStringWriter): pass
+#Feedback: no benefit to inheriting from TestStringWriter

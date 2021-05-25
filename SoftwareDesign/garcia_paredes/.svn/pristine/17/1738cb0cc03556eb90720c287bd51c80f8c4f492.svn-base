@@ -1,0 +1,16 @@
+from operators import lowercase, uppercase
+
+class CombinedOperationTests:
+  def setUp(self):
+    self.writer = self.create_writer(uppercase, lowercase)
+
+  def test_write_mixed_case_to_writer_with_lowercase_operation_returns_lowercase(self):
+    self.writer.write("hello THERE")
+
+    self.assertEquals("hello there", self.writer.get_contents())
+
+#Feedback: please remove commented out stuff
+  # def test_write_mixed_case_to_writer_with_uppercase_operation_returns_uppercase(self):
+  #   self.writer.write("hello THERE")
+
+  #   self.assertEquals("HELLO THERE", self.writer.get_contents())

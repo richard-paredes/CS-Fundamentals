@@ -1,0 +1,53 @@
+class WriterTests:
+
+  def setUp(self):
+    self.writer = self.create_writer()
+
+  def test_canary(self):
+    self.assertTrue(True)
+  
+  def test_write_nothing_to_writer_is_ignored(self):
+    self.assertEquals("", self.writer.get_contents())
+
+  def test_write_string_to_writer_writes_to_target(self):
+    self.writer.write("Hello")
+
+    self.assertEquals("Hello", self.writer.get_contents())
+  
+  def test_write_string_twice_to_writer_writes_both_to_target(self):
+    self.writer.write("Hello")
+    self.writer.write(" World!")
+
+    self.assertEquals("Hello World!", self.writer.get_contents())
+  
+  def test_write_close_write_to_writer_ignores_second_write(self):
+    self.writer.write("Hello")
+    self.writer.close()
+    self.writer.write(" World!")
+
+    self.assertEquals("Hello", self.writer.get_contents())
+  
+  def test_close_write_to_writer_ignores_write(self):
+    self.writer.close()
+    self.writer.write("Hello")
+
+    self.assertEquals("", self.writer.get_contents())
+
+#Feedback: the above focus on core features of writer. The following about one additional
+#operation, being here violates SRP. Need to move this to a different test suite
+  def test_mixcase_to_lowercase(self):
+    self.writer.write("heLLo WorLD")
+
+    self.assertEquals("hello world", self.writer.to_lowercase())
+    #Feedback: please see the pseudocode given in assign4.txt. We do not directly call
+    #functions like to_lowercase.
+
+  def test_all_uppercase_to_lowercase(self):
+    self.writer.write("HELLO WORLD")
+
+    self.assertEquals("hello world", self.writer.to_lowercase())
+
+  def test_all_lowercase_to_lowercase(self):
+    self.writer.write("hello world")
+
+    self.assertEquals("hello world", self.writer.to_lowercase())

@@ -1,0 +1,13 @@
+from unittest import TestCase
+from fibonacci_imperative import fibonacci
+
+class FibonacciImperativeTests(TestCase):
+  
+  def test_canary(self):
+    self.assertTrue(True)
+  
+  def test_fibonacci_function_returns_1_for_position_0(self):
+    self.assertEquals(1, fibonacci(0))
+  
+  def test_fibonacci_function_returns_8_for_position_5(self):
+    self.assertEquals(8, fibonacci(5))

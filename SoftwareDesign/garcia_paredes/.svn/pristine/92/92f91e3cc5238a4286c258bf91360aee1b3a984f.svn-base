@@ -1,0 +1,8 @@
+from time import perf_counter
+
+def fibonacci_timer(fibonacci, position):
+  start_time = perf_counter()
+  fibonacci(position)
+  end_time = perf_counter()
+  
+  return end_time - start_time

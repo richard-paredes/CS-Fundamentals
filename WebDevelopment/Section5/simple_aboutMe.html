@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About Me</title>
+    <!-- we want link tags, styles, files, other meta data all in head element -->
+    <!-- reference another file:  -->
+    <link rel="stylesheet" type="text/css" href="simple_aboutMe.css">
+    <!-- meta data -->
+    <!-- using style element tag:
+    example of styling within HTML via in-line
+    <style type="text/css">
+
+        /* comment in CSS*/
+        /*
+        selector {
+            property: value;
+            anotherProperty: value;
+        }
+        */
+        h1 {
+            color: blue;
+        }
+
+        li {
+            color: orange;
+        }
+        /* since this style comes last, it is the one that
+        will be processed */
+        h1 {
+            color: purple;
+        }
+
+
+    </style>
+    -->
+
+</head>
+<body>
+    <h1>About Me</h1>
+    <hr>
+
+    <h4>My Hobbies</h4>
+    <!-- we want ONLY the structure of page in HTML
+        any styling should be done in a separate CSS file
+         -->
+    <ul>
+        <li>Playing League of Legends</li>
+        <li>Eating Food</li>
+        <li>Cooking</li>
+    </ul>
+
+
+</body>
+</html>

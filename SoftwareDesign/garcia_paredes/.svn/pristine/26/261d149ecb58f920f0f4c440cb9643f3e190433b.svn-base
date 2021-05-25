@@ -1,0 +1,18 @@
+from functools import cache
+import fibonacci_recursive
+from fibonacci_recursive import recursive_fibonacci
+
+def add_cache_to_recursion():
+  fibonacci_recursive.recursive_fibonacci = cache(recursive_fibonacci)
+
+def remove_cache_from_recursion():
+  fibonacci_recursive.recursive_fibonacci = recursive_fibonacci
+
+@cache
+def memoized_fibonacci(position):
+
+  add_cache_to_recursion()
+  fibonacci_value = fibonacci_recursive.recursive_fibonacci(position)
+  remove_cache_from_recursion()
+  
+  return fibonacci_value

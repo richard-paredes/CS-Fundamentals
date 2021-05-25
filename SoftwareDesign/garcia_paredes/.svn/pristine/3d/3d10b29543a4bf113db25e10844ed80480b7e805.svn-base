@@ -1,0 +1,17 @@
+class StringWriter:
+  def __init__(self):
+    self.target = ""
+    self.is_closed = False
+    
+  def write(self, message = ""):
+    if not self.is_closed:
+      self.target += message
+  
+  def close(self):
+    self.is_closed = True
+  
+  def get_contents(self):
+    return self.target
+
+  def to_lowercase(self): #Feedback: DRY and OCP (please see FileWriter)
+    return self.get_contents().lower()

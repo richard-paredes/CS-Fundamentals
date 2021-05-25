@@ -1,0 +1,7 @@
+from functools import reduce
+
+def fibonacci(position):
+    if position < 0:
+        raise ValueError("Invalid Fibonacci sequence position")
+    
+    return 1

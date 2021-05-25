@@ -1,0 +1,24 @@
+class StringWriter:
+  def __init__(self):
+    self.target = ""
+    self.content = ""
+    self.is_closed = False
+    
+  def add_message(self, message = ""):
+    if not self.is_closed:
+      self.content += message
+    return self
+  
+  def close(self):
+    self.is_closed = True
+
+  def to_lowercase(self):
+    self.content = self.content.lower()
+    return self
+
+  def write(self):
+    if not self.is_closed:
+      self.target += self.content
+
+  def get_contents(self):
+    return self.content

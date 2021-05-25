@@ -1,0 +1,24 @@
+from functools import cache
+import fibonacci_recursive
+from fibonacci_recursive import recursive_fibonacci
+
+def add_cache_to_recursion():
+  fibonacci_recursive.recursive_fibonacci = cache(recursive_fibonacci)
+#Feedback: this is populating the recursive function with data.
+#we want the cache to be kept isolated for each fresh call to the memoized function.
+#Let's explore other ways so that we do not need these add_cache_to_recursion and
+#remove_cache_from_recursion functions. Let us device a localized approach so that
+#the cached data is within the memoized function, does not have to be cleared,
+#and is not placed into the recursive function.
+
+def remove_cache_from_recursion():
+  fibonacci_recursive.recursive_fibonacci = recursive_fibonacci
+
+@cache
+def memoized_fibonacci(position):
+
+  add_cache_to_recursion()
+  fibonacci_value = fibonacci_recursive.recursive_fibonacci(position)
+  remove_cache_from_recursion()
+  
+  return fibonacci_value

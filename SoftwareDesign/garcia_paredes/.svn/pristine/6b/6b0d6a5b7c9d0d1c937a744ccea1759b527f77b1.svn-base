@@ -1,0 +1,18 @@
+from fibonacci_recursive import fibonacci as recursive_fibonacci
+
+#Feedback: the problem here is that the cache is updated for all calls to fibonacci
+#even fresh calls. As a result, cache becomes global.
+def fibonacci(position, cache = {0:1, 1:1}):
+  if position < 0:
+    raise ValueError("Invalid Fibonacci sequence position")
+  
+  if position not in cache:
+    cache[position] = recursive_fibonacci(position, fibonacci)
+
+  return cache[position]
+
+#Feedback: 
+#def fibonacci(position, cache = [{}]):
+#  cache = cache[0] if cache else {0:1, 1:1}
+#...  
+#    cache[position] = recursive_fibonacci(position, partial(fibonacci, cache = [cache]))

@@ -1,0 +1,25 @@
+from unittest import TestCase
+
+class FibonacciTest():
+  def setUp(self):
+    self.fibonacci = self.create_fibonacci()
+ 
+  def test_canary(self):
+    assert True == True
+ 
+  def test_for_positions(self):
+    for(position, expected) in [(0, 1), (1, 1), (2, 2), (3, 3), (5, 8), (10, 89), (-1, ValueError)]:
+      if position < 0:
+        yield self.check_exception, position, expected
+      else:
+        yield self.check_fibonacci, position, expected
+  
+  def check_exception(self, position, expected_exception):
+    try:
+      self.fibonacci(position)
+      assert False
+    except expected_exception as exception:
+      assert True
+  
+  def check_fibonacci(self, position, expected):
+    assert self.fibonacci(position) == expected

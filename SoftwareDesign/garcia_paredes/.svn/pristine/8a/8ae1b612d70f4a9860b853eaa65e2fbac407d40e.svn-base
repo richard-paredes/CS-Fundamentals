@@ -1,0 +1,8 @@
+x canary test
+x imperative iteration of fibonacci returns 1 for position 0
+x imperative iteration of fibonacci returns 8 for position 5
+
+- imperative iteration of fibonacci returns None for negative positions
+- functional iteration of fibonacci returns 1 for position 1
+- functional iteration of fibonacci returns 3 for position 3
+- functional iteration of fibonacci does not mutate input

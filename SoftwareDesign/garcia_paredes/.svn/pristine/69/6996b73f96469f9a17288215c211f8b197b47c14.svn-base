@@ -1,0 +1,21 @@
+from random import shuffle
+import requests
+from collections import Counter
+
+def scramble_word(word):
+  letters = list(word.strip().lower())
+  shuffle(letters) #Feedback: let's use sample instead of shuffle so we do not have to mutate
+  scrambled_word = ''.join(letters) #Feedback: we can write the above three in one line
+  return scrambled_word if scrambled_word is not word else scrambled_word(scrambled_word)
+
+def calculate_points_from_guess(word, guess):
+  allowed_chars = Counter(word)
+  given_chars = Counter(guess)
+  if len(given_chars - allowed_chars) > 0:
+    return 0
+
+  points = 0
+  for letter in guess:
+    points += 1 if letter in "aeiou" else 2
+  #Feedback: let's use functional style instead of imperative loop.
+  return points

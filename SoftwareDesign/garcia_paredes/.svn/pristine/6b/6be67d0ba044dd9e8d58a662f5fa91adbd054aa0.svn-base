@@ -1,0 +1,23 @@
+from unittest import TestCase
+from operators import apply, lowercase
+
+class TestOperators(TestCase):
+  
+  def test_apply_nothing_to_mixcase_returns_mixcase(self):
+    self.assertEquals("heLLo WorLD", apply("heLLo WorLD"))
+  
+  def test_apply_nothing_to_all_uppercase_returns_uppercase(self):
+    self.assertEquals("HELLO WORLD", apply("HELLO WORLD"))
+  
+  def test_apply_nothing_to_all_lowercase_returns_lowercase(self):
+    self.assertEquals("hello world", apply("hello world"))
+
+  def test_apply_lowercase_to_mixcase_returns_lowercase(self):
+    self.assertEquals("hello world", apply("heLLo WorLD", lowercase))
+
+  def test_apply_lowercase_to_all_uppercase_returns_lowercase(self):
+    self.assertEquals("hello world", apply("HELLO WORLD", lowercase))
+
+  def test_apply_lowercase_to_all_lowercase_returns_lowercase(self):
+    self.assertEquals("hello world", apply("hello world", lowercase))
+  

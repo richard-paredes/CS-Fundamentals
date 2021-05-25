@@ -1,0 +1,33 @@
+Using test first development, write the program described below.
+
+To run the tests, run the build. For example, 
+./gradlew for Java or paver for Python, etc.
+
+To execute the program, run the build with the run task. For example,
+./gradlew run for Java or paver run for Python, etc.
+
+Write a program that will ask the user to enter a number. The program will then print all the perfect numbers between 1 and that number.
+https://en.wikipedia.org/wiki/Perfect_number
+
+Assume that the user enters a number greater than or equal to 1. Do not check for the possibility that 
+the user enters anything other than a number greater than or equal to 1.
+
+The interaction with the user should be like this, on the console. Do not create a GUI:
+Please enter a number greater than 0: <user enters a number>
+The perfect numbers between 1 and <user entered number> are: a, b, c, d,...
+where a, b, c, d, etc. are perfect numbers less than or equal to the user entered number.
+
+Partial scores will be given for using functional style and avoiding mutating any variables (assignment is OK, but reassignment is not). When using functional style avoid using recursion.
+
+Write the program so that if we decide to change the way the user will interact with the program then most of the code will not have to change.
+
+Scores will be allotted for each part below:
+Build setup properly [10]:
+Program works as expected [10]:
+Program deals with user input within stated expectations properly [10]:
+Tests pass [10]:
+Test Quality [10]:
+Code coverage [10]:
+Design quality [20]:
+Code quality [10]:
+Honoring immutability, using functional style [10]:

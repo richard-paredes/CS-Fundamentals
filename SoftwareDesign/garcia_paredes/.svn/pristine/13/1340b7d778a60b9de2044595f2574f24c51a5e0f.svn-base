@@ -1,0 +1,8 @@
+from unittest import TestCase
+from fibonacci_test import FibonacciTests
+from fibonacci_functional import fibonacci
+
+class FibonacciFunctionalTests(FibonacciTests, TestCase):
+
+  def setUp(self):
+    self.fibonacci = fibonacci

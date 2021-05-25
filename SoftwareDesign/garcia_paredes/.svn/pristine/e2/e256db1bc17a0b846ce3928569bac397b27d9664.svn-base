@@ -1,0 +1,12 @@
+from fibonacci_recursive import base_recursive_fibonacci
+
+def memoize(func): 
+  cache = {}
+  def wrapper(val):
+    if val not in cache: cache[val] = func(val)
+    return cache[val]
+  return wrapper
+
+@memoize
+def memoized_fibonacci(position):
+  return base_recursive_fibonacci(memoized_fibonacci, position)

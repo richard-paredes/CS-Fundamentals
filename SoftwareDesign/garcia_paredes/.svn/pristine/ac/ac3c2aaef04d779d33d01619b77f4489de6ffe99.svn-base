@@ -1,0 +1,13 @@
+from unittest import TestCase
+from fibonacci_test import FibonacciTests
+from fibonacci_imperative import fibonacci
+
+#Feedback: 
+#class TestFibonacciImperative(FibonnaciTest):
+#  def create_fibonacci(self):
+#    return fibonnaci
+
+class FibonacciImperativeTests(FibonacciTests, TestCase):
+
+  def setUp(self):
+    self.fibonacci = fibonacci

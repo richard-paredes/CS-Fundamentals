@@ -1,0 +1,35 @@
+apply plugin: 'java'
+apply plugin: 'jdepend'
+
+dependencies {
+}
+
+repositories {
+  mavenCentral()
+}
+
+jdependMain {
+  reports {
+    xml.enabled true
+    text.enabled false
+  }
+}
+
+//To exclude the java packages, the file jdepend.properties in the home directory
+//has the following line (uncommented)
+//
+//ignore.java=java.*,javax.*
+
+task jdependReport(dependsOn: jdependMain) << {
+   ant.xslt(
+      in: "$reporting.baseDir/jdepend/main.xml",
+      style: "$rootDir/conf/jdepend/jdepend-report.xslt",
+      out:"$reporting.baseDir/jdepend/main.html")
+}
+
+task openreport(dependsOn: jdependReport) << {
+  "open build/reports/jdepend/main.html".execute()
+  //on Windows, this should be "cmd /c start build\\reports\\jdepend\\main.html".execute()
+}
+
+defaultTasks 'clean', 'openreport'

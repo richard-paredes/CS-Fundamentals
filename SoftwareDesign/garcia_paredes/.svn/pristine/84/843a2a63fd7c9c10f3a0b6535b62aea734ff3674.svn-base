@@ -1,0 +1,7 @@
+def fibonacci(position):
+  prev = 0 #Feedback: previous
+  curr = 1 #Feedback: current
+  for i in range(position):
+    prev, curr = curr, curr + prev
+
+  return curr if position > -1 else 0

@@ -1,0 +1,7 @@
+from functools import reduce
+
+
+def fibonacci(position):
+    if position < 0:
+        raise ValueError("Invalid Fibonacci sequence position")
+    return list(reduce(lambda seq, _: seq+[seq[-1]+seq[-2]], range(position), [0, 1]))[-1]

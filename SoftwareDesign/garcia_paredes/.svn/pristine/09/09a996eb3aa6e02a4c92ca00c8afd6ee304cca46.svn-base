@@ -1,0 +1,67 @@
+from unittest import TestCase, mock
+from requests import head
+from spell_check_service import is_spelling_correct, parse_text
+
+class SpellCheckServiceTests(TestCase):
+
+  def test_get_response_from_service_URL_and_confirm_test_was_received(self):
+    url = "http://agile.cs.uh.edu/spell?check=word"
+
+    self.assertTrue(head(url).status_code == 200)
+    #Feedback: let's verify, instead of status code, that the result of a get_response function is
+    #a text
+
+  def test_parse_text_true_and_return_boolean_true(self):
+    text = "True"
+
+    self.assertEquals(True, parse_text(text)) #Feedback: assertTrue
+
+  def test_parse_text_false_and_return_boolean_false(self):
+    text = "False"
+
+    self.assertEquals(False, parse_text(text)) #Feedback: assertFalse
+
+  def test_parse_text_something_else_and_return_something(self):
+    text = "something else"
+
+    self.assertRaises(Exception, parse_text(text)) #Feedback: let's check the error message in the exception
+
+  def test_is_spelling_correct_should_take_a_word_and_returns_true_for_word_right(self):
+    word = 'right'
+
+    with mock.patch("spell_check_service.is_spelling_correct") as mock_spell_checker:
+      mock_spell_checker.return_value = True
+      actual_response = mock_spell_checker(word)
+      self.assertEquals(True, actual_response)
+      #Feedback: in this test we first mock the is_spelling_correct and then we call it. In short
+      #we mocked the verify function we are testing. We should never mock the function we are testing.
+      #mock get_response to return true. Then test is_spelling_correct.
+
+  def test_is_spelling_correct_should_take_a_word_and_returns_false_for_word_rigth(self):
+    word = 'rigth'
+
+    with mock.patch("spell_check_service.is_spelling_correct") as mock_spell_checker:
+      mock_spell_checker.return_value = False
+      actual_response = mock_spell_checker(word)
+      self.assertEquals(False, actual_response)
+
+  def test_is_spelling_correct_should_take_a_word_and_returns_false_for_word_haha(self):
+    word = 'haha'
+
+    with mock.patch("spell_check_service.is_spelling_correct") as mock_spell_checker:
+      mock_spell_checker.return_value = False
+      actual_response = mock_spell_checker(word)
+      self.assertEquals(False, actual_response)
+
+  def test_is_spelling_correct_handles_exeption_from_get_response_properly(self):
+    word = 'raise exception'
+
+    with mock.patch("spell_check_service.is_spelling_correct") as mock_spell_checker:
+      mock_spell_checker.return_value = Exception
+      actual_response = mock_spell_checker(word)
+      self.assertEquals(Exception, actual_response)
+
+  def test_is_spelling_correct_integration_takes_word_correct_and_returns_boolean_true(self):
+    word = "correct"
+
+    self.assertEquals(True, parse_text(is_spelling_correct(word)))

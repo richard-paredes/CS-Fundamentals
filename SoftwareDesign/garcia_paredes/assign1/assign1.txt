@@ -1,0 +1,46 @@
+Assign1: Due 11:59PM March 5 [Moved from February 26 due to inclement weather]
+
+***Please review the top part of ../hw1/hw1.txt***
+***Your chance of success greatly increases if you start very early. Your chance of failure increases if you start late. Please use as many reviews as you possibly can.***
+
+Using Test First Development (no code without test first) let's implement the problem designed in hw2. Feel free to evolve that design and use judgment to make changes based on the improved understanding and learning.
+
+Please take small steps and ask for frequent reviews.
+
+First start with a tests list (tests.txt) and a canary test. Implement at most two more tests and minimum code to make those tests to pass. This is a great first step to complete and ask for a review.
+
+After completing the assignment (and only after) let's answer the following questions:
+
+1. What did you learn mainly in this assignment?
+
+One of the main takeaways from this assignment has been how strongly test driven development facilitates better design and higher quality code. Through the Red/Green/Refactor process of TDD, we were able to come up with much more simplistic and pragmatic solutions to each feature of the assignment. Compared to the initial strategic design, our final design was significantly less complex.
+
+Although the process of TDD is more time consuming, developing tests with and maintaining high code coverage provided a high level of confidence when evolving and refactoring the codebase. Any time changes were made to the code, we were able to verify if everything still worked as expected and quickly resolve any issues.
+
+2. How is the current design different, if at all, from the strategic design created in hw2?
+
+The current design of the Minesweeper application is significantly simpler when compared to the strategic design developed in hw2. In the strategic design, multiple features of the game were unnecessarily decomposed into various classes. Moreover, there were multiple dependency relationships among these classes which would have been tedious to test.
+
+For example, our strategic design involved a Cell class that would serve as a container for the state of the cell. Furthermore, there were subclasses of the Cell, such as MinedCell, AdjacentCell, and EmptyCell which would vary in behavior based on the type. There was also a CellGrid class whose sole purpose was to manage the states of all cells in the game. None of these classes were required using our tactical design.
+
+Retrospectively, the strategic design was flawed in that it overcomplicated many details of the game and sought to unnecessarily separate many features. For example, the GameManager, Board, and CellGrid classes were all planned to work in isolation even though they all depended on each other. Moreover, the inheritance hierarchy associated with the Cells of the game was not needed.
+
+The current design only involves two main classes: the Minesweeper class and the MineSweeperGui class, along with two enums to help manage cell state. With all the cells and game state being directly managed within the Minesweeper class, no dependencies were needed on other classes. This made it significantly easier to integrate with the MineSweeperGui, which just created a GUI for users to interact with.
+
+3. Were there any surprises or things you did not expect along the way? Any particular problem faced, things you had to tackle that you did not expect 
+beforehand?
+
+We definitely experienced several surprises along the project that we handled as learning experiences instead of problems or issues. 
+
+One of the first items that surprised us was first-hand experiencing the tremendous usefulness and value of test-driven development. Initially, our strategic design was relatively complex and reflected several classes and relationships that we found to be unnecessary as we underwent the Red/Green/Refactor process of TDD.
+
+Understanding code complexity in the form of cyclomatic complexity through the use of the Radon static code analysis tool was a second item that surprised us. This was the first time we were exposed to a static code analysis tool and we found it to be a great tool to provide us with some immediate feedback. Radon enabled us to quickly refactor complicated code such as conditionals and matrix iterations by thinking critically and using newly learned programming language modules, such as Python's itertools module.
+
+Total [100]: 100
+Program runs as expected [20]:
+All test pass [20]:
+Code coverage [10]:
+Test quality [10]:
+Design quality [20]:
+Code quality [10]: 
+Questions in assign1.txt [10]:

@@ -1,0 +1,10 @@
+from functools import cache
+
+@cache
+def memoized_fibonacci(position):
+  if position < 0:
+    raise ValueError("Invalid Fibonacci sequence position")
+
+  return 1 if position < 2 else memoized_fibonacci(position - 2) + memoized_fibonacci(position - 1)
+  #Feedback: the recursive call and the operator + were already done in the recursive solution.
+  #Let us reuse that instead of repeating it here.

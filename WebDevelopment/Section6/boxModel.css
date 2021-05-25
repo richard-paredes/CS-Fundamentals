@@ -1,0 +1,43 @@
+p {
+    /*CONTENT- width & height*/
+    /*specify width so that it doesn't extend to end of screen
+        units:
+            pixels: px
+            percentages: % (relative to its parent element)--
+                great for resizing as window minimizes/maximizes
+        */
+    width: 20%;
+    height: 20px;
+
+    /*BORDER*/
+    /*surrounds the content*/
+    border: 2px solid blue;
+
+    /*PADDING*/
+    /* applies to all 4 sides of the content*/
+    /*padding: 25px;*/
+    /*to apply to each side:*/
+    padding-left: 30px;
+    padding-right: 10px;
+
+
+    /*MARGIN*/
+    /*margin looks like padding, but its a layer above padding*/
+
+    /*applies to all four sides*/
+    /*margin: 100px;*/
+
+    /* TOP, RIGHT, BOT, LEFT*/
+    /*margin: 50px 0px 20px 100px;*/
+
+    /* to center automatically:; */
+    /* center left and right */
+    /*margin: 0 auto 0 auto;*/
+
+    /* applies 0 to top and bot, auto to left and right*/
+    /*margin: 0 auto;*/
+
+    /*100px to top and bot, 50px to left and right*/
+    margin: 100px 50px;
+
+}

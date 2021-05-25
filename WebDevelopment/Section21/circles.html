@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="circles.css">
+    <script type="text/javascript" src="paperjs/paper-full.min.js"></script>
+    <script type="text/paperscript" canvas="myCanvas">
+        var path = new Path();
+        var width = 1000;
+        var numRows = 18;
+        numCircles = 37;
+        for (var j = 0; j < numRows; j++) {
+            for (var i = 0; i < numCircles; i++) {
+                new Path.Circle(new Point(30+(i*50), 35+(j*50)), 10).fillColor = "rgb(" + i*(255/numCircles) + ", " + j*(255/numRows) + ", " + (i*j) + ")";
+            }
+        }
+        
+        
+
+    </script>
+</head>
+
+<body>
+
+    <canvas id="myCanvas" resize></canvas>
+
+</body>
+
+</html>

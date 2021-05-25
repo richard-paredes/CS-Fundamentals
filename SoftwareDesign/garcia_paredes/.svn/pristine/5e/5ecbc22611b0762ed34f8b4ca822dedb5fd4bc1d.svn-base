@@ -1,0 +1,18 @@
+from unittest import TestCase
+
+from word_guess import WordGuess
+
+class WordGuessTests(TestCase):
+  def setUp(self):
+    self.word_guess = WordGuess()
+
+  def test_canary(self):
+    self.assertTrue(True)
+
+  def test_scramble_word_with_different_seed_returns_different_scramble(self):
+    word = "monkey"
+
+    scrambled_with_seed_1 = self.word_guess.scramble_word(word, 1)
+    scrambled_with_seed_2 = self.word_guess.scramble_word(word, 2)
+
+    self.assertNotEquals(scrambled_with_seed_1, scrambled_with_seed_2)

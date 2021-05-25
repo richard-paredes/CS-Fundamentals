@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/client.cpp
+unistd.h
+-
+stdio.h
+-
+string.h
+-
+stdlib.h
+-
+sys/types.h
+-
+sys/socket.h
+-
+netinet/in.h
+-
+netdb.h
+-
+iostream
+-
+vector
+-
+algorithm
+-
+pthread.h
+-
+unordered_map
+-
+fstream
+-
+

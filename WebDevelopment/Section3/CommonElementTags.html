@@ -1,0 +1,290 @@
+<!-- MDN Element Reference:
+-- contains all the element tags in HTML:
+-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element
+-- approx: ~100 element tags . .
+-- actual usage: 10 to 15 used commonly
+ -->
+
+ <!DOCTYPE html>
+ <html>
+ <head>
+    <!-- title element is what the entire page is called as -->
+     <title>Common HTML Tags</title>
+     <!-- link element links other files to this HTML document -->
+     <!-- here we're linking our CSS file -->
+     <link rel="stylesheet" type="text/css" href="CommonElementTags.css">
+ </head>
+ <body>
+    <!-- HEADINGS: -->
+<!-- block level elements -->
+    <h1> Example of H1 Heading </h1>
+    <h2> Example of H2 Heading </h2>
+    <h3> Example of H3 Heading </h3>
+    <h4> Example of H4 Heading </h4>
+    <h5> Example of H5 Heading </h5>
+    <h6> Example of H6 Heading </h6>
+
+<!-- hr: creates a horizontal ruler (line across screen) -->
+    <hr>
+<!-- In-line elements -->
+    Regular text that isn't necessarily structured. It's on a single line
+    even if it's not that way in the HTML-code.
+
+    <br><bdo dir="rtl">What is this text? :txeT sdrawkcaB</bdo>
+    <!-- mark tag highlights the text -->
+    <br>
+    <mark>Interesting isn't it?</mark>
+
+<!-- block level -->
+    <p>
+        <!-- in-line level -->
+        Here is a paragraph block:
+        <!-- sub tag: subscripts the element -->
+        <sub>It contains a single line.</sub>
+    </p>
+    <p>
+        <!-- in-line level -->
+        Here is another paragraph:
+        <!-- del tag: strikes out element -->
+        <del>It contains Lorem Ipsum.</del>
+        <strong><em> Lorem Ipsum is simply dummy text! </em></strong>
+
+       <!-- block level within the in-line of a block-level -->
+       <!-- <br>: creates a line break -->
+        <p>
+            <!-- q tag: adds quotes around element -->
+            <q>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do <br>
+             eiusmod tempor incididunt ut labore et dolore magna aliqua. <br>
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris <br>
+             nisi ut aliquip ex ea commodo consequat. <br>
+            Duis aute irure dolor in reprehenderit in voluptate velit esse <br>
+            cillum dolore eu fugiat nulla pariatur. <br>
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui <br>
+             officia deserunt mollit anim id est laborum.
+            </q>
+            <footer>--<abbr title="Richard Omar Paredes"> ROP</abbr></footer>
+        </p>
+    </p>
+
+    <!-- LISTS:
+    -- ordered: <ol> contains numbers
+    -- unordered: <ul> contains bullets
+    -->
+    <hr>
+    <p>
+        <h3> Ordered List Example: </h3>
+        <ol>
+            <li><strong><em> Rank One </em></strong></li>
+            <li> Rank Two </li>
+            <li> Rank Three </li>
+        </ol>
+    </p>
+
+    <p>
+        <h3>Description List Example </h3>
+        <dl>
+            <dt>Felines:</dt>
+            <dd>Cats, tigets, lions</dd>
+            <dt>Canines:</dt>
+            <dd>Dogs, wolves, coyotes</dd>
+        </dl>
+    </p>
+
+    <p>
+        <h3> Un-Ordered List Example: </h3>
+        <ul>
+            <li> Red </li>
+            <li> Yellow </li>
+            <li> Orange </li>
+        </ul>
+    </p>
+
+    <p>
+        <h3> Un-Ordered List Nested in Ordered List </h3>
+        <ol type="I">
+            <!-- first point -->
+            <li> <strong>Name: </strong><em>Richard</em>
+                <ul>
+                    <li>Occupation: <em>Student</em></li>
+                </ul>
+            </li>
+
+            <!-- second point -->
+            <li> <strong>Name: </strong><em>Miiko</em>
+                <ul>
+                    <li>Occupation: <em>Cutie</em></li>
+                </ul>
+            </li>
+
+            <!-- third point -->
+            <li> <strong>Name: </strong><em>Alfredo</em>
+                <ul>
+                    <li>Occupation: <em>SWE</em></li>
+                </ul>
+            </li>
+        </ol>
+    </p>
+
+    <!-- <div> tags are used to group elements together
+    --  it acts as a container to group things together
+    -- div is a block-level element (things get pushed to a new line)
+    -->
+    <hr>
+    <div>
+        <h2>Here's some random Lorem:</h2>
+            <p>
+                <!-- blockquote tag: pushes element to emphasize, kind of like a quote -->
+                <blockquote cite="URL/SOURCE">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                <footer>-- Richard Paredes, <cite>A Brave Programmer</cite></footer>
+                </blockquote>
+            </p>
+    </div>
+
+    <!-- ungrouped portion (not included in the div tag) -->
+    <p>
+        Lorem <div>ipsum dolor sit </div>amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+
+    <!-- <span> is also a generic container for grouping elements
+    -- together, however it differs from div:
+    -- span is an in-line container!
+    --
+    -->
+    <p>
+        Lorem <span>ipsum dolor sit</span> amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+
+    <!-- TABLES: -->
+    <hr>
+    <div>
+        <h2>Here's an un-styled table element:</h2>
+        <!-- border attribute to set a border, better done in CSS -->
+        <table border="1">
+            <caption>Simple table</caption>
+            <!-- a header row (HTML5 has thead element-->
+            <thead>
+                <tr>
+                    <th colspan="1" align="center">Name</th>
+                    <th colspan="1" align="center">Age</th>
+                    <th align="center">Breed</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- a single table ROW -->
+                <tr>
+                    <!-- basically each column on the SAME ROW -->
+                    <td align="center">Rusy</td>
+                    <td align="center">2</td>
+                    <td align="center">Mutt</td>
+                </tr>
+                <!-- second table row -->
+                <tr>
+                    <td align="center">Wyatt</td>
+                    <td align="center">13</td>
+                    <td align="center">Golden Retriever</td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- a tag: hyperlink
+            href attribute: reference link
+            title attribute: tooltip for link
+            target attribute: where to open new link
+             -->
+        <p>Link to a <a href="PokemonTable.html" title="First-Gen Pokemon" target="_blank">cute Pokemon Table</a></p>
+    </div>
+
+    <!-- FORMS: -->
+    <hr>
+    <div>
+        <h2>Here's an un-styled form: </h2>
+        <!-- attributes:
+        -- action: where to send the form data to (backend)
+        -- method: what type of HTTP request to get (get request-- retrieve) (post request-- posting/sending data)
+         -->
+         <form action="input_file.txt" method = "post">
+            <!-- input tags are the interactive bits -- inline
+                attributes:
+            -- text: takes in text
+            -- date: takes in a date
+            -- color: takes in a color
+            -- file: takes in a file
+            -- checkbox: uses a checkbox
+            -- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input
+            -->
+            <input type="text" name="text:">
+            <input type="date" name="date:">
+            <input type="color" name="color:">
+            <input type="file" name="file:">
+            <!-- remember: radio is to select 1 within a range of items -->
+            <!-- a checkbox can have multiple selections in the range -->
+            <input type="radio" name="radio">
+            <input type="checkbox" name="checkbox:">
+            <input type="email" name="email:">
+            <input type="password" name="password:">
+
+            <input type="Select" name="sel">
+
+        </form>
+    </div>
+
+    <div>
+        <h2>A Simple Form:</h2>
+        <h4>Sign-In</h4>
+        <form action="https://www.google.com/" method="get">
+            <!-- label tags are for screen-reading programs
+            -- very useful for visually-impaired
+            -- or other aid when reading/parsing websites
+             -->
+            <!-- syntax example 1: (basic tag-encompassing) -->
+            <label>
+                Username:
+                <input type="text" name="Username">
+            </label>
+
+            <!-- syntax example 2: using 'for' attribute
+            -- looks to match the 'for' attribute with the 'id' -->
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="Password">
+
+            <p>
+                <button>Login</button>
+            </p>
+
+        </form>
+
+        <p>Here's a link to a <a href="SampleForm.html" title="Simple form data!" target="_blank"><em>simple form</em></a>
+        <p>Want to register for updates? <a href="exercise_3.html" title="Registration Page" target="_blank"><em><strong>Click Here!</strong></em></a></p>
+
+    </div>
+
+    <!-- iframe: embedded elements from other sources -->
+    <hr>
+    <h2>Embedded Element </h2>
+    <p>
+    <iframe id="inlineFrameExample"
+        title="Inline Frame Example"
+        width="300"
+        height="200"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&layer=mapnik">
+    </iframe>
+    </p>
+
+ </body>
+ </html>

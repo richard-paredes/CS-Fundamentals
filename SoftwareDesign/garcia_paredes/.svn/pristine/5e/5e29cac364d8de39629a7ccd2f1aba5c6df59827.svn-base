@@ -1,0 +1,66 @@
+from unittest import TestCase, mock
+from requests import head
+from spell_check_service import is_spelling_correct, parse_text
+
+class SpellCheckServiceTests(TestCase):
+
+  def test_get_response_from_service_URL_and_confirm_text_was_received(self):
+    url = "http://agile.cs.uh.edu/spell?check=word"
+
+    response_type = head(url).headers.get("content-type")
+
+    self.assertTrue(response_type == "text/plain")
+    #Feedback: in this test we want to call a function get_response("apple")
+    #verify that the response is a non-blank text
+
+  def test_parse_text_true_and_return_boolean_true(self):
+    text = "True"
+
+    self.assertTrue(parse_text(text))
+
+  def test_parse_text_false_and_return_boolean_false(self):
+    text = "False"
+
+    self.assertFalse(parse_text(text))
+
+  def test_parse_text_something_else_and_return_value_error(self):
+    text = "something else"
+
+    self.assertRaisesRegex(ValueError, "Input could not be parsed", parse_text, text)
+
+  def test_is_spelling_correct_should_take_a_word_and_returns_true_for_word_right(self):
+    word = 'right'
+
+    with mock.patch("spell_check_service.get") as mock_get_response:
+      mock_get_response.return_value.text = "true"
+      
+      self.assertTrue(is_spelling_correct(word))
+
+  def test_is_spelling_correct_should_take_a_word_and_returns_false_for_word_rigth(self):
+    word = 'rigth'
+
+    with mock.patch("spell_check_service.get") as mock_get_response:
+      mock_get_response.return_value.text = "false"
+      
+      self.assertFalse(is_spelling_correct(word))
+
+  def test_is_spelling_correct_should_take_a_word_and_returns_false_for_word_haha(self):
+    word = 'haha'
+
+    with mock.patch("spell_check_service.get") as mock_get_response:
+      mock_get_response.return_value.text = "false"
+
+      self.assertFalse(is_spelling_correct(word))
+
+  def test_is_spelling_correct_handles_exeption_from_get_response_properly(self):
+    word = 'raise exception'
+
+    with mock.patch("spell_check_service.get") as mock_get_response:
+      mock_get_response.side_effect = Exception()
+      
+      self.assertRaisesRegex(ConnectionError, "Error connecting to the spell checking service", is_spelling_correct, word)
+
+  def test_is_spelling_correct_integration_takes_word_correct_and_returns_boolean_true(self):
+    word = "correct"
+
+    self.assertTrue(is_spelling_correct(word))

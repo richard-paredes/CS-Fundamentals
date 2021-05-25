@@ -1,0 +1,14 @@
+from unittest import TestCase
+from writer_test import WriterTests
+from lowercase_write_operation_test import LowerCaseWriteOperationTests
+from string_writer import StringWriter
+
+class TestStringWriter(TestCase):
+
+  def create_writer(self):
+    return StringWriter()
+
+#Feedback: the following should go in separate files  
+class LowerCaseStringWriterTests(LowerCaseWriteOperationTests, TestStringWriter): pass
+
+class WriteStringWriterTests(WriterTests, TestStringWriter): pass

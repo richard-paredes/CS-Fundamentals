@@ -1,0 +1,94 @@
+import tkinter as tk
+import os
+import sys
+from random import random
+sys.path.append(os.path.dirname(__file__).replace("gui", ""))
+
+from minesweeper import Minesweeper, CellState, GameStatus
+
+class MinesweeperGui(tk.Frame):
+  SEAL_SYMBOL = "S"
+  MINE_SYMBOL = "X"
+
+  def __init__(self, master=None):
+    super().__init__(master)
+    self.master = master
+    self.minesweeper = Minesweeper()
+    self.master.geometry("400x400")
+    self.master.title("Minesweeper")
+    self.master.rowconfigure(0, weight=1)
+    self.master.columnconfigure(0, weight=1)
+    self.minesweeper.set_mines(random())
+    self.create_cell_grid()
+    self.grid(row=0, column=0, padx=10, pady=10, sticky="nsew")
+
+  def create_cell_grid(self):
+    for i in range(Minesweeper.SIZE):
+      self.rowconfigure(i, weight=1)
+      self.columnconfigure(i, weight=1)
+      for j in range(Minesweeper.SIZE):
+        self.create_cell(i, j)
+
+  def create_cell(self, x, y):
+    button = tk.Button(self, text="", height=1, width=2, foreground="red")
+    button.bind("<Button-1>", self.left_click)
+    button.bind("<Button-2>", self.right_click)
+    button.bind("<Button-3>", self.right_click)
+    button.grid(row=x, column=y, sticky="nsew")
+
+  def left_click(self, event):
+    if self.minesweeper.get_game_status() == GameStatus.INPROGRESS:
+      x = event.widget.grid_info()["row"]
+      y = event.widget.grid_info()["column"]
+      self.minesweeper.expose_cell(x, y)
+      self.update_grid()
+
+  def right_click(self, event):
+    if self.minesweeper.get_game_status() == GameStatus.INPROGRESS:
+      x = event.widget.grid_info()["row"]
+      y = event.widget.grid_info()["column"]
+      self.minesweeper.toggle_seal(x, y)
+      self.update_grid()
+
+  def update_grid(self):
+    print("Updating grid")
+    for i in range(Minesweeper.SIZE):
+      for j in range(Minesweeper.SIZE):
+        self.update_cell(i, j)
+    if self.minesweeper.get_game_status() != GameStatus.INPROGRESS:
+      print("Game has finished.")
+    if self.minesweeper.get_game_status() == GameStatus.WON:
+      self.show_win_dialog()
+    elif self.minesweeper.get_game_status() == GameStatus.LOST:
+      self.show_lose_dialog()
+
+  def update_cell(self, x, y):
+    cell = self.grid_slaves(row=x, column=y)[0]
+
+    if self.minesweeper.get_cell_status(x, y) == CellState.EXPOSED:
+      cell.configure(state="disabled", relief="sunken", bg="light grey")
+
+      adjacent_mines_count = self.minesweeper.adjacent_mines_count_at(x, y)
+      if self.minesweeper.is_mine_at(x, y):
+        cell.configure(text=self.MINE_SYMBOL)
+
+      elif adjacent_mines_count:
+        cell.configure(text=adjacent_mines_count)
+
+    elif self.minesweeper.get_cell_status(x, y) == CellState.SEALED:
+      cell.configure(state="disabled", text=self.SEAL_SYMBOL, bg="red")
+
+  def show_lose_dialog(self):
+    dialog = tk.Frame(self, width=100, height=100, bg="white")
+    text = tk.Label(dialog, text="You lost!")
+    dialog.place(relx=0.5, rely=0.5, anchor="center")
+    pass
+
+  def show_win_dialog(self):
+    pass
+
+
+if __name__ == "__main__":
+  root = tk.Tk()
+  app = MinesweeperGui(master=root)
+  app.mainloop()

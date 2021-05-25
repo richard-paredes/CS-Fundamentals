@@ -1,0 +1,55 @@
+Design Option 1: only concrete classes for CurrencyExchange and XYZRateService
+exchange:
+    A = (#I) / (#I + #C) = 0 / 1
+    I = (#F-Out)/ (#F-In + #F-Out) = 1 / 1 = 1
+    D' = |A + I - 1| = 0
+service:
+    A = 0
+    I = 0 / (1+0) = 0
+    D' = |0 + 0 - 1| = 1
+
+Overall D' = (0 + 1) / 2 = 0.5
+
+****************
+Design Option 2: create interface for XYZRateService, have CurrencyExchange depend on interface
+exchange:
+    A = 0
+    I = 1
+service:
+    A = 0.5
+    I = 0
+    D' = |0.5 + 0 - 1| = 0.5
+
+Overall D' = (0.5 + 0) / 2 = 0.25
+
+*****************
+Design Option 3: move RateService interface to same package as CurrencyExchange
+exchange:
+    A = 0.5
+    I = 0 / 1 = 0
+    D' = 0.5
+service:
+    A = 0
+    I = 1
+    D' = 0
+
+Overall D' = 0.5 / 2 = 0.25
+No overall improvement, but introduces more stability!
+
+*********************
+Design Option 4: Keep RateService interface in service package but create new package called ServiceImplementation
+exchange:
+    A = 0
+    I = 1 / 1 = 1
+    D' = 0
+service:
+    A = 1
+    I = 0 / 2 = 0
+    D' = 0
+serviceImplementation:
+    A = 0
+    I = 1 / 1 = 1
+    D' = 1 + 0 - 1 = 0
+
+Overall D' = 0 / 2 = 0
+Service package is better design whenever more interfaces in it; it is more stable

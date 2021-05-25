@@ -1,0 +1,87 @@
+[Reviewed 03/14/21 05:30 AM MDT]
+synopsis: good so far
+
+details: 
+
+Good so far. Please see suggestions in code.
+
+Let's explore the next steps:
+-score for word with incorrect spelling - "apple" and guess "app"
+-score for another word with incorrect spelling "apple" and guess "ael"
+
+------------------------------------------------------------------------------
+[Reviewed 03/13/21 14:58 PM MST]
+synopsis: let's refactor
+
+details: 
+
+Please see suggestions in code.
+
+------------------------------------------------------------------------------
+[Reviewed 03/13/21 06:39 AM MST]
+synopsis~: let's add a few more tests
+
+details: 
+
+Please see suggestions in code.
+
+Let's add a few more tests.
+-score for guess where it has letters not in word: "bayou" and guess "bye"
+-score for guess with repeat letters: "relate" and guess "rear"
+
+Let's do a quick review after these changes. Please modify the requestReview.txt file and check it in as soon as you are ready and I will do a review well before the next scheduled review cycle.
+
+------------------------------------------------------------------------------
+[Reviewed 03/11/21 21:24 PM MST]
+synopsis: jumping ahead faster than we should
+
+details: 
+
+The code is dealing with spell check but non of the tests at this time should be concerned with spelling. Please remove all references to things related to spell check. Let's do a review after that.
+
+------------------------------------------------------------------------------
+[Reviewed 03/11/21 05:50 AM MST]
+synopsis~: let's revisit some tests
+
+details: 
+
+Good tests so far. Let's make sure the following are covered:
+-score for a letter guess that is part of the word - "apple" and guess "a"
+-score for guess that is part of the word - word "monkey" and guess "monk"
+-score for guess that is part of the word but not continuous - word "apple" and guess "ape"
+-score for guess with no vowel - word "bayou" and guess "by" 
+
+Let's do a quick review after these changes. Please modify the requestReview.txt file and check it in as soon as you are ready and I will do a review well before the next scheduled review cycle.
+
+------------------------------------------------------------------------------
+[Reviewed 03/10/21 04:19 AM MST]
+synopsis: let's remove the type information and leverage dynamic typing
+
+details: 
+
+  def scramble_word(self, word: str):
+to
+  def scramble_word(self, word):
+
+Good so far. Let's take the next small step.
+
+------------------------------------------------------------------------------
+[Reviewed 03/06/21 10:20 AM MST]
+synopsis: Good to see early start. No need for the seed
+
+details: 
+
+Let's not force the user of our code to pass a seed.
+
+Please see the tests.txt file.
+-scramble apple
+-scramble matter
+-scramble apple twice and expect different results
+-scramble an empty string
+-scramble a word with a space in the beginning
+-scramble a word with a space in the end
+-scramble a word with a space in the middle
+-scramble a word with mixed cases and expect the result to have all letters in lowercase
+-result of scramble has same characters as the original string
+
+------------------------------------------------------------------------------

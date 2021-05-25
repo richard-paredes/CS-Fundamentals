@@ -1,0 +1,26 @@
+from unittest import TestCase
+from writer_test import WriterTests
+from string_writer import StringWriter
+
+class TestStringWriter(WriterTests, TestCase):
+  
+  def create_writer(self):
+    return StringWriter()
+  
+  def test_get_output_returns_written_stream(self):
+    self.writer.write("Hello")
+    
+    self.assertEquals("Hello", self.writer.get_output())
+
+  def test_close_target_closes_target_stream(self):
+    self.writer.close_target()
+
+    self.assertTrue(self.writer.is_closed)
+  
+  def test_writer_ignores_write_after_calling_close(self):
+    self.writer.close_target()
+
+    self.writer.write("Hello")
+
+    self.assertEquals("", self.writer.get_output())
+  

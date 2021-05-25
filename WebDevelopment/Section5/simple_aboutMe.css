@@ -1,0 +1,13 @@
+/* helps prevent cluttering the HTML
+all CSS colors by NAME: http://colours.neilorangepeel.com/
+better choice: use hexadecimal;
+*/
+h1 {
+    color: red;
+}
+li {
+    color: green;
+}
+h4 {
+    color: #FF1493;
+}

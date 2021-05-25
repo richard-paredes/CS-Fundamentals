@@ -1,0 +1,8 @@
+def fibonacci(position):
+  if position < 0:
+    raise ValueError("Invalid Fibonacci sequence position") #Feedback: a blank line after this line, please
+  if position == 0 or position == 1: #Feedback: position < 2
+    return 1 #Feedback: a blank line after this line, please
+  return fibonacci(position - 2) + fibonacci(position - 1)
+
+#Feedback: blank lines tell the reader we care about readability.

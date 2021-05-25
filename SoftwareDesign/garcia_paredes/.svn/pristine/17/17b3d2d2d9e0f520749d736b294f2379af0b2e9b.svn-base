@@ -1,0 +1,95 @@
+from enum import Enum
+from random import Random
+
+class CellState(Enum):
+  UNEXPOSED = 0
+  EXPOSED = 1
+  SEALED = 2
+
+class GameStatus(Enum):
+  INPROGRESS = 0
+  LOST = 1
+  WON = 2
+
+class Minesweeper:
+  SIZE = 10
+  NUM_MINES = 10
+
+  def __init__(self):
+    self.cell_states = [[CellState.UNEXPOSED for i in range(self.SIZE)] for i in range(self.SIZE)]
+    # self.set_mines()
+    self.mined_cells = [[False for i in range(self.SIZE)] for i in range(self.SIZE)]
+
+  def get_cell_status(self, x: int, y: int):
+    return self.cell_states[x][y]
+
+  def expose_cell(self, x: int, y: int):
+    if self.get_cell_status(x, y) == CellState.UNEXPOSED:
+      self.cell_states[x][y] = CellState.EXPOSED
+      
+      if self.adjacent_mines_count_at(x, y) == 0:
+        self.expose_neighbors(x, y)
+
+  def toggle_seal(self, x: int, y: int):
+    self.cell_states[x][y] = {
+        CellState.UNEXPOSED: CellState.SEALED,
+        CellState.SEALED: CellState.UNEXPOSED,
+        CellState.EXPOSED: CellState.EXPOSED
+    }[self.get_cell_status(x, y)]
+
+  def expose_neighbors(self, x: int, y: int):
+    start_x = max(0, x - 1)
+    end_x = min(self.SIZE, x + 2)
+
+    start_y = max(0, y - 1)
+    end_y = min(self.SIZE, y + 2)
+
+    for i in range(start_x, end_x):
+      for j in range(start_y, end_y):
+        self.expose_cell(i, j)
+
+  def is_mine_at(self, x: int, y: int):
+    return not any(val not in range(0, self.SIZE) for val in [x, y]) and self.mined_cells[x][y]
+
+  def adjacent_mines_count_at(self, x: int, y: int):
+    start_x = max(0, x - 1)
+    end_x = min(self.SIZE, x + 2)
+
+    start_y = max(0, y - 1)
+    end_y = min(self.SIZE, y + 2)
+
+    mine_count = 0
+
+    for i in range(start_x, end_x):
+      for j in range(start_y, end_y):
+        mine_count += self.is_mine_at(i, j)
+
+    return mine_count - 1 if self.is_mine_at(x, y) else mine_count
+
+  def get_game_status(self):
+    num_exposed_cells = 0 #Feedback: we can implement this code without need to count
+    #we could set the state to win and change it to inprogress along the way as appropriate. In
+    #the end we can return the state. Code can reduce a bit by doing so.
+
+    for i in range(self.SIZE):
+      for j in range(self.SIZE):
+        if self.is_mine_at(i, j) and self.get_cell_status(i, j) == CellState.EXPOSED:
+          return GameStatus.LOST
+        
+        num_exposed_cells += self.get_cell_status(i, j) == CellState.EXPOSED
+
+    return { 
+      True: GameStatus.WON,
+      False: GameStatus.INPROGRESS
+    }[num_exposed_cells == self.SIZE**2 - self.NUM_MINES]
+
+  def set_mines(self, seed: int):
+    random = Random(seed)
+    num_mined_cells = 0
+
+    while num_mined_cells < self.NUM_MINES:
+      x = random.randint(0, self.SIZE - 1)
+      y = random.randint(0, self.SIZE - 1)
+
+      num_mined_cells += not self.is_mine_at(x, y)
+      self.mined_cells[x][y] = True

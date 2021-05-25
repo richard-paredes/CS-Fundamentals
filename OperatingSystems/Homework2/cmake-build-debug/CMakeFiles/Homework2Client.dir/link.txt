@@ -1,0 +1,1 @@
+/usr/bin/g++  -pthread -std=c++11 -g -lpthread -Wall -Wextra -g   CMakeFiles/Homework2Client.dir/client.cpp.o  -o Homework2Client 

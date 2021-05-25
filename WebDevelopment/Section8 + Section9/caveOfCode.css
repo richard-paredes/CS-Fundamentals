@@ -1,0 +1,106 @@
+body {
+    /* colors:
+    gray: #272822
+    pink: #f92672
+    blue: #66d9ef
+    green: #a6e22e
+    orange: fd971f
+     */
+    font-family: 'Nunito';
+    background: #272822
+}
+
+#navigation {
+    font-size: 1.5rem;
+    font-weight: 100;
+}
+
+#navigation .navbar-brand {
+    font-size: 1.5rem;
+    color: #a6e22e;
+}
+
+#navigation .navbar-brand:hover {
+    color: #fd971f;
+    font-weight: 700;
+    background: white;
+    filter: drop-shadow(0px 0px 0px #66d9ef);
+    transition: filter .25s ease-in-out;
+    padding: 0 0;
+    transition: 1000ms;
+
+}
+
+.btn-outline-light.focus, .btn-outline-light {
+    color: #a6e22e;
+    border-color: #a6e22e;
+}
+
+.navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover {
+    color: #fd971f
+}
+
+.navbar-dark .navbar-nav .active > .nav-link, .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show > .nav-link {
+    color: #f92672;
+}
+
+.navbar-dark .navbar-toggler-icon {
+    color: #a6e22e;
+}
+
+.navbar.scrolled {
+    background: #66d9ef9a;
+    text-shadow: 1px 1px 1px #ffffff;
+    transition: background 500ms;
+}
+
+#header .headerBracket {
+    color: #66d9ef;
+}
+
+#header h1 {
+    font-weight: 100;
+    font-size: 4.25rem;
+}
+
+@media (max-width: 1500px) {
+    #header h1 {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    #header h1 {
+        font-size: 2rem;
+    }
+}
+
+.blurb h2 {
+    color: #66d9ef;
+    font-weight: 100;
+}
+
+.blurb p {
+    font-size: 1.125rem;
+    font-weight:100;
+    color: #f92672;
+    line-height: 1.8;
+}
+
+.blurb .laptop {
+    font-size: 2rem;
+}
+
+.blurb hr {
+    color:red;
+    font-size: 10px;
+}
+
+.infoCard:hover {
+    background: #fd971f44 !important;
+    transition: background 1000ms;
+}
+
+.content {
+    margin-top: 100px;
+}

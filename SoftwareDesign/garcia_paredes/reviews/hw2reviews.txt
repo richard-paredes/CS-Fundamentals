@@ -1,0 +1,71 @@
+[Reviewed 02/09/21 12:26 PM MST]
+synopsis: you're done
+
+details: 
+
+yay, good work, you're done.
+
+------------------------------------------------------------------------------
+[Reviewed 02/08/21 08:13 AM MST]
+synopsis: let's revisit a few parts
+
+details: 
+
+1.
+At this level of design it is better to use aggregation (unshaded diamond) instead of composition (shaded diamond).
+
+Is there a common relationship between the different types of cells?
+
+We do not put words like Aggregation and Composition in the diagram as the symbols already convey those.
+
+The part with Window, Button, Text, Shape does not really add value to the domain and the problem at hand.
+
+Text:
+
+1.
+Good details here.
+
+2.
+There are many other languages that fit this bill, why are we choosing Java? Please present the reasoning for our choice for this program.
+
+3.
+Good details here.
+
+------------------------------------------------------------------------------
+[Reviewed 02/06/21 07:56 AM MST]
+synopsis: very nice start
+
+details: 
+
+Diagram:
+Less is more, we want to write minimum information in the diagrams so we get maximum exposure to essential details. Please do not show fields unless the fields are not obvious from knowing the domain or are highly critical for the reader to know right now.
+
+Likewise, please do not show methods unless they are exceptional and needs to be shown right now on the diagram.
+
+Please do not write comments in the diagram. The names should be clear enough to the reader.
+
+Strategic design, minimum essential details.
+
+The diagram shows that Cell depends on MinedCell, EmptyCell, and AdjacentCell. Did we mean that or something else?
+
+Please show relationship between each of the classes in the diagram. Please also show the cardinality (number) of the relationships.
+
+Please go over each and every abstraction presented in the diagram and check if that is relevant and necessary to the given problem.
+
+Text:
+
+1.
+Please see requestReview.txt "For written parts in homework and assignment" and then rework this part.
+
+Present the what but also the why here in this part, as you proceed to write in short paragraphs.
+
+2. 
+There are many other languages that fit this bill, why are we choosing Java? Please present the reasoning for our choice for this program.
+
+3.
+
+Please write in short paragraphs. Different ideas/thoughts/details in different paragraphs. 
+
+What do we plan to use for testing, for automated builds of the code (compiling, running tests).
+
+------------------------------------------------------------------------------

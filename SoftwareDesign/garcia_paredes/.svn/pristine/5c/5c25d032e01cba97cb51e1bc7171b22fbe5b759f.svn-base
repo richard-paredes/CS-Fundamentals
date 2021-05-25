@@ -1,0 +1,26 @@
+from collections import Counter
+from random import sample
+from requests import request
+
+def scramble_word(word):
+  scrambled_word = ''.join(sample(word.strip().lower(), len(word.strip())))
+  return scrambled_word if scrambled_word is not word else scramble_word(word)
+
+def calculate_points_from_guess(word, guess):
+  return {
+    True: 0, 
+    False: sum(map(lambda letter: 1 if letter in "aeiou" else 2, guess))
+  } [len(Counter(guess) - Counter(word)) > 0 or not is_spelled_correctly(guess)]
+#Feedback: nice solution above  
+
+
+#Feedback: this is tight coupling. If we decide to use a different 
+#spell check service in the future then this file will have to change. If we decide to use
+#multiple different services, this file will get polluted. We should postpone dealing
+#with the actual spell check. Instead, we should pass a reference to a is_spelling_correct
+#function to the calculate_score. In the test, using the mocking library, we should create
+#a stub or mock for the is_spelling_correct function that returns a false for the cases
+#when the spelling is incorrect.
+
+def is_spelled_correctly(guess):
+  return request("GET", f"http://agilec.cs.uh.edu/spell?check={guess}").json()

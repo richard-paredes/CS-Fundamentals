@@ -1,0 +1,253 @@
+import unittest
+from unittest import mock, TestCase
+from functools import partial
+import requests
+from word_guess import scramble_word, calculate_points_from_guess as calculate_points, pick_a_random_word, parse_text, is_spelling_correct
+
+calculate_points_from_guess =\
+  partial(calculate_points, is_spelling_correct = lambda word: True)
+
+class WordGuessTests(TestCase):
+
+  def test_canary(self):
+    self.assertTrue(True)
+
+  def test_scramble_word_apple(self):
+    word = "apple"
+
+    scrambled_word = scramble_word(word)
+
+    self.assertNotEquals(word, scrambled_word)
+
+  def test_scramble_word_matter(self):
+    word = "matter"
+
+    scrambled_word = scramble_word(word)
+
+    self.assertNotEquals(word, scrambled_word)
+
+  def test_scramble_word_apple_twice_and_expect_different_results(self):
+    word = "apple"
+
+    first_scrambled_word = scramble_word(word)
+    second_scrambled_word = scramble_word(first_scrambled_word)
+
+    self.assertNotEquals(second_scrambled_word, first_scrambled_word)
+
+  def test_scramble_an_empty_string_and_returns_scramble_without_space(self):
+    word = "    "
+
+    scrambled_word = scramble_word(word)
+
+    self.assertFalse(scrambled_word.isspace())
+
+  def test_scramble_word_with_space_in_the_beginning_and_returns_scramble_without_space(self):
+    word = " scramble"
+
+    scrambled_word = scramble_word(word)
+
+    self.assertFalse(scrambled_word.isspace())
+
+  def test_scramble_word_with_space_at_end_returns_scramble_without_space(self):
+    word = "scramble "
+
+    scrambled_word = scramble_word(word)
+
+    self.assertFalse(scrambled_word.isspace())
+
+  def test_scramble_word_with_space_in_middle_returns_scramble_with_space(self):
+    word = "ice cream"
+
+    scrambled_word = scramble_word(word)
+
+    self.assertEquals(1, scrambled_word.count(" "))
+
+  def test_scramble_word_with_mixed_casing_returns_scramble_with_lowercase(self):
+    word = "PoLyMoRpHiSm"
+
+    scrambled_word = scramble_word(word)
+
+    self.assertTrue(scrambled_word.islower())
+
+  def test_scramble_word_returns_scramble_with_same_characters(self):
+    word = "scramble"
+
+    scrambled_word = scramble_word(word)
+
+    self.assertTrue(sorted(word) == sorted(scrambled_word))
+
+  def test_calculate_points_from_guess_for_monk_with_original_word_monkey_and_returns_7(self):
+    word = "monkey"
+    guess = "monk"
+    
+    self.assertEquals(7, calculate_points_from_guess(word, guess))
+
+  def test_calculate_points_from_guess_for_pine_with_original_word_pineapple_and_returns_6(self):
+    word = "pineapple"
+    guess = "pine"
+
+    self.assertEquals(6, calculate_points_from_guess(word, guess))
+
+  def test_calculate_points_from_guess_for_mop_with_original_word_monkey_returns_0(self):
+    word = "monkey"
+    guess = "mop"
+
+    self.assertEquals(0, calculate_points_from_guess(word, guess))
+
+  def test_calculate_points_from_guess_for_pink_with_original_word_pineapple_returns_0(self):
+    word = "pineapple"
+    guess = "pink"
+
+    self.assertEquals(0, calculate_points_from_guess(word, guess))
+
+  def test_calculate_points_for_guess_with_right_letters_but_not_in_order_with_original_word_hyena_returns_5(self):
+    word = "hyena"
+    guess = "nay"
+
+    self.assertEquals(5, calculate_points_from_guess(word, guess))
+
+  def test_calculate_points_for_guess_with_right_letters_but_not_in_order_with_original_word_pineapple_returns_6(self):
+    word = "pineapple"
+    guess = "peel"
+
+    self.assertEquals(6, calculate_points_from_guess(word, guess))
+
+  def test_calculate_points_from_guess_for_a_with_original_word_apple_returns_1(self):
+    word = "apple"
+    guess = "a"
+
+    self.assertEquals(1, calculate_points_from_guess(word, guess))
+
+  def test_calculate_points_from_non_continuous_guess_ape_with_original_word_apple_returns_4(self):
+    word = "apple"
+    guess = "ape"
+    
+    self.assertEquals(4, calculate_points_from_guess(word, guess))
+
+  def test_calculate_points_from_no_vowel_guess_by_with_original_word_bayou_returns_4(self):
+    word = "bayou"
+    guess = "by"
+
+    self.assertEquals(4, calculate_points_from_guess(word, guess))
+
+  def test_calculate_points_for_guess_with_letters_not_in_original_word_returns_0(self):
+    word = "bayou"
+    guess = "bye"
+
+    self.assertEquals(0, calculate_points_from_guess(word, guess))
+
+  def test_calculate_points_for_guess_with_repeated_letters_in_original_word_returns_0(self):
+    word = "relate"
+    guess = "rear"
+
+    self.assertEquals(0, calculate_points_from_guess(word, guess))
+
+  def test_calculate_points_for_guess_with_incorrect_spelling_and_correct_order(self):
+    word = "apple"
+    guess = "app"
+
+    is_spelling_correct = lambda word: False
+    
+    self.assertEquals(0, calculate_points(word, guess, is_spelling_correct))    
+
+  def test_calculate_points_for_guess_with_incorrect_spelling_and_incorrect_order(self):
+    word = "apple"
+    guess = "ael"
+
+    is_spelling_correct = lambda word: False
+
+    self.assertEquals(0, calculate_points(word, guess, is_spelling_correct))
+
+  def test_calculate_points_for_guess_with_correct_spelling_but_spell_checker_throws_runtime_exception(self):
+    word = "monkey"
+    guess = "monk"
+
+    is_spelling_correct = lambda word: throw(Exception("Network error"))
+
+    self.assertRaises(Exception, calculate_points, word, guess, is_spelling_correct)
+
+  def test_pick_a_random_word_returns_random_word_from_list_of_words(self):
+    words = ['monkey', 'pineapple', 'apple', 'bayou', 'avocado', 'watermelon', 'hyena']
+
+    self.assertIn(pick_a_random_word(words), words)
+  
+  def test_pick_a_random_word_returns_different_word_when_called_again(self):
+    words = ['monkey', 'pineapple', 'apple', 'bayou', 'avocado', 'watermelon', 'hyena']
+
+    first_word = pick_a_random_word(words)
+    second_word = pick_a_random_word(words)
+
+    self.assertNotEquals(first_word, second_word)
+  
+  def test_pick_a_random_word_from_empty_list_raises_index_error(self):
+    words = []
+
+    self.assertRaises(IndexError, pick_a_random_word, words)
+
+#Feedback: The tests above focused on score computation and shuffling the word. The tests below take on
+#a different focus, working with a remote service. The above concerns are more stable and very different
+#than the concerns below. We may use different services with the above solution. Thus, having the below
+#tests here violates the Single Responsibility Principle (SRP). These tests below should be in a separate
+#file.
+
+  def test_get_response_from_service_URL_and_confirm_test_was_received(self):
+    url = "http://agile.cs.uh.edu/spell?check=word"
+
+    self.assertTrue(requests.head(url).status_code == 200)
+    #Feedback: let's verify, instead of status code, that the result of a get_response function is
+    #a text
+
+  def test_parse_text_true_and_return_boolean_true(self):
+    text = "True"
+
+    self.assertEquals(True, parse_text(text)) #Feedback: assertTrue
+
+  def test_parse_text_false_and_return_boolean_false(self):
+    text = "False"
+
+    self.assertEquals(False, parse_text(text)) #Feedback: assertFalse
+
+  def test_parse_text_something_else_and_return_something(self):
+    text = "something else"
+
+    self.assertRaises(Exception, parse_text(text)) #Feedback: let's check the error message in the exception
+
+  def test_is_spelling_correct_should_take_a_word_and_returns_true_for_word_right(self):
+    word = 'right'
+
+    with mock.patch("word_guess.is_spelling_correct") as mock_spell_checker:
+      mock_spell_checker.return_value = True
+      actual_response = mock_spell_checker(word)
+      self.assertEquals(True, actual_response)
+      #Feedback: in this test we first mock the is_spelling_correct and then we call it. In short
+      #we mocked the verify function we are testing. We should never mock the function we are testing.
+      #mock get_response to return true. Then test is_spelling_correct.
+
+  def test_is_spelling_correct_should_take_a_word_and_returns_false_for_word_rigth(self):
+    word = 'rigth'
+
+    with mock.patch("word_guess.is_spelling_correct") as mock_spell_checker:
+      mock_spell_checker.return_value = False
+      actual_response = mock_spell_checker(word)
+      self.assertEquals(False, actual_response)
+
+  def test_is_spelling_correct_should_take_a_word_and_returns_false_for_word_haha(self):
+    word = 'haha'
+
+    with mock.patch("word_guess.is_spelling_correct") as mock_spell_checker:
+      mock_spell_checker.return_value = False
+      actual_response = mock_spell_checker(word)
+      self.assertEquals(False, actual_response)
+
+  def test_is_spelling_correct_handles_exeption_from_get_response_properly(self):
+    word = 'raise exception'
+
+    with mock.patch("word_guess.is_spelling_correct") as mock_spell_checker:
+      mock_spell_checker.return_value = Exception
+      actual_response = mock_spell_checker(word)
+      self.assertEquals(Exception, actual_response)
+
+  def test_is_spelling_correct_integration_takes_word_correct_and_returns_boolean_true(self):
+    word = "correct"
+
+    self.assertEquals(True, parse_text(is_spelling_correct(word)))

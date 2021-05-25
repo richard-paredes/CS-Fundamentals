@@ -1,0 +1,75 @@
+HW2 Due 11:59PM February 12
+
+***Please review the top part of ../hw1/hw1.txt***
+***Your chance of success greatly increases if you start very early. Your chance of failure increases if you start late. Please use as many reviews as you possibly can.***
+
+In this homework we'll create an initial strategic design for a version of the minesweeper game.
+
+Let's first describe the version of the game that we'll design. We'll not be writing any code in this homework, but only creating an initial design.
+
+The object of the game is for a player to find and seal all ten mines hidden  among hundred cells (10 x 10 cells). The mines may be in any random location.
+
+There are three types of cells: mined cell, adjacent cell, and empty cell. 
+
+A mined cell has a hidden mine.
+
+An adjacent cell is next to one or more mined cells and knows the number of mines next to it. This number is not revealed to the player initially. 
+
+An empty cell has no mine and is not next to a mined cell.
+
+At the start of the game all cells are displayed grayed out, the player has no initial clue which cells are mined, adjacent, or empty. The player may either expose a cell or seal it.
+
+The player may seal a cell if they suspect that cell to have a mine. Only an unexposed cell can be sealed. A sealed cell is shown with a seal symbol. A player may unseal a sealed cell and it will be displayed gray again.
+
+Only an unexposed and unsealed cell can be exposed. 
+
+The behavior of a cell when exposed depends on the type of the cell.
+
+Exposing a mined cell ends the game.
+
+If an empty cell is exposed, the player can see that it's empty. Furthermore, when an empty cell is exposed, it will trigger an expose action on all its unsealed neighbors.
+
+When an adjacent cell is exposed (either due to users direct action or due 
+to the successive action from exposing of a neighboring cell) it's count 
+is shown and no further action happens.
+
+There are two outcomes of the game. The player wins after sealing all the 
+mines and exposing all the other cells. The player loses if a mined cell 
+is exposed.
+
+Create an initial design of this program and answer the questions below. 
+Feel free to ask for frequent reviews.
+
+Include a separate file (may be a scan of hand drawn picture if you like, or a pdf, tiff, word document, etc.) which shows a UML diagram of your design. Refer to that diagram from the text description you write here.
+
+1. How would you design this program? 
+
+We will focus on implementing the single responsibility principle by creating separate classes that manage individual aspects of the game. In this way, although the features use each other, they each have their own responsibility that can be easily tested.
+
+The EventHandler class will serve to receive events caused by player interaction with the GUI and dispatch these events to the GameManager for an appropriate response. The EventHandler will be an extension (or implementation) of classes (or interfaces) provided by the TKinter GUI library we will use to create the game.
+
+The GameManger class will manage the flow of the game, serving as the entry point to the application, keeping track of the game state by coordinating with the EventHandler class to receive input from the user and dispatching those events to the Board class.
+
+The Board class will primarily focus on rendering the graphical interface to the user based upon the state of the game. In essence, the Board class will coordinate with the CellGrid for gameplay mechanics and appropriately update the interface.
+
+The CellGrid class receives grid coordinates for a specific cell and provides the Board class with a new mapping of cell metadata to be rendered as a response to user input. The CellGrid class houses the game mechanics and is composed of the MinedCell, AdjacentCell, and EmptyCell classes.
+
+The MinedCell, AdjacentCell, and EmptyCell classes will act as subclasses and inherit from the base Cell class. The (3) cell subclasses are representations of the mined cell, adjacent cell, and empty cell of the Minesweeper game. Their location and state will be managed by the CellGrid.
+
+2. Discuss what language you would use.
+
+We are choosing to develop the Minesweeper application using the Python language. Both of us have experience scripting in Python, however not necessarily in the domain of software design. Therefore, we want to up-skill and practice the four pillars of object oriented programming in a language that we are already well acquainted with syntactically and thus allowing us to place the focus on the principles of software design.
+
+In addition, Python is a high-level, dynamically typed programming language. This allows us to focus more on the abstractions and implementations of the application rather than concerning ourselves with managing system resources, such as memory.
+
+Furthermore, in terms of the available libraries for GUIs and automated testing, there is a wide array of developer-friendly options that are available for use in a Python implementation. 
+
+3. How do you plan to structure the program, what libraries would you use?
+
+In terms of the structure of the program, we will be focusing on developing based on the object oriented programming paradigm and the single responsibility principle. The gameplay will be separated into classes, with each class responsible for managing an integral mechanic of the game. This way, it will be easier to incorporate the classes into a cohesive, structured application.
+
+We will utilize the TKinter library for development of the GUI, Pytest as part of our test driven development approach, and the Numpy library to take advantage of data structures such as matrices.
+
+In order to implement continuous integration we will utilize Jenkins for our automatic builds to ensure every iteration of our codebase properly compiles and verifies all unit and integration tests are passing with proper code coverage.
+
+Total [10]: 10

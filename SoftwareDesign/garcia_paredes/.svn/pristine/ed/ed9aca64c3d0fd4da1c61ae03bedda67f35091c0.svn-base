@@ -1,0 +1,16 @@
+from random import sample
+import requests
+from collections import Counter
+from functools import reduce
+
+def scramble_word(word):
+  letters = list(word.strip().lower())
+  scrambled_word = ''.join(sample(letters, len(letters)))
+  return scrambled_word if scrambled_word is not word else scrambled_word(scrambled_word)
+
+def calculate_points_from_guess(word, guess):
+  allowed_chars = Counter(word)
+  given_chars = Counter(guess)
+  if len(given_chars - allowed_chars) > 0:
+    return 0
+  return reduce(lambda points, letter: points + 1 if letter in "aeiou" else points + 2, guess, 0)

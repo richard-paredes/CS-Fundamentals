@@ -1,0 +1,4 @@
+from requests import request
+
+def is_spelling_correct(word):
+  return request("GET", f"http://agile.cs.uh.edu/spell?check={word}").json()

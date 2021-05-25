@@ -1,0 +1,20 @@
+from unittest import TestCase
+from writer_test import WriterTests
+from lowercase_write_operation_test import LowerCaseWriteOperationTests
+from file_writer import FileWriter
+from os import remove
+
+class TestFileWriter(TestCase):
+  
+  TEST_FILE_NAME = "contents.txt"
+
+  def create_writer(self):
+    return FileWriter(self.TEST_FILE_NAME)
+  
+  def tearDown(self):
+    self.writer.close()
+    self.addCleanup(remove, self.TEST_FILE_NAME)
+
+class LowerCaseFileWriterTests(LowerCaseWriteOperationTests, TestFileWriter): pass
+
+class WriteFileWriterTests(WriterTests, TestFileWriter): pass

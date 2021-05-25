@@ -1,0 +1,17 @@
+HW3 Due 11:59PM April 16
+
+***Please review the top part of ../hw1/hw1.txt***
+***Your chance of success greatly increases if you start very early. Your chance of failure increases if you start late. Please use as many reviews as you possibly can.***
+
+1.
+According to the article <http://martinfowler.com/bliki/BeckDesignRules.html>, what are the rules of simple design. Why are these important? Discuss the impact of these principles. Give examples of using these principles in the class so far. Also give from examples outside of this class, but limit to your personal experiences.
+
+Following Martin Fowler's interpretation, the rules of simple design, in order of priority, are to ensure the code passes tests, reveals intentions clearly, eliminates duplication, and incorporates only essential elements that perserve the prior three rules. Following the rules of simple design facilitate developers to produce higher quality software. Specifically, each of the rules play a significant role in mitigating, or eliminating altogether, the accidental process of making software overly complex.
+
+By guaranteeing that the codebase passes all tests, developers are able to demonstrate that the software is useful in solving the intended problem for which it was written -- at least to the extent of the relevant coverage that the test cases provide. A design that fails to adhere to this rule is unable to provide consistent assurance to its clients and, in turn, most likely brittle. Incorporating relevant tests to the software provides robustness and empowers developers to extend and refactor without fear, allowing the code to become more maintainable and evolvable, producing higher quality code for users.
+
+
+
+2. What design patterns did you use in assignment 3? Discuss.
+
+PLEASE REPLACE THIS WITH YOUR RESPONSE

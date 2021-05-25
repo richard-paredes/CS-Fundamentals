@@ -1,0 +1,10 @@
+x is_perfect_number returns false for -1
+x is_perfect_number returns false for 1
+x is_perfect_number returns true for 6
+x is_perfect_number returns true for 14
+x is_perfect_number returns true for 28
+x generate_perfect_numbers_upto for -1 returns empty list
+x generate_perfect_numbers_upto for 1 returns empty list
+x generate_perfect_numbers_upto for 6 returns [6]
+x generate_perfect_numbers_upto for 14 returns [6]
+x generate_perfect_numbers_upto for 28 returns [6, 28]

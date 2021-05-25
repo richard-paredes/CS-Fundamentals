@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Homework2"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Homework2Fireman">
+				<Option output="/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/cmake-build-debug/Homework2Fireman" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/cmake-build-debug/Makefile&quot;  VERBOSE=1 Homework2Fireman"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Homework2Fireman/fast">
+				<Option output="/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/cmake-build-debug/Homework2Fireman" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/cmake-build-debug/Makefile&quot;  VERBOSE=1 Homework2Fireman/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Homework2Server">
+				<Option output="/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/cmake-build-debug/Homework2Server" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/cmake-build-debug/Makefile&quot;  VERBOSE=1 Homework2Server"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Homework2Server/fast">
+				<Option output="/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/cmake-build-debug/Homework2Server" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/cmake-build-debug/Makefile&quot;  VERBOSE=1 Homework2Server/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Homework2Client">
+				<Option output="/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/cmake-build-debug/Homework2Client" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/cmake-build-debug/Makefile&quot;  VERBOSE=1 Homework2Client"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Homework2Client/fast">
+				<Option output="/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/cmake-build-debug/Homework2Client" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/cmake-build-debug/Makefile&quot;  VERBOSE=1 Homework2Client/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/client.cpp">
+			<Option target="Homework2Client"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/fireman.cpp">
+			<Option target="Homework2Fireman"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/server.cpp">
+			<Option target="Homework2Server"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/richa/OneDrive/Desktop/Repositories/School/COSC3360/Homework2/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

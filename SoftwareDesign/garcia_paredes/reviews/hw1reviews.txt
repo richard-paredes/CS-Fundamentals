@@ -1,0 +1,52 @@
+[Reviewed 01/26/21 05:10 AM MST]
+synopsis: you're done
+
+details: 
+
+Good work, you're done.
+
+------------------------------------------------------------------------------
+[Reviewed 01/24/21 16:17 PM MST]
+synopsis: good work so far
+
+details: 
+
+1.
+
+The first paragraphs covers multiple areas. Let's give that a try, to break that into shorter paragraph. Each paragraph should focus on one idea or one single thought.
+
+Then see if the second paragraph can be split also into shorter ones.
+
+One idea, one paragraph.
+
+2.
+
+Nice details here and well written.
+
+3.
+
+Very nice writing, especially like the observation in the last paragraph.
+
+------------------------------------------------------------------------------
+[Reviewed 01/24/21 07:03 AM MST]~
+synopsis: previous review not addressed
+
+details: 
+
+Suggestions from previous review not addressed. Please go over the previous review, especially the paragraph that starts with "Let's break the writing into short paragraphs..."
+
+Let's do a quick review after these changes. Please modify the requestReview.txt file and check it in as soon as you are ready and I will do a review well before the next scheduled review cycle.
+
+------------------------------------------------------------------------------
+[Reviewed 01/23/21 07:00 AM MST]
+synopsis: very nice work so far
+
+details: 
+
+1. I really like what you have written here, very good observations, pros and cons of both the approach and the article. Good work.
+
+Let's break the writing into short paragraphs with each paragraph separated by one blank line. We don't need to add any new content to part 1, but a simple rearrangement to paragraphs should suffice.
+
+Looking forward to review part 2 and 3. Please write in short paragraphs.
+
+------------------------------------------------------------------------------

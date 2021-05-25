@@ -1,0 +1,5 @@
+from file_writer_test import TestFileWriter
+from writer_test import WriterTests
+
+# class WriteFileWriterTests(WriterTests, TestFileWriter): pass
+#Feedback: Not clear what this class is for, need better naming to make that clear or remove it. Also, no need to inherit form these many test classes

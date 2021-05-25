@@ -1,0 +1,118 @@
+/*body contains 20px border*/
+/*body has explicity width*/
+/*body is centered*/
+header {
+    background: white;
+}
+h1 {
+    margin: auto;
+    font-family: 'Lobster';
+    font-size: 75px;
+    text-align: center;
+
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
+    background: white;
+}
+
+span {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+body {
+    background: #566246;
+}
+
+#blog {
+    margin: 30px auto;
+
+    /*width adjusts based on window size*/
+    max-width:1000px;
+    width:80%;
+
+    padding:30px;
+    border-top: 20px solid #192826;
+    border-bottom: 20px solid #192826;
+    font-family: 'Source Sans Pro';
+    background: #a4c2a5;
+}
+
+p:nth-of-type(1) {
+    border-left: 5px solid #1b2826;
+    padding:5px;
+}
+
+/*hr {
+    color: white;
+    height: 5px;
+
+    margin-top: 10px;
+    margin-bottom: 20px;
+}*/
+
+/* Flaired edges, by Tomas Theunissen */
+
+hr{
+    overflow: visible; /* For IE */
+    margin-top:35px;
+    height: 20px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px 0 0 0;
+    border-radius: 20px; }
+
+hr:before { /* Not really supposed to work, but does */ display: block;
+    content: "";
+    height: 30px;
+    margin-top: -31px;
+    border-style: solid;
+    border-color: black;
+    border-width: 0 0 1px 0;
+    border-radius: 20px;
+ }
+
+.articledate{
+    text-transform: uppercase;
+    /*relevant to (based on) root element, instead of parent element like em*/
+    letter-spacing: 0.2rem;
+    margin: auto;
+    /*background: #00b99a;*/
+    color:#d8dad3;
+
+    text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+    /*color: #00b99a;*/
+    font-size: 20px;
+}
+
+.articleheader {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 2.25rem;
+    font-weight: bold;
+    color: #F1f2eb;
+
+}
+
+.articleparagraph {
+    font-weight: 800;
+}
+
+/*colors:
+    background: white;
+    border-color: #bdc3c7
+    date-color: #3498db
+    h2 color: #2c3e50
+
+    font: source sans pro
+*/
+
+/*first paragraph in each article has a left gray border*/
+/*each paragraph is aligned*/
+/*date in each article is capitalized --UPPERCASE*/
+/*letters are spaced a bit--float and add letterspacing*/
+/*each paragraph is separated by a thin line*/

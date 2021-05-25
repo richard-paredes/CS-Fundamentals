@@ -1,0 +1,13 @@
+from unittest import TestCase
+from writer_test import WriterTests
+from string_writer import StringWriter
+
+class TestStringWriter(WriterTests, TestCase):
+  
+  def create_writer(self):
+    return StringWriter()
+  
+  def test_get_output_returns_written_stream(self):
+    self.writer.write("Hello")
+    
+    self.assertEquals("Hello", self.writer.get_output())

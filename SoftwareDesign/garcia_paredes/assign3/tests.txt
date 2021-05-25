@@ -1,0 +1,30 @@
+x canary test
+x imperative fibonacci for position 0 returns 1
+x imperative fibonacci for position 1 returns 1
+x imperative fibonacci for position 2 returns 2
+x imperative fibonacci for position 3 returns 3
+x imperative fibonacci for position 5 returns 8
+x imperative fibonacci for position 10 returns 89
+x imperative fibonacci for position -1 raises exception
+x functional fibonacci for position 0 returns 1
+x functional fibonacci for position 1 returns 1
+x functional fibonacci for position 2 returns 2
+x functional fibonacci for position 3 returns 3
+x functional fibonacci for position 5 returns 8
+x functional fibonacci for position 10 returns 89
+x functional fibonacci for position -1 raises exception
+x recursive fibonacci for position 0 returns 1
+x recursive fibonacci for position 1 returns 1
+x recursive fibonacci for position 2 returns 2
+x recursive fibonacci for position 3 returns 3
+x recursive fibonacci for position 5 returns 8
+x recursive fibonacci for position 10 returns 89
+x recursive fibonacci for position -1 raises exception
+x memoized recursive fibonacci for position 0 returns 1
+x memoized recursive fibonacci for position 1 returns 1
+x memoized recursive fibonacci for position 2 returns 2
+x memoized recursive fibonacci for position 3 returns 3
+x memoized recursive fibonacci for position 5 returns 8
+x memoized recursive fibonacci for position 10 returns 89
+x memoized recursive fibonacci for position -1 raises exception
+x memoized recursive fibonacci is significantly faster than recursive fibonacci

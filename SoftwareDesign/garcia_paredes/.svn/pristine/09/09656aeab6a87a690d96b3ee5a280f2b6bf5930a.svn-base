@@ -1,0 +1,10 @@
+from requests import get
+
+def parse_text(text):
+  return {
+    True: text.lower() == "true",
+    False: Exception()
+  } [text.lower() in ["true", "false"]]
+
+def is_spelling_correct(word):
+  return get(f"http://agilec.cs.uh.edu/spell?check={word}").text

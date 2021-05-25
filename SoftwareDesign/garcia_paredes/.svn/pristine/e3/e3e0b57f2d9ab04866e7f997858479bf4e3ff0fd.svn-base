@@ -1,0 +1,4 @@
+from file_writer_test import TestFileWriter
+from writer_test import WriterTests
+
+class WriteFileWriterTests(WriterTests, TestFileWriter): pass

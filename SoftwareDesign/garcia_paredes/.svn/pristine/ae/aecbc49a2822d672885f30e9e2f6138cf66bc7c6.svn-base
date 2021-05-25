@@ -1,0 +1,6 @@
+from fibonacci_memoized_recursive import fibonacci
+from fibonacci_test import FibonacciTest
+
+class TestFibonacciMemoizedRecursive(FibonacciTest):
+  def create_fibonacci(self):
+    return fibonacci

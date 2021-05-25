@@ -1,0 +1,28 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch BetteExample",
+            "request": "launch",
+            "mainClass": "BetteExample",
+            "projectName": ""
+        },
+        {
+            "type": "java",
+            "name": "Launch Better",
+            "request": "launch",
+            "mainClass": "Better"
+        },
+        {
+            "name": ".NET Core Launch (console)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/bin/Debug/<target-framework>/<project-name.dll>",
+            "args": [],
+            "cwd": "${workspaceFolder}/Week9",
+            "stopAtEntry": false,
+            "console": "internalConsole"
+        }
+    ]
+}

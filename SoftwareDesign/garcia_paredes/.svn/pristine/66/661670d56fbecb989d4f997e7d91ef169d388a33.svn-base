@@ -1,0 +1,18 @@
+from requests import get
+
+def parse_text(text):
+  text_lower = text.lower() #Feedback: no need for this line
+  if text_lower in ["true", "false"]:
+    return text_lower == "true"
+  raise ValueError("Input could not be parsed")
+
+def get_response(word):
+  try:
+    return get(f"http://agilec.cs.uh.edu/spell?check={word}").text
+  except: #Feedback: we can remove try and except and propagate the exception from the call 
+    raise ConnectionError("Error connecting to the spell checking service") 
+
+def is_spelling_correct(word):
+  response_text = get_response(word)
+  return parse_text(response_text) #Feedback: we can merge this with the previous line
+  

@@ -1,0 +1,108 @@
+[Reviewed 04/27/21 05:14 AM MDT]
+synopsis~: let's remove the last bit of duplication
+
+details: 
+
+**1 are doing the same, calling Writer.write. Let's remove that duplication.
+
+Let's do a quick review after these changes. Please modify the requestReview.txt file and check it in as soon as you are ready and I will do a review well before the next scheduled review cycle.
+
+------------------------------------------------------------------------------
+[Reviewed 04/26/21 05:16 AM MDT]
+synopsis~: let us keep it DRY
+
+details: 
+
+Let's keep it DRY, please see suggestions in code.
+
+------------------------------------------------------------------------------
+[Reviewed 04/24/21 10:15 AM MDT]
+synopsis: let's rework to meet the requirements
+
+details: 
+
+LowerCase Write Operations Tests
+*create a writer, configure it with a lowercase operation
+-write nothing to the writer
+-write "hello THERE" to the writer and verify content is "hello there"
+-write twice "hELLo" and then "wORLd" to the writer, verify content is "hello world"
+-write, close, write to the writer
+-close, write to the writer
+
+------------------------------------------------------------------------------
+[Reviewed 04/24/21 07:29 AM MDT]
+synopsis: let's honor DRY and OCP
+
+details: 
+
+Let's honor DRY and OCP. Please see suggestions in code.
+
+Need to align code to the given problem. Please see these parts in assign4.txt:
+
+***Design so that other such functions may be added in the future, but 
+without changing any existing class.
+
+***The user of your design will pick and choose what kinds of operations
+they want to use or combine to use. For example, I may be interested
+in combining the stupid remover and the lower case operation when
+writing to a String. I may also be interested in combining the
+duplicate remover and the upper case operation when writing to
+a file. I may chose to use any combination of these operations
+at will.
+
+You can imagine an operation like this (pseudocode):
+
+writeToWriter(Writer writer) {
+  writer.write("This is really really stupid!!!")
+  writer.close();
+}
+
+If I had combined the operations of duplicate remover, stupid remover,
+and if the writer is targeting a file (say myfile.dat), then the file
+myfile.dat would contain the content
+
+This is really s*****!!!
+
+
+------------------------------------------------------------------------------
+[Reviewed 04/22/21 04:41 AM CDT]
+synopsis: nice work so far
+
+details: 
+
+Nice work so far.
+
+Let's move forward to designing the lower case transformation feature.
+
+------------------------------------------------------------------------------
+[Reviewed 04/21/21 04:23 AM EDT]
+synopsis: let's proceed to the tests mentioned for FileWriter
+
+details: 
+
+Let's proceed to the tests mentioned in tests.txt for FileWriter.
+
+------------------------------------------------------------------------------
+[Reviewed 04/20/21 05:41 AM EDT]
+synopsis: let's reduce code
+
+details: 
+
+Let's reduce code and write minimum code for the following tests:
+
+-canary test
+-write nothing to a StringWriter
+-write a string to a StringWriter
+-write a string twice to a StringWriter
+-write, close, write to a StringWriter
+-close, write to a StringWriter
+
+------------------------------------------------------------------------------
+[Reviewed 04/19/21 07:41 AM EDT]
+synopsis: let's start by bringing in CI for assign4
+
+details: 
+
+Please see build.sh
+
+------------------------------------------------------------------------------

@@ -1,0 +1,85 @@
+body {
+    padding-top: 80px;
+    background-color: #cccccc;
+    color: #333333;
+}
+#logo .navbar-brand {
+    /*width: 50px;
+    height:50px;*/
+    margin: auto auto;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+    /*background: white;*/
+}
+
+/*glyphicon treated as a text*/
+.navbar-brand span {
+    font-size: 130%;
+    text-align: center;
+}
+
+/* for fire logo
+#logo img {
+
+    margin: -30% -25%;
+    width: 150%;
+    height:auto;
+}
+*/
+
+.jumbotron {
+    text-align: center;
+    font-weight: bold;
+    color: #2c3e50;
+    background: #ecf0f1;
+
+    filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, .3));
+}
+
+.navbar-inverse {
+    background: #2c3e50;
+}
+
+.navbar-inverse .navbar-nav li a {
+    color: white;
+}
+
+.navbar-inverse .navbar-brand {
+    color: white;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.thumbnail img {
+
+    filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, .3));
+    transition: filter .25s ease-in-out;
+
+    object-fit: cover;
+    height: 300px;
+    width: 100%;
+}
+
+.thumbnail img:hover {
+    filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, .3));
+}
+
+.footer {
+  font-size: 1em;
+  opacity: .25;
+  text-align: center;
+  padding-top: 3em;
+  padding-bottom: 3em;
+  margin-bottom: -1.5em;
+  transition: opacity 1s ease-in-out;
+}
+.footer a {
+  color: currentColor;
+}
+.footer:hover, .footer:active, .footer:focus {
+  opacity: .75;
+}

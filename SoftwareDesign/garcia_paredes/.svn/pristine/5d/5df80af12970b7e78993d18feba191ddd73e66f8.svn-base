@@ -1,0 +1,6 @@
+from fibonacci_test import FibonacciTest
+from functions.fibonacci_functional import functional_fibonacci
+
+class TestFibonacciFunctional(FibonacciTest):
+  def create_fibonacci(self):
+    return functional_fibonacci

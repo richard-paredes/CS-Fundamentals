@@ -1,0 +1,43 @@
+from unittest import TestCase
+
+#Feedback: 
+#class FibonacciTest():
+#  def setUp(self):
+#    self.fibonacci = self.create_fibonacci()
+#  
+#  def test_canary(self):
+#    assert True == True
+#  
+#  def test_for_positions(self):
+#    for(position, expected) in [(0, 1), (1, 1), (2, 2), .....]:
+#      yield self.check_fibonacci, position, expected
+#  
+#  def check_fibonacci(self, position, expected):
+#    assert self.fibonacci(position) == expected
+
+
+class FibonacciTests():
+  
+  def test_canary(self):
+    self.assertTrue(True)
+  
+  def test_fibonacci_for_position_0_returns_1(self):
+    self.assertEquals(1, self.fibonacci(0))
+  
+  def test_fibonacci_for_position_1_returns_1(self):
+    self.assertEquals(1, self.fibonacci(1))
+
+  def test_fibonacci_for_position_2_returns_2(self):
+    self.assertEquals(2, self.fibonacci(2))
+
+  def test_fibonacci_for_position_3_returns_3(self):
+    self.assertEquals(3, self.fibonacci(3))
+  
+  def test_fibonacci_for_position_5_returns_8(self):
+    self.assertEquals(8, self.fibonacci(5))
+  
+  def test_fibonacci_for_position_10_returns_89(self):
+    self.assertEquals(89, self.fibonacci(10))
+
+  def test_fibonacci_for_position_negative_1_raises_exception(self):
+    self.assertRaisesRegex(ValueError, "Invalid Fibonacci sequence position", self.fibonacci, -1)

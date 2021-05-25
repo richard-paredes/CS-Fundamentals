@@ -1,0 +1,20 @@
+from functools import reduce
+
+class StringWriter:
+  def __init__(self):
+    self.target = ""
+    self.is_closed = False
+    self.operations = []
+  
+  def configure_operations(self, *operations): #Feedback: let's move this to the constructor
+    self.operations = operations
+    
+  def write(self, message):
+    if not self.is_closed:
+      self.target += reduce(lambda text, operator: operator(text), self.operations, message)#Feedback: let's remove the duplication of this code in FileWriter - DRY
+  
+  def close(self):
+    self.is_closed = True
+  
+  def get_contents(self):
+    return self.target

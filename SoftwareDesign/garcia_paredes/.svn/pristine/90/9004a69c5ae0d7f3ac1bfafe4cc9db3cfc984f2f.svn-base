@@ -1,0 +1,12 @@
+from fibonacci_recursive import recursive_fibonacci
+
+def memoized_fibonacci(position, cache = {0: 1, 1: 1}):
+  if position < 0:
+    raise ValueError("Invalid Fibonacci sequence position")
+
+  if position in cache:
+    return cache[position]
+
+  cache[position] = recursive_fibonacci(position)
+
+  return cache[position]

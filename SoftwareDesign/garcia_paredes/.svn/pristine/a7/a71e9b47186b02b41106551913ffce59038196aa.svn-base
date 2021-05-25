@@ -1,0 +1,10 @@
+def fibonacci(position, memo = {0: 1, 1: 1}):
+  if position < 0:
+    raise ValueError("Invalid Fibonacci sequence position")
+
+  if position in memo:
+    return memo[position]
+
+  memo[position] = fibonacci(position - 2) + fibonacci(position - 1)
+
+  return memo[position]
