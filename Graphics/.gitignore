@@ -362,5 +362,4 @@ FodyWeavers.xsd
 
 *.docx
 
-HW1/**
-HW2/**
+freeglut
